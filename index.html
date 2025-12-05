@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +9,6 @@
   <link rel="stylesheet" href="css/footer.css">
   <title>PetBot-Home</title>
   <style>
-    .navbar {
-      background-color: #eceded;
-    }
-
-    .navbar-brand img {
-      width: 70px;
-      margin-left: 25px;
-    }
-
-    .nav-link {
-      font-size: 20px;
-      margin: 0 10px;
-      text-transform: capitalize;
-
-    }
-
     .section1 h1 {
       text-transform: capitalize;
       color: rgb(9, 10, 14);
@@ -206,8 +189,13 @@
       .hero-text h1 {
         font-size: 30px;
       }
-    }
 
+      .hero-text p {
+        padding: 0;
+        margin: 0;
+        text-align: justify;
+      }
+    }
     @media (min-width: 1024px) {
       .hero-text h1 {
         font-size: 45px;
@@ -286,18 +274,6 @@
       }
     }
 
-    @media (max-width: 768px) {
-      .footer-col {
-        width: 45%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .footer-col {
-        width: 100%;
-      }
-    }
-
     .col {
       /* background: linear-gradient(to right, #9bc0bc, #9bc0bc, Lightgreen); */
       transition: all 0.3s ease-in-out;
@@ -341,57 +317,76 @@
       color: navy;
       margin-left: 20px;
     }
+
+    #carouselExampleFade .carousel-item img {
+      height: 1000px;
+      position: relative;
+      top: 85px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      #carouselExampleFade .carousel-item img {
+        height: 600px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #carouselExampleFade .carousel-item img {
+        height: 400px;
+      }
+    }
   </style>
 </head>
-
 <body>
-<nav class="navbar">
-  <div class="logo">
-    <img src="src/logo1.png" alt="Logo">
-  </div>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="src/logo1.png" alt="Logo">
+    </div>
 
-  <ul class="items">
-    <li><a class="navlinks" href="index.html">home</a></li>
-    <li><a class="navlinks" href="#about">about us</a></li>
-    <li class="dropdown">
-      <a class="navlinks dropdown-toggle" href="#" role="button">
-        product
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">bottles</a></li>
-        <li><a class="dropdown-item" href="#">jars</a></li>
-        <li><a class="dropdown-item" href="#">beverages</a></li>
-        <li><a class="dropdown-item" href="#">edible oil</a></li>
-        <li><a class="dropdown-item" href="#">pharma</a></li>
-      </ul>
-    </li>
-    <li><a class="navlinks" href="gallery.html">gallery</a></li>
-    <li><a class="navlinks" href="#contact">contact us</a></li>
-    <li><a class=" navlinks" href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-  </ul>
+    <ul class="items">
+      <li><a class="navlinks" href="index.html">home</a></li>
+      <li><a class="navlinks" href="#about">about us</a></li>
+      <li class="dropdown">
+        <a class="navlinks dropdown-toggle" href="#" role="button">
+          product
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">bottles</a></li>
+          <li><a class="dropdown-item" href="#">jars</a></li>
+          <li><a class="dropdown-item" href="#">beverages</a></li>
+          <li><a class="dropdown-item" href="#">edible oil</a></li>
+          <li><a class="dropdown-item" href="#">pharma</a></li>
+        </ul>
+      </li>
+      <li><a class="navlinks" href="gallery.html">gallery</a></li>
+      <li><a class="navlinks" href="#contact">contact us</a></li>
+      <li><a class=" navlinks" href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+    </ul>
 
-  <!-- 🔍 ADDED SEARCH BAR -->
-  <div class="search-bar">
-    <input type="text" placeholder="Search...">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </div>
+    <!-- 🔍 ADDED SEARCH BAR -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
 
-  <div class="toggle-btn">
-    <button class="navbar-toggler" type="button">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</nav>
-  <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="toggle-btn">
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="src/beverages/beverages8.webp" class="d-block w-100" alt="...">
+        <img src="src/hero.1.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="src/beverages/beverages9.webp" class="d-block w-100" alt="...">
+        <img src="src/hero2.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="src/beverages/beverages10.webp" class="d-block w-100" alt="...">
+        <img src="src/hero3.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -541,6 +536,7 @@
         img: "beverages1.jpg",
         ital: 5999,
         bold: 4499,
+        img1:"beverages5.jpg",
         btn: "view details"
       },
       {
@@ -631,5 +627,4 @@
   <script src="js/nav.js"></script>
   <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
-
 </html>
