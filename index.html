@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/cards.css">
   <title>PetBot-Home</title>
   <style>
+    .section1{
+      margin: 0 !important;
+    }
     .section1 h1 {
       text-transform: capitalize;
       color: rgb(9, 10, 14);
-      /* color: aliceblue; */
       font-size: 40px;
       font-weight: bolder;
       display: inline-block;
@@ -40,13 +44,32 @@
     }
 
     .section1 p {
-      margin-top: 10px;
-      font-weight: bold;
-      color: gray;
+      text-align: center;
+      color: black;
+      margin: 20px 30px 0;
+      word-spacing: 3px;
+      line-height: 25px;
+    }
+    #carouselExampleFade .carousel-item img {
+      height: 650px;
+      position: relative;
+      top: 85px;
+      width: 100%;
     }
 
+    @media (max-width: 768px) {
+      #carouselExampleFade .carousel-item img {
+        height: 500px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #carouselExampleFade .carousel-item img {
+        height: 400px;
+      }
+    }
     .home-info {
-      padding: 25px;
+      padding: 15px;
     }
 
     .hero-text {
@@ -56,8 +79,8 @@
 
     .hero-text h1 {
       font-size: 60px;
-      font-weight: 600;
-      margin: 10px 80px 25px;
+      font-weight: 500;
+      margin: 10px;
       overflow-wrap: break-word;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
@@ -78,21 +101,12 @@
 
     .video iframe {
       width: 100%;
-      margin: 20px;
-      height: 600px;
+      margin: 10px 40px;
+      height: 450px;
       border-radius: 25px;
     }
 
-    .pet1,
-    .pet2 {
-      margin: 20px;
-    }
 
-    .pet1 img,
-    .pet2 img {
-      border-radius: 20px;
-      width: 100%;
-    }
 
     section {
       padding: 60px 20px;
@@ -156,6 +170,11 @@
     }
 
     @media (max-width: 480px) {
+      .section1 p {
+        text-align: justify;
+        margin: 10px 0px;
+      }
+
       .hero-text {
         padding: 0;
       }
@@ -165,9 +184,13 @@
         margin: 10px 0;
       }
 
+      .hide-para {
+        display: none;
+      }
+
       .hero-text p {
         padding: 0;
-        margin: 0;
+        margin: 15px;
         text-align: justify;
       }
 
@@ -177,11 +200,7 @@
 
       .video iframe {
         height: 350px;
-      }
-
-      .pet1,
-      .pet2 {
-        margin: 10px;
+        margin: 20px;
       }
     }
 
@@ -196,6 +215,7 @@
         text-align: justify;
       }
     }
+
     @media (min-width: 1024px) {
       .hero-text h1 {
         font-size: 45px;
@@ -273,96 +293,32 @@
         gap: 10px;
       }
     }
-
-    .col {
-      /* background: linear-gradient(to right, #9bc0bc, #9bc0bc, Lightgreen); */
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
-      height: 300px;
-      margin: 20px 0;
-    }
-
-    .col:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    .col img {
-      width: 100%;
-      height: 200px;
-    }
-
-    .col img:hover {
-      opacity: 0.5;
-    }
-
-    .col p {
-      margin-left: 10px;
-      overflow: hidden;
-      /* padding: 3px; */
-      color: gray;
-      font-weight: 600;
-    }
-
-    .col i {
-      color: red;
-      font-size: 18px;
-      text-decoration: line-through;
-      margin-left: 20px;
-    }
-
-    .col b {
-      font-size: 20px;
-      color: navy;
-      margin-left: 20px;
-    }
-
-    #carouselExampleFade .carousel-item img {
-      height: 1000px;
-      position: relative;
-      top: 85px;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    @media (max-width: 768px) {
-      #carouselExampleFade .carousel-item img {
-        height: 600px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      #carouselExampleFade .carousel-item img {
-        height: 400px;
-      }
-    }
   </style>
 </head>
+
 <body>
   <nav class="navbar">
     <div class="logo">
       <img src="src/logo1.png" alt="Logo">
     </div>
-
     <ul class="items">
       <li><a class="navlinks" href="index.html">home</a></li>
-      <li><a class="navlinks" href="#about">about us</a></li>
+      <li><a class="navlinks" href="about.html">about us</a></li>
+      <li><a class="navlinks" href="gallery.html">gallery</a></li>
       <li class="dropdown">
         <a class="navlinks dropdown-toggle" href="#" role="button">
           product
         </a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">bottles</a></li>
-          <li><a class="dropdown-item" href="#">jars</a></li>
-          <li><a class="dropdown-item" href="#">beverages</a></li>
-          <li><a class="dropdown-item" href="#">edible oil</a></li>
-          <li><a class="dropdown-item" href="#">pharma</a></li>
+          <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+          <li><a class="dropdown-item" href="jars.html">jars</a></li>
+          <li><a class="dropdown-item" href="bevrages.html">beverages</a></li>
+          <li><a class="dropdown-item" href="edibleoil.html">edible oil</a></li>
+          <li><a class="dropdown-item" href="pharma.html">pharmas</a></li>
         </ul>
       </li>
-      <li><a class="navlinks" href="gallery.html">gallery</a></li>
-      <li><a class="navlinks" href="#contact">contact us</a></li>
-      <li><a class=" navlinks" href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      <li><a class="navlinks" href="contact.html">contact us</a></li>
+      <li><a class=" navlinks" href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
     </ul>
 
     <!-- 🔍 ADDED SEARCH BAR -->
@@ -405,17 +361,10 @@
         material sourcing to high-quality finished bottles and containers. With a strong commitment to sustainability,
         PETBot ensures low carbon emissions and high recyclability, making PET a superior alternative to paper, glass,
         and metal packaging.
-        Equipped with advanced, digitalized production lines, PETBot manufactures billions of PET bottles, jars, and
-        containers annually for beverages, dairy, juices, and other food products. Our solutions are ideal for global
-        brands, households, and outdoor events, combining innovation, scale, and environmental responsibility.
-      </p>
-      <p id="p2">At PETBot, we craft high-quality, food-grade PET bottles and containers designed for safety,
-        durability, and sustainability. Our production process combines advanced technology with eco-friendly practices,
-        ensuring every bottle is not only strong and reliable but also environmentally responsible.
-
-        From refreshing beverages and dairy products to juices, desserts, and more, PETBot’s packaging solutions cater
-        to households, businesses, and global brands alike. With a focus on innovation, scalability, and minimal
-        environmental impact, PETBot stands as a trusted name in modern PET packaging.
+        <span class="hide-para">Equipped with advanced, digitalized production lines, PETBot manufactures billions of
+          PET bottles, jars, and
+          containers annually for beverages, dairy, juices, and other food products. Our solutions are ideal for global
+          brands, households, and outdoor events, combining innovation, scale, and environmental responsibility.</span>
       </p>
     </div>
   </div>
@@ -423,23 +372,6 @@
     <iframe width="853" height="480" src="https://www.youtube.com/embed/XRiDu1FkYX4" title="" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </div>
-  <div class="section1 text-center m-5">
-    <h1>why pet material?</h1>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6 col-sm-12">
-        <div class="pet1">
-          <img src="src/charts/chart1.jpg" alt="">
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <div class="pet2">
-          <img src="src/charts/chart2.jpg" alt="">
-        </div>
-      </div>
-    </div>
   </div>
   <section class="text-center">
     <div class="container-fluid">
@@ -474,8 +406,8 @@
       eco-friendly practices in mind. Our innovative solutions help businesses reduce waste, promote recycling, and
       contribute to a greener future.</p>
   </div>
-  <div class="container-fluid">
-    <div class="row" id="row1">
+  <div  class="container-fluid contain_card">
+    <div id="card_display" class="row">
     </div>
   </div>
   <footer class="footer container-fluid">
@@ -494,10 +426,10 @@
         <div class="foot-links">
           <h3>quick links</h3>
           <ul>
-            <li><a href="">home</a></li>
-            <li><a href="">about us</a></li>
-            <li><a href="">gallery</a></li>
-            <li><a href="">contact us</a></li>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about us</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="contact.html">contact us</a></li>
           </ul>
         </div>
       </div>
@@ -505,11 +437,11 @@
         <div class="foot-links">
           <h3>product links</h3>
           <ul>
-            <li><a href="">bottles</a></li>
-            <li><a href="">jars</a></li>
-            <li><a href="">edible oil</a></li>
-            <li><a href="">beverages</a></li>
-            <li><a href="">pharma</a></li>
+            <li><a href="bottles.html">bottles</a></li>
+            <li><a href="jars.html">jars</a></li>
+            <li><a href="edibleoil.html">edible oil</a></li>
+            <li><a href="beverages.html">beverages</a></li>
+            <li><a href="pharma.html">pharma</a></li>
           </ul>
         </div>
       </div>
@@ -531,98 +463,114 @@
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
   <script>
-    let homeProducts = [
+    let homeCards= [
       {
-        img: "beverages1.jpg",
-        ital: 5999,
-        bold: 4499,
-        img1:"beverages5.jpg",
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages5.jpg",
-        ital: 4500,
-        bold: 3999,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+                desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages6.webp",
-        ital: 9000,
-        bold: 6499,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+                desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages7.webp",
-        ital: 5999,
-        bold: 4499,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+                desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages8.webp",
-        ital: 4500,
-        bold: 3999,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+               desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages9.webp",
-        ital: 9000,
-        bold: 6499,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+                desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages10.webp",
-        ital: 5999,
-        bold: 4499,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+               desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages11.webp",
-        ital: 5499,
-        bold: 3499,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+               desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages12.webp",
-        ital: 5999,
-        bold: 4499,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+               desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages1.jpg",
-        ital: 4500,
-        bold: 3999,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+               desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages3.jpg",
-        ital: 9000,
-        bold: 6499,
-        btn: "view details"
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+               desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
       },
       {
-        img: "beverages2.jpg",
-        ital: 5499,
-        bold: 3499,
-        btn: "view details"
-      }
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+              desc:"bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
     ];
-    function mensDisplay(list = homeProducts) {
-      let col = "";
-      list.forEach(i => {
-        col += `
-     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-         <div class="col">
-          <img src="src/beverages/${i.img}" alt="">
-          <i>PKR${i.ital.toLocaleString()}</i>
-          <b id="bol">PKR${i.bold.toLocaleString()}</b>
-          <button id="btn10" style="background-color: #0f172a; text-transform: capitalize;" class="btn text-light fw-bolder d-block ms-3 mt-2">${i.btn}</button>
-       </div>
-    </div>
-    `;
-      });
-      document.getElementById("row1").innerHTML = col;
-    }
-    mensDisplay()
+    document.addEventListener("DOMContentLoaded",function(){
+      let card_display=document.getElementById("card_display");
+      let  container=document.getElementById("contain_card");
+      card_data="";
+      homeCards.forEach(i =>{
+        card_data+=`
+              <div class="col-lg-3 col-md-4 col-6">
+        <div class="home-card">
+          <img class="home-card-img" src="src/${i.img_card}" alt="">
+          <img class="home-hover-img" src="src/${i.img1_hover}" alt="">
+          <p class="home-card-descrip">${i.desc}</p>
+          <div class="card-prices">
+            <p class="duplicate-price">rs:${i.p_1}</p>
+            <p class="price">rs:${i.p_2}</p>
+          </div>
+          <button class="btn btn-outline-dark cart-btn">add to cart</button>
+        </div>
+      </div>
+        `
+        })
+        card_display.innerHTML=card_data;
+    })
   </script>
   <script src="js/nav.js"></script>
   <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>

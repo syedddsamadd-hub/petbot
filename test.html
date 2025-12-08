@@ -1,121 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
     <style>
-        .card-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .card {
-            position: relative;
-            width: 250px;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.5s ease;
-        }
-        .card-img-hover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-        }
-        .card:hover .card-img-hover {
-            opacity: 1;
-        }
-        .card-icon {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 8px;
-            border-radius: 50%;
-            font-size: 20px;
-            color: #333;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-        .card:hover .card-icon {
-            background: #ff6f61;
-            color: #fff;
-            transform: scale(1.2);
-        }
-        .cards-container{
-            display: flex;
-            justify-content: center;
-        }
-        .cards{
-            position: relative;
-            width: 250px;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-        .cards img{
-            width: 100%;
-            height: 80%;
-            object-fit: cover;
-            transition: opacity 0.5s ease;
-        }
-        .cards-img-hover{
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-        }
-        .cards:hover .cards-img-hover{
-            opacity: 1;
-        }
-        .icon{
-            opacity: 0;
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 24px;
-            border-radius: 100%;
-            padding: 10px;
-            background-color: aquamarine;
-        }
-        .cards:hover .icon{
-            opacity: 1;
-        }
+        .pet1,
+    .pet2 {
+      margin: 20px;
+    }
+
+    .pet1 img,
+    .pet2 img {
+      border-radius: 20px;
+      width: 100%;
+    }
+    @media (max-width:480px) {
+     .pet1,
+      .pet2 {
+         margin: 10px;
+      }   
+    }
     </style>
 </head>
-
 <body>
-    <!-- Make sure Font Awesome 6 link included -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-    <div class="card-container">
-        <div class="card">
-            <img src="src/beverages/beverages1.jpg" class="card-img" alt="Product">
-            <img src="src/beverages/beverages11.webp" class="card-img-hover" alt="Product Hover">
-            <div class="card-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
+      <div class="section1 text-center m-5">
+    <h1>why pet material?</h1>
+  </div>
+      <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="pet1">
+          <img src="src/charts/chart1.jpg" alt="">
         </div>
-    </div>
-    <div class="cards-container">
-        <div class="cards">
-            <img src="src/beverages/beverages1.jpg" class="cards-img" alt="products">
-             <img src="src/beverages/beverages3.jpg" class="cards-img-hover" alt="products">
-             <i class="icon fa-solid fa-cart-shopping"></i>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="pet2">
+          <img src="src/charts/chart2.jpg" alt="">
         </div>
+      </div>
     </div>
+  </div>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
-
 </html>

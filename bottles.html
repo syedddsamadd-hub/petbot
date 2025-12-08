@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetBot-bottles</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <style>
+        .category-banner img {
+            height: 600px;
+            position: relative;
+            top: 85px;
+            width: 100%;
+        }
+        .email-sub {
+            width: 80%;
+            text-align: center;
+            height: 250px;
+            background-color: #0f172a;
+            display: block;
+            padding: 20px;
+            align-items: center;
+            color: #fff;
+            margin: 50px auto;
+            border: solid;
+        }
+        .email-sub h3 {
+            font-size: 40px;
+            margin: 10px;
+            color: #fff;
+        }
+        .inp {
+            width: 50%;
+            padding: 9px;
+            border: none;
+        }
+        .inp::placeholder {
+            font-size: 18px;
+        }
+        .submit-email {
+            width: 20%;
+            padding: 9px;
+            border: none;
+            color: #fff;
+            background-color: black;
+        }
+        /* @media (max-width:992px) {
+            .category-banner img {
+                height: 300px;
+            }
+        } */
+          @media (max-width:800px) {
+            .category-banner img{
+                height: 400px;
+            }
+            #product-cards{
+                margin: 100px 0 0 0;
+            }
+          }
+        @media (max-width:500px) {
+            #product-cards{
+                margin: 70px 0 0 0;
+            }
+             .category-banner img {
+                   height: 250px;
+            }
+            .inp::placeholder {
+                font-size: 15px;
+            }
+            .email-sub {
+                padding: 10px;
+                width: 95%;
+            }
+
+            .submit-email {
+                padding: 5px;
+            }
+
+            .inp {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="src/logo1.png" alt="Logo">
+        </div>
+        <ul class="items">
+            <li><a class="navlinks" href="index.html">home</a></li>
+            <li><a class="navlinks" href="about.html">about us</a></li>
+            <li><a class="navlinks" href="gallery.html">gallery</a></li>
+            <li class="dropdown">
+                <a class="navlinks dropdown-toggle" href="#" role="button">
+                    product
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+                    <li><a class="dropdown-item" href="jars.html">jars</a></li>
+                    <li><a class="dropdown-item" href="bevrages.html">beverages</a></li>
+                    <li><a class="dropdown-item" href="edibleoil.html">edible oil</a></li>
+                    <li><a class="dropdown-item" href="pharma.html">pharmas</a></li>
+                </ul>
+            </li>
+            <li><a class="navlinks" href="contact.html">contact us</a></li>
+            <li><a class="navlinks" href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="toggle-btn">
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="category-banner">
+        <img src="src/banner1.jpg" alt="">
+    </div>
+    <div id="product-cards" class="container-fluid contain_card">
+        <div id="bottles_display" class="row"></div>
+    </div>
+    <div class="email-sub">
+        <h3>news letter</h3>
+        <p>let your customer to interact with you by sending email and updates of new products.</p>
+        <input type="email" class="inp" placeholder="example@gmail.com">
+        <button class="submit-email">subscribe</button>
+    </div>
+    <footer class="footer container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="foot-1">
+                    <h1>petbot</h1>
+                    <p>your trusted partner in premium PET packaging solutions.
+                        We craft durable, lightweight, and food-grade PET bottles designed for every industry.
+                        From innovation to quality, we ensure packaging that protects your product and enhances your
+                        brand.
+                        PetBot — where strength, style, and sustainability come together.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="foot-links">
+                    <h3>quick links</h3>
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="about.html">about us</a></li>
+                        <li><a href="gallery.html">gallery</a></li>
+                        <li><a href="contact.html">contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="foot-links">
+                    <h3>product links</h3>
+                    <ul>
+                        <li><a href="bottles.html">bottles</a></li>
+                        <li><a href="jars.html">jars</a></li>
+                        <li><a href="edibleoil.html">edible oil</a></li>
+                        <li><a href="beverages.html">beverages</a></li>
+                        <li><a href="pharma.html">pharma</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="social-link">
+                    <h3>follow us</h3>
+                    <p>for get more information follow us on these platform to gain the first hand konwledge about
+                        petbot.</p>
+                    <span><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></span>
+                    <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
+                    <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i
+                                class="fa-brands fa-linkedin"></i></a></span>
+                    <span><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© 2025 PetBot Industries. All Rights Reserved.</p>
+    </div>
+    <script>
+        let bottlesCards = [
+            {
+                img_card: "logo1.png",
+                img1_hover: "logo2.png",
+                desc: "bsdkjfbksbdfk",
+                p_1: 5999,
+                p_2: 4499,
+            },
+            {
+                img_card: "logo1.png",
+                img1_hover: "logo2.png",
+                desc: "bsdkjfbksbdfk",
+                p_1: 5999,
+                p_2: 4499,
+            },
+            {
+                img_card: "logo1.png",
+                img1_hover: "logo2.png",
+                desc: "bsdkjfbksbdfk",
+                p_1: 5999,
+                p_2: 4499,
+            },
+            {
+                img_card: "logo1.png",
+                img1_hover: "logo2.png",
+                desc: "bsdkjfbksbdfk",
+                p_1: 5999,
+                p_2: 4499,
+            },
+            {
+                img_card: "logo1.png",
+                img1_hover: "logo2.png",
+                desc: "bsdkjfbksbdfk",
+                p_1: 5999,
+                p_2: 4499,
+            },
+            {
+                img_card: "logo1.png",
+                img1_hover: "logo2.png",
+                desc: "bsdkjfbksbdfk",
+                p_1: 5999,
+                p_2: 4499,
+            },
+            {
+                img_card: "logo1.png",
+                img1_hover: "logo2.png",
+                desc: "bsdkjfbksbdfk",
+                p_1: 5999,
+                p_2: 4499,
+            },
+            {
+                img_card: "logo1.png",
+                img1_hover: "logo2.png",
+                desc: "bsdkjfbksbdfk",
+                p_1: 5999,
+                p_2: 4499,
+            },
+            {
+                img_card: "logo1.png",
+                img1_hover: "logo2.png",
+                desc: "bsdkjfbksbdfk",
+                p_1: 5999,
+                p_2: 4499,
+            },
+        ];
+        document.addEventListener("DOMContentLoaded", function () {
+            let bottle_display = document.getElementById("bottles_display");
+            let container = document.getElementById("contain_card");
+            bottles_data = "";
+            bottlesCards.forEach(i => {
+                bottles_data += `
+              <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card">
+          <img class="home-card-img" src="src/${i.img_card}" alt="">
+          <img class="home-hover-img" src="src/${i.img1_hover}" alt="">
+          <p class="home-card-descrip">${i.desc}</p>
+          <div class="card-prices">
+            <p class="duplicate-price">rs:${i.p_1}</p>
+            <p class="price">rs:${i.p_2}</p>
+          </div>
+          <button class="btn btn-outline-dark cart-btn">add to cart</button>
+        </div>
+      </div>
+        `
+            })
+            bottle_display.innerHTML = bottles_data;
+        });
+    </script>
+    <script src="js/nav.js"></script>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,12 +113,6 @@
             border-radius: 20px;
             height: 400px;
         }
-
-        /* .gal1,
-        .gal2 {
-            mar
-        } */
-
         @media (max-width:500px) {
 
             .content-btn,
@@ -138,6 +131,20 @@
             .section1 h1 {
                 margin-bottom: 20px;
             }
+        }
+        .custom-carousel {
+            width: 90%;
+            height: 400px;
+            margin: 30px auto;
+            border-radius: 20px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .custom-carousel .carousel-item img {
+            width: 100%;
+            height: 400px;
+            /* object-fit: cover; */
         }
 
         /* Hover icon overlay */
@@ -200,20 +207,6 @@
             font-size: 40px;
             cursor: pointer;
         }
-        .custom-carousel {
-            width: 90%;
-            height: 400px;
-            margin: 30px auto;
-            border-radius: 20px;
-            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-        }
-
-        .custom-carousel .carousel-item img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
         .gal-img {
             margin: 20px;
             position: relative;
@@ -245,45 +238,43 @@
         }
     </style>
 </head>
-
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="src/logo1.png" alt="Logo">
-        </div>
-
-        <ul class="items">
-            <li><a class="navlinks" href="index.html">home</a></li>
-            <li><a class="navlinks" href="#about">about us</a></li>
-            <li class="dropdown">
-                <a class="navlinks dropdown-toggle" href="#" role="button">
-                    product
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">bottles</a></li>
-                    <li><a class="dropdown-item" href="#">jars</a></li>
-                    <li><a class="dropdown-item" href="#">beverages</a></li>
-                    <li><a class="dropdown-item" href="#">edible oil</a></li>
-                    <li><a class="dropdown-item" href="#">pharma</a></li>
-                </ul>
-            </li>
-            <li><a class="navlinks" href="gallery.html">gallery</a></li>
-            <li><a class="navlinks" href="#contact">contact us</a></li>
-            <li><a class=" navlinks" href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="src/logo1.png" alt="Logo">
+    </div>
+    <ul class="items">
+      <li><a class="navlinks" href="index.html">home</a></li>
+      <li><a class="navlinks" href="about.html">about us</a></li>
+      <li><a class="navlinks" href="gallery.html">gallery</a></li>
+      <li class="dropdown">
+        <a class="navlinks dropdown-toggle" href="#" role="button">
+          product
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+          <li><a class="dropdown-item" href="jars.html">jars</a></li>
+          <li><a class="dropdown-item" href="bevrages.html">beverages</a></li>
+          <li><a class="dropdown-item" href="edibleoil.html">edible oil</a></li>
+          <li><a class="dropdown-item" href="pharma.html">pharmas</a></li>
         </ul>
+      </li>
+      <li><a class="navlinks" href="contact.html">contact us</a></li>
+      <li><a class=" navlinks" href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+    </ul>
 
-        <!-- 🔍 ADDED SEARCH BAR -->
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
+    <!-- 🔍 ADDED SEARCH BAR -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
 
-        <div class="toggle-btn">
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+    <div class="toggle-btn">
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
     <div class="section1 text-center m-5">
         <h1><i class="fas fa-camera" style="color: rgb(104, 104, 202); margin: 0 5px;"></i>gallery</h1>
         <p>explore our gallery and wittnessed the best product and demandable product of our store.</p>
@@ -892,58 +883,58 @@
         <span class="close">&times;</span>
         <img class="lightbox-content" id="lightbox-img" src="">
     </div>
-    <footer class="footer container-fluid">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="foot-1">
-                    <h1>petbot</h1>
-                    <p>your trusted partner in premium PET packaging solutions.
-                        We craft durable, lightweight, and food-grade PET bottles designed for every industry.
-                        From innovation to quality, we ensure packaging that protects your product and enhances your
-                        brand.
-                        PetBot — where strength, style, and sustainability come together.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="foot-links">
-                    <h3>quick links</h3>
-                    <ul>
-                        <li><a href="">home</a></li>
-                        <li><a href="">about us</a></li>
-                        <li><a href="">gallery</a></li>
-                        <li><a href="">contact us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="foot-links">
-                    <h3>product links</h3>
-                    <ul>
-                        <li><a href="">bottles</a></li>
-                        <li><a href="">jars</a></li>
-                        <li><a href="">edible oil</a></li>
-                        <li><a href="">beverages</a></li>
-                        <li><a href="">pharma</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="social-link">
-                    <h3>follow us</h3>
-                    <p>for get more information follow us on these platform to gain the first hand konwledge about
-                        petbot.</p>
-                    <span><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></span>
-                    <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
-                    <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i
-                                class="fa-brands fa-linkedin"></i></a></span>
-                    <span><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></span>
-                </div>
-            </div>
+  <footer class="footer container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="foot-1">
+          <h1>petbot</h1>
+          <p>your trusted partner in premium PET packaging solutions.
+            We craft durable, lightweight, and food-grade PET bottles designed for every industry.
+            From innovation to quality, we ensure packaging that protects your product and enhances your
+            brand.
+            PetBot — where strength, style, and sustainability come together.</p>
         </div>
-    </footer>
-    <div class="footer-bottom">
-        <p>© 2025 PetBot Industries. All Rights Reserved.</p>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="foot-links">
+          <h3>quick links</h3>
+          <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about us</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="contact.html">contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="foot-links">
+          <h3>product links</h3>
+          <ul>
+            <li><a href="bottles.html">bottles</a></li>
+            <li><a href="jars.html">jars</a></li>
+            <li><a href="edibleoil.html">edible oil</a></li>
+            <li><a href="beverages.html">beverages</a></li>
+            <li><a href="pharma.html">pharma</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="social-link">
+          <h3>follow us</h3>
+          <p>for get more information follow us on these platform to gain the first hand konwledge about
+            petbot.</p>
+          <span><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></span>
+          <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
+          <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i
+                class="fa-brands fa-linkedin"></i></a></span>
+          <span><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></span>
+        </div>
+      </div>
     </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>© 2025 PetBot Industries. All Rights Reserved.</p>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="jquery.js"></script>
     <script src="js/nav.js"></script>
