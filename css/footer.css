@@ -1,7 +1,8 @@
+        /* footer css */
         .footer {
             /* background: linear-gradient(to right, #9bc0bc, #9bc0bc, Lightgreen); */
             padding: 10px;
-            background-color: #0f172a;
+            /* background-color: #0f172a; */
         }
         .foot-1 {
             text-transform: capitalize;
@@ -9,14 +10,14 @@
         }
 
         .foot-1 h1 {
-            color: #fff;
+            color: black;
             text-transform: capitalize;
         }
 
         .foot-1 p {
             text-align: justify;
             font-weight: 400;
-            color: #fff;
+            color: black;
         }
 
         .foot-links {
@@ -25,7 +26,7 @@
         }
 
         .foot-links h3 {
-            color: #fff;
+            color: black;
             margin-left: 20px;
         }
 
@@ -39,7 +40,7 @@
             position: relative;
             transition: color 0.3s ease;
             line-height: 1.5;
-            color:#fff;
+            color:black;
             font-weight: 450;
         }
 
@@ -49,14 +50,14 @@
         }
 
         .social-link h3 {
-            color: #fff;
+            color: black;
         }
 
         .social-link p {
             /* margin:  10px; */
             text-align: justify;
             font-weight: 400;
-            color: #fff;
+            color: black;
         }
 
         span a {
@@ -67,14 +68,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #0f172a;
+            /* background-color: #0f172a; */
             height: 50px;
             text-align: center;
             /* background: linear-gradient(to right, #9bc0bc, #9bc0bc, Lightgreen); */
         }
         .footer-bottom p {
             font-weight: 500;
-            color: #fff;
+            color: black;
         }
         @media (max-width: 500px) {
             .foot-links {
@@ -102,3 +103,4 @@
         .foot-links ul li a:hover::after {
             width: 100%;
         }
+        /* footer css end */

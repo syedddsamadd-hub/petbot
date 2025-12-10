@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/detail.css">
     <style>
+        .category-banner{
+                    margin-bottom: 150px;
+                }
         .category-banner img {
             height: 600px;
             position: relative;
@@ -57,14 +61,11 @@
             .category-banner img{
                 height: 400px;
             }
-            #product-cards{
-                margin: 100px 0 0 0;
-            }
           }
         @media (max-width:500px) {
-            #product-cards{
-                margin: 70px 0 0 0;
-            }
+            .category-banner{
+                    margin-bottom: 90px;
+                }
              .category-banner img {
                    height: 250px;
             }
@@ -87,45 +88,170 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="src/logo1.png" alt="Logo">
-        </div>
-        <ul class="items">
-            <li><a class="navlinks" href="index.html">home</a></li>
-            <li><a class="navlinks" href="about.html">about us</a></li>
-            <li><a class="navlinks" href="gallery.html">gallery</a></li>
-            <li class="dropdown">
-                <a class="navlinks dropdown-toggle" href="#" role="button">
-                    product
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
-                    <li><a class="dropdown-item" href="jars.html">jars</a></li>
-                    <li><a class="dropdown-item" href="bevrages.html">beverages</a></li>
-                    <li><a class="dropdown-item" href="edibleoil.html">edible oil</a></li>
-                    <li><a class="dropdown-item" href="pharma.html">pharmas</a></li>
-                </ul>
-            </li>
-            <li><a class="navlinks" href="contact.html">contact us</a></li>
-            <li><a class="navlinks" href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="src/logo1.png" alt="Logo">
+    </div>
+    <ul class="items">
+      <li><a class="navlinks" href="index.html">home</a></li>
+      <li><a class="navlinks" href="about.html">about us</a></li>
+      <li><a class="navlinks" href="gallery.html">gallery</a></li>
+      <li class="dropdown">
+        <a class="navlinks dropdown-toggle" href="#" role="button">
+          product
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+          <li><a class="dropdown-item" href="jars.html">jars</a></li>
+          <li><a class="dropdown-item" href="bevrages.html">beverages</a></li>
+          <li><a class="dropdown-item" href="edibleoil.html">edible oil</a></li>
+          <li><a class="dropdown-item" href="pharma.html">pharmas</a></li>
         </ul>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
+      </li>
+      <li><a class="navlinks" href="contact.html">contact us</a></li>
+    </ul>
+    <div class="d-block me-3 text-dark text-center">
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-magnifying-glass"></i>
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-user"></i>
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-heart"></i>
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-cart-shopping"></i>
+    </div>
 
-        <div class="toggle-btn">
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+    <div class="toggle-btn">
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
     <div class="category-banner">
         <img src="src/banner1.jpg" alt="">
     </div>
-    <div id="product-cards" class="container-fluid contain_card">
-        <div id="bottles_display" class="row"></div>
+    <div  class="container contain_card">
+        <div id="bottles_display" class="row">
+        <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card" onclick="ShowProducts('product1')">
+          <img class="home-card-img" src="src/logo1.png" alt="">
+          <img class="home-hover-img" src="src/logo2.png" alt="">
+          <p class="home-card-descrip">dhvfjasvfvh</p>
+          <div class="card-prices">
+            <p class="duplicate-price">pkr 3000</p>
+            <p class="price">pkr 2499</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card" onclick="ShowProducts('product1')">
+          <img class="home-card-img" src="src/logo1.png" alt="">
+          <img class="home-hover-img" src="src/logo2.png" alt="">
+          <p class="home-card-descrip">dhvfjasvfvh</p>
+          <div class="card-prices">
+            <p class="duplicate-price">pkr 3000</p>
+            <p class="price">pkr 2499</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card" onclick="ShowProducts('product1')">
+          <img class="home-card-img" src="src/logo1.png" alt="">
+          <img class="home-hover-img" src="src/logo2.png" alt="">
+          <p class="home-card-descrip">dhvfjasvfvh</p>
+          <div class="card-prices">
+            <p class="duplicate-price">pkr 3000</p>
+            <p class="price">pkr 2499</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card" onclick="ShowProducts('product1')">
+          <img class="home-card-img" src="src/logo1.png" alt="">
+          <img class="home-hover-img" src="src/logo2.png" alt="">
+          <p class="home-card-descrip">dhvfjasvfvh</p>
+          <div class="card-prices">
+            <p class="duplicate-price">pkr 3000</p>
+            <p class="price">pkr 2499</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card" onclick="ShowProducts('product1')">
+          <img class="home-card-img" src="src/logo1.png" alt="">
+          <img class="home-hover-img" src="src/logo2.png" alt="">
+          <p class="home-card-descrip">dhvfjasvfvh</p>
+          <div class="card-prices">
+            <p class="duplicate-price">pkr 3000</p>
+            <p class="price">pkr 2499</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card" onclick="ShowProducts('product1')">
+          <img class="home-card-img" src="src/logo1.png" alt="">
+          <img class="home-hover-img" src="src/logo2.png" alt="">
+          <p class="home-card-descrip">dhvfjasvfvh</p>
+          <div class="card-prices">
+            <p class="duplicate-price">pkr 3000</p>
+            <p class="price">pkr 2499</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card" onclick="ShowProducts('product1')">
+          <img class="home-card-img" src="src/logo1.png" alt="">
+          <img class="home-hover-img" src="src/logo2.png" alt="">
+          <p class="home-card-descrip">dhvfjasvfvh</p>
+          <div class="card-prices">
+            <p class="duplicate-price">pkr 3000</p>
+            <p class="price">pkr 2499</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card" onclick="ShowProducts('product1')">
+          <img class="home-card-img" src="src/logo1.png" alt="">
+          <img class="home-hover-img" src="src/logo2.png" alt="">
+          <p class="home-card-descrip">dhvfjasvfvh</p>
+          <div class="card-prices">
+            <p class="duplicate-price">pkr 3000</p>
+            <p class="price">pkr 2499</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-4 col-md-6 col-6">
+        <div class="home-card" onclick="ShowProducts('product1')">
+          <img class="home-card-img" src="src/logo1.png" alt="">
+          <img class="home-hover-img" src="src/logo2.png" alt="">
+          <p class="home-card-descrip">dhvfjasvfvh</p>
+          <div class="card-prices">
+            <p class="duplicate-price">pkr 3000</p>
+            <p class="price">pkr 2499</p>
+          </div>
+        </div>
+      </div>
+        </div>
+    </div>
+        <div id="detail-sections" class="detail-section">
+        <div class="container mt-5">
+            <button id="back1" onclick="back()" class="back btn text-light bg-dark my-2 d-block mx-auto"><i class="fa-solid fa-arrow-left mx-1"></i>back</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="detail-img" src="" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-5 col">
+                    <h2 id="detail-title" class="title"></h2>
+                    <p id="detail-desc" class="desc"></p>
+                    <p id="detail-price" class="price text-danger text-capitalize"></p>
+                    <div class="rating-box text-center">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <button class="add-to-cart bg-success btn mx-2 text-capitalize" onclick="ShowAlerts()">add to cart</button>
+                    <button class="buy-now bg-primary btn mx-2 text-capitalize">buy now</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="email-sub">
         <h3>news letter</h3>
@@ -185,97 +311,52 @@
     <div class="footer-bottom">
         <p>© 2025 PetBot Industries. All Rights Reserved.</p>
     </div>
-    <script>
-        let bottlesCards = [
-            {
-                img_card: "logo1.png",
-                img1_hover: "logo2.png",
-                desc: "bsdkjfbksbdfk",
-                p_1: 5999,
-                p_2: 4499,
-            },
-            {
-                img_card: "logo1.png",
-                img1_hover: "logo2.png",
-                desc: "bsdkjfbksbdfk",
-                p_1: 5999,
-                p_2: 4499,
-            },
-            {
-                img_card: "logo1.png",
-                img1_hover: "logo2.png",
-                desc: "bsdkjfbksbdfk",
-                p_1: 5999,
-                p_2: 4499,
-            },
-            {
-                img_card: "logo1.png",
-                img1_hover: "logo2.png",
-                desc: "bsdkjfbksbdfk",
-                p_1: 5999,
-                p_2: 4499,
-            },
-            {
-                img_card: "logo1.png",
-                img1_hover: "logo2.png",
-                desc: "bsdkjfbksbdfk",
-                p_1: 5999,
-                p_2: 4499,
-            },
-            {
-                img_card: "logo1.png",
-                img1_hover: "logo2.png",
-                desc: "bsdkjfbksbdfk",
-                p_1: 5999,
-                p_2: 4499,
-            },
-            {
-                img_card: "logo1.png",
-                img1_hover: "logo2.png",
-                desc: "bsdkjfbksbdfk",
-                p_1: 5999,
-                p_2: 4499,
-            },
-            {
-                img_card: "logo1.png",
-                img1_hover: "logo2.png",
-                desc: "bsdkjfbksbdfk",
-                p_1: 5999,
-                p_2: 4499,
-            },
-            {
-                img_card: "logo1.png",
-                img1_hover: "logo2.png",
-                desc: "bsdkjfbksbdfk",
-                p_1: 5999,
-                p_2: 4499,
-            },
-        ];
-        document.addEventListener("DOMContentLoaded", function () {
-            let bottle_display = document.getElementById("bottles_display");
-            let container = document.getElementById("contain_card");
-            bottles_data = "";
-            bottlesCards.forEach(i => {
-                bottles_data += `
-              <div class="col-lg-4 col-md-6 col-6">
-        <div class="home-card">
-          <img class="home-card-img" src="src/${i.img_card}" alt="">
-          <img class="home-hover-img" src="src/${i.img1_hover}" alt="">
-          <p class="home-card-descrip">${i.desc}</p>
-          <div class="card-prices">
-            <p class="duplicate-price">rs:${i.p_1}</p>
-            <p class="price">rs:${i.p_2}</p>
-          </div>
-          <button class="btn btn-outline-dark cart-btn">add to cart</button>
-        </div>
-      </div>
-        `
-            })
-            bottle_display.innerHTML = bottles_data;
-        });
-    </script>
+    
     <script src="js/nav.js"></script>
     <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+                detailproducts = {
+            product1: {
+                img: "src/logo1.png",
+                title: "petbot ai",
+                desc: "baFKBVASFHbdkasfbIGIFGIGvfsVFIeiqgfiBFUAufvvaCHVUGFgfhsAFGHGGFIGFGIwgfirgwegfgweifgwgfgwGFFUIagfgashvfuasdgzfugsuafgusgfugbagfkagfkgaHJHKkdbjaKFBKAdbfjkvKBJFKKKKJIKfbiebFBIEQWFIKBfbWFBbafiqwi",
+                price: "pkr 1000"
+            },
+            product2: {
+                img: "src/logo1.png",
+                title: "petbot ai2",
+                desc: "bagfkagfkgaHJHK",
+                price: "pkr 2000"
+            },
+            product3: {
+                img: "src/logo1.png",
+                title: "petbot 3",
+                desc: "bagfkagfkgaHJHK",
+                price: "2000"
+            }
+        }
+        function ShowProducts(productId) {
+            let product = detailproducts[productId]
+            if (product) {
+                document.getElementById("detail-img").src = product.img;
+                document.getElementById("detail-title").innerText = product.title;
+                document.getElementById("detail-desc").innerText = product.desc;
+                document.getElementById("detail-price").innerText = product.price;
+                document.getElementById("detail-sections").classList.add("active");
+            }
+        }
+        function back() {
+            document.getElementById("detail-sections").classList.remove("active");
+        };
+        function ShowAlerts(){
+            Swal.fire({
+  title: "Success!",
+  text: "Your product was added to cart",
+  icon: "success"
+});
+        };
+    </script>
 </body>
 
 </html>

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/cards.css">
   <title>PetBot-Home</title>
   <style>
-    .section1{
+    .section1 {
       margin: 0 !important;
     }
     .section1 h1 {
@@ -50,6 +50,7 @@
       word-spacing: 3px;
       line-height: 25px;
     }
+
     #carouselExampleFade .carousel-item img {
       height: 650px;
       position: relative;
@@ -68,6 +69,7 @@
         height: 400px;
       }
     }
+
     .home-info {
       padding: 15px;
     }
@@ -93,22 +95,35 @@
       margin: 0 20px;
     }
 
+    .hero-text .view-more {
+      background-color: orange;
+      margin: 10px;
+      padding: 10px;
+      font-size: 18px;
+      width: 150px;
+      text-transform: capitalize;
+      font-weight: bold;
+      border: none;
+      transition: 0.3 ease;
+    }
+
+    .hero-text .view-more:hover {
+      opacity: 0.9;
+    }
+
     .video {
       display: flex;
       justify-content: center;
-      /* width: 80%; */
     }
 
     .video iframe {
-      width: 100%;
-      margin: 10px 40px;
-      height: 450px;
+      width: 65%;
+      margin: 10px 50px;
+      height: 500px;
       border-radius: 25px;
     }
 
-
-
-    section {
+    #section {
       padding: 60px 20px;
     }
 
@@ -144,14 +159,12 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
-
     .circle-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
     }
-
     .circle-box .title {
       position: absolute;
       top: 180px;
@@ -172,7 +185,7 @@
     @media (max-width: 480px) {
       .section1 p {
         text-align: justify;
-        margin: 10px 0px;
+        margin: 20px;
       }
 
       .hero-text {
@@ -199,13 +212,13 @@
       }
 
       .video iframe {
-        height: 350px;
-        margin: 20px;
+        height: 300px;
+        width: 90%;
+        margin: 5px 20px;
       }
     }
-
     @media (width: 768px) {
-      .hero-text h1 {
+      .hero-text h1 { 
         font-size: 30px;
       }
 
@@ -275,7 +288,7 @@
     }
 
     @media (max-width: 576px) {
-      .circle-box {
+      .circle-box   {
         width: 80px;
         height: 80px;
       }
@@ -295,7 +308,6 @@
     }
   </style>
 </head>
-
 <body>
   <nav class="navbar">
     <div class="logo">
@@ -318,13 +330,12 @@
         </ul>
       </li>
       <li><a class="navlinks" href="contact.html">contact us</a></li>
-      <li><a class=" navlinks" href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
     </ul>
-
-    <!-- 🔍 ADDED SEARCH BAR -->
-    <div class="search-bar">
-      <input type="text" placeholder="Search...">
-      <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="d-block me-3 text-dark text-center">
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-magnifying-glass"></i>
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-user"></i>
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-heart"></i>
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-cart-shopping"></i>
     </div>
 
     <div class="toggle-btn">
@@ -356,7 +367,7 @@
   </div>
   <div class="home-info col-12">
     <div class="hero-text">
-      <h1>Leading Food-Grade PET Packaging Solutions</h1>
+      <h1>pebot Leading Food-Grade PET Packaging Solutions</h1>
       <p>PETBot specializes in premium, eco-friendly, food-grade PET packaging, offering end-to-end solutions from raw
         material sourcing to high-quality finished bottles and containers. With a strong commitment to sustainability,
         PETBot ensures low carbon emissions and high recyclability, making PET a superior alternative to paper, glass,
@@ -366,6 +377,7 @@
           containers annually for beverages, dairy, juices, and other food products. Our solutions are ideal for global
           brands, households, and outdoor events, combining innovation, scale, and environmental responsibility.</span>
       </p>
+      <a href="about.html"><button style="" class="view-more">view more</button></a>
     </div>
   </div>
   <div class="video">
@@ -373,7 +385,7 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
-  <section class="text-center">
+  <section id="section" class="text-center">
     <div class="container-fluid">
       <h2 class="text-capitalize">The path to sustainable development of PET</h2>
       <div class="path-row">
@@ -406,7 +418,7 @@
       eco-friendly practices in mind. Our innovative solutions help businesses reduce waste, promote recycling, and
       contribute to a greener future.</p>
   </div>
-  <div  class="container-fluid contain_card">
+  <div id="product-cards" class="container contain_card">
     <div id="card_display" class="row">
     </div>
   </div>
@@ -463,100 +475,100 @@
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
   <script>
-    let homeCards= [
+    let homeCards = [
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-        desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-                desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-                desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-                desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-               desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-                desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-               desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-               desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-               desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-               desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-               desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
         img1_hover: "logo2.png",
-              desc:"bsdkjfbksbdfk",
+        desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
     ];
-    document.addEventListener("DOMContentLoaded",function(){
-      let card_display=document.getElementById("card_display");
-      let  container=document.getElementById("contain_card");
-      card_data="";
-      homeCards.forEach(i =>{
-        card_data+=`
+    document.addEventListener("DOMContentLoaded", function () {
+      let card_display = document.getElementById("card_display");
+      let container = document.getElementById("contain_card");
+      card_data = "";
+      homeCards.forEach(i => {
+        card_data += `
               <div class="col-lg-3 col-md-4 col-6">
-        <div class="home-card">
+        <div class="home-card m-0">
           <img class="home-card-img" src="src/${i.img_card}" alt="">
           <img class="home-hover-img" src="src/${i.img1_hover}" alt="">
           <p class="home-card-descrip">${i.desc}</p>
@@ -564,12 +576,11 @@
             <p class="duplicate-price">rs:${i.p_1}</p>
             <p class="price">rs:${i.p_2}</p>
           </div>
-          <button class="btn btn-outline-dark cart-btn">add to cart</button>
         </div>
       </div>
         `
-        })
-        card_display.innerHTML=card_data;
+      })
+      card_display.innerHTML = card_data;
     })
   </script>
   <script src="js/nav.js"></script>

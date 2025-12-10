@@ -1,11 +1,12 @@
-  body {
+/* body */
+body {
     margin: 0;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
     text-transform: capitalize;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     /* background: linear-gradient(135deg, Lightgreen,cadetblue); */
   }
   p{
@@ -14,7 +15,7 @@
   h1,h2,h3,h4.h5,h6{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   }
-
+/* navbar css */
   .navbar {
     height: auto;
     display: flex;
@@ -23,7 +24,7 @@
     /* background:linear-gradient(to right,#9bc0bc,#9bc0bc,Lightgreen); */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
-    background-color: #0f172a;
+    /* background-color: #0f172a; */
     top: 0;
     left: 0;
     right: 0;
@@ -56,7 +57,8 @@
     color: rgb(39, 37, 37);
     font-size: 20px;
     font-weight: 500;
-    color: #fff;
+    color: black;
+    font-family: 'Pacifico', cursive;
     padding: 5px;
     position: relative;
     transition: all 0.3s ease;
@@ -302,4 +304,5 @@
       padding: 0;
 
     }
-  }
+  };
+  /* navbar css */

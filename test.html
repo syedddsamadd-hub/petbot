@@ -1,47 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
-    <style>
-        .pet1,
-    .pet2 {
-      margin: 20px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <title>PetBot-Home</title>
+  <style>
+    body{
+      background-color: #fff;
+    }
+    .navbar{
+      background-color: #fff;
+    }
+    .navlinks{
+      color: black;
+    }
+    .footer{
+      background-color: #fff;
+    }
+    .section1 {
+      margin: 0 !important;
     }
 
-    .pet1 img,
-    .pet2 img {
-      border-radius: 20px;
+    .section1 h1 {
+      text-transform: capitalize;
+      color: rgb(9, 10, 14);
+      font-size: 40px;
+      font-weight: bolder;
+      display: inline-block;
+      position: relative;
+      margin: 10px;
+      font-weight: bold;
+    }
+
+    .section1 h1::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      /* underline thoda neeche */
+      width: 100%;
+      height: 4px;
+      /* underline ki motai */
+      background-color: navy;
+      /* acha gradient underline */
+      border-radius: 2px;
+    }
+
+    .section1 h1:hover {
+      color: navy;
+    }
+
+    .section1 p {
+      text-align: center;
+      color: black;
+      margin: 20px 30px 0;
+      word-spacing: 3px;
+      line-height: 25px;
+    }
+
+    #carouselExampleFade .carousel-item img {
+      height: 650px;
+      position: relative;
+      top: 85px;
       width: 100%;
     }
-    @media (max-width:480px) {
-     .pet1,
-      .pet2 {
-         margin: 10px;
-      }   
+
+    @media (max-width: 768px) {
+      #carouselExampleFade .carousel-item img {
+        height: 500px;
+      }
     }
-    </style>
+
+    @media (max-width: 480px) {
+      #carouselExampleFade .carousel-item img {
+        height: 400px;
+      }
+    }
+
+    .home-info {
+      padding: 15px;
+    }
+
+    .hero-text {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .hero-text h1 {
+      font-size: 60px;
+      font-weight: 500;
+      margin: 10px;
+      overflow-wrap: break-word;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .hero-text p {
+      text-align: center;
+      line-height: 2;
+      overflow-wrap: break-word;
+      word-spacing: 3px;
+      margin: 0 20px;
+    }
+
+    .hero-text .view-more {
+      background-color: orange;
+      margin: 10px;
+      padding: 10px;
+      font-size: 18px;
+      width: 150px;
+      text-transform: capitalize;
+      font-weight: bold;
+      border: none;
+      transition: 0.3 ease;
+    }
+
+    .hero-text .view-more:hover {
+      opacity: 0.9;
+    }
+
+    .video {
+      display: flex;
+      justify-content: center;
+    }
+
+    .video iframe {
+      width: 65%;
+      margin: 10px 50px;
+      height: 500px;
+      border-radius: 25px;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    h2 {
+      font-weight: 700;
+      /* font-size: 45px; */
+      margin-bottom: 50px;
+      color: #333;
+    }
+
+    .path-row {
+      display: flex;
+      flex-wrap: nowrap;
+      /* Always in a single row */
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      /* space between items */
+      flex-shrink: 0;
+    }
+
+    .circle-box {
+      position: relative;
+      border: 3px solid #eceded;
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    .circle-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .circle-box .title {
+      position: absolute;
+      top: 180px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #ff8300;
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+
+    .arrow {
+      font-size: 70px;
+      font-weight: bold;
+      color: gray;
+      user-select: none;
+    }
+
+    @media (max-width: 480px) {
+      .section1 p {
+        text-align: justify;
+        margin: 20px;
+      }
+
+      .hero-text {
+        padding: 0;
+      }
+
+      .hero-text h1 {
+        font-size: 26px;
+        margin: 10px 0;
+      }
+
+      .hide-para {
+        display: none;
+      }
+
+      .hero-text p {
+        padding: 0;
+        margin: 15px;
+        text-align: justify;
+      }
+
+      .hero-text #p2 {
+        display: none;
+      }
+
+      .video iframe {
+        height: 300px;
+        width: 90%;
+        margin: 5px 20px;
+      }
+    }
+    @media (width: 768px) {
+      .hero-text h1 { 
+        font-size: 30px;
+      }
+
+      .hero-text p {
+        padding: 0;
+        margin: 0;
+        text-align: justify;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-text h1 {
+        font-size: 45px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .circle-box {
+        width: 140px;
+        height: 140px;
+      }
+
+      .circle-box .title {
+        top: 155px;
+        font-size: 16px;
+      }
+
+      .arrow {
+        font-size: 60px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .circle-box {
+        width: 120px;
+        height: 120px;
+      }
+
+      .circle-box .title {
+        top: 135px;
+        font-size: 15px;
+      }
+
+      .arrow {
+        font-size: 50px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .circle-box {
+        width: 100px;
+        height: 100px;
+      }
+
+      .circle-box .title {
+        top: 115px;
+        font-size: 14px;
+      }
+
+      .arrow {
+        font-size: 40px;
+      }
+
+      .path-row {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .circle-box   {
+        width: 80px;
+        height: 80px;
+      }
+
+      .circle-box .title {
+        top: 95px;
+        font-size: 12px;
+      }
+
+      .arrow {
+        font-size: 30px;
+      }
+
+      .path-row {
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-      <div class="section1 text-center m-5">
-    <h1>why pet material?</h1>
-  </div>
-      <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6 col-sm-12">
-        <div class="pet1">
-          <img src="src/charts/chart1.jpg" alt="">
-        </div>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="src/logo1.png" alt="Logo">
+    </div>
+    <ul class="items">
+      <li><a class="navlinks" href="index.html">home</a></li>
+      <li><a class="navlinks" href="about.html">about us</a></li>
+      <li><a class="navlinks" href="gallery.html">gallery</a></li>
+      <li class="dropdown">
+        <a class="navlinks dropdown-toggle" href="#" role="button">
+          product
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+          <li><a class="dropdown-item" href="jars.html">jars</a></li>
+          <li><a class="dropdown-item" href="bevrages.html">beverages</a></li>
+          <li><a class="dropdown-item" href="edibleoil.html">edible oil</a></li>
+          <li><a class="dropdown-item" href="pharma.html">pharmas</a></li>
+        </ul>
+      </li>
+      <li><a class="navlinks" href="contact.html">contact us</a></li>
+    </ul>
+    <div class="d-block me-3 text-light text-center">
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-magnifying-glass"></i>
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-user"></i>
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-heart"></i>
+      <i style="font-size: 22px;" class="fa-solid mx-2 fa-cart-shopping"></i>
+    </div>
+
+    <div class="toggle-btn">
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="src/hero.1.jpg" class="d-block w-100" alt="...">
       </div>
-      <div class="col-md-6 col-sm-12">
-        <div class="pet2">
-          <img src="src/charts/chart2.jpg" alt="">
+      <div class="carousel-item">
+        <img src="src/hero2.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="src/hero3.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="home-info col-12">
+    <div class="hero-text">
+      <h1>pebot Leading Food-Grade PET Packaging Solutions</h1>
+      <p>PETBot specializes in premium, eco-friendly, food-grade PET packaging, offering end-to-end solutions from raw
+        material sourcing to high-quality finished bottles and containers. With a strong commitment to sustainability,
+        PETBot ensures low carbon emissions and high recyclability, making PET a superior alternative to paper, glass,
+        and metal packaging.
+        <span class="hide-para">Equipped with advanced, digitalized production lines, PETBot manufactures billions of
+          PET bottles, jars, and
+          containers annually for beverages, dairy, juices, and other food products. Our solutions are ideal for global
+          brands, households, and outdoor events, combining innovation, scale, and environmental responsibility.</span>
+      </p>
+      <a href="about.html"><button style="" class="view-more">view more</button></a>
+    </div>
+  </div>
+  <div class="video">
+    <iframe width="853" height="480" src="https://www.youtube.com/embed/XRiDu1FkYX4" title="" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <section class="text-center">
+    <div class="container-fluid">
+      <h2 class="text-capitalize">The path to sustainable development of PET</h2>
+      <div class="path-row">
+        <div class="circle-box">
+          <img src="src/petchip.avif" alt="PET Chips">
+          <p class="title">PET Chips</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="circle-box">
+          <img src="src/petsheet.jpg" alt="PET Sheet">
+          <p class="title">PET Sheet</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="circle-box">
+          <img src="src/petcontainer.jpg" alt="PET Container">
+          <p class="title">PET Container</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="circle-box">
+          <img src="src/petfibr.avif" alt="Fiber">
+          <p class="title">Fiber</p>
         </div>
       </div>
     </div>
+  </section>
+  <div class="section1 text-center m-5">
+    <h1>our product</h1>
+    <p>PETBot is dedicated to creating high-quality, sustainable PET products that meet modern industry standards. From
+      PET chips to sheets, containers, and fibers, we ensure every product is crafted with precision, durability, and
+      eco-friendly practices in mind. Our innovative solutions help businesses reduce waste, promote recycling, and
+      contribute to a greener future.</p>
   </div>
-    <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+  <div class="container contain_card">
+    <div id="card_display" class="row">
+    </div>
+  </div>
+  <footer class="footer container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="foot-1">
+          <h1>petbot</h1>
+          <p>your trusted partner in premium PET packaging solutions.
+            We craft durable, lightweight, and food-grade PET bottles designed for every industry.
+            From innovation to quality, we ensure packaging that protects your product and enhances your
+            brand.
+            PetBot — where strength, style, and sustainability come together.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="foot-links">
+          <h3>quick links</h3>
+          <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about us</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="contact.html">contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="foot-links">
+          <h3>product links</h3>
+          <ul>
+            <li><a href="bottles.html">bottles</a></li>
+            <li><a href="jars.html">jars</a></li>
+            <li><a href="edibleoil.html">edible oil</a></li>
+            <li><a href="beverages.html">beverages</a></li>
+            <li><a href="pharma.html">pharma</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="social-link">
+          <h3>follow us</h3>
+          <p>for get more information follow us on these platform to gain the first hand konwledge about
+            petbot.</p>
+          <span><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></span>
+          <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
+          <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i
+                class="fa-brands fa-linkedin"></i></a></span>
+          <span><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>© 2025 PetBot Industries. All Rights Reserved.</p>
+  </div>
+  <script>
+    let homeCards = [
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+      {
+        img_card: "logo1.png",
+        img1_hover: "logo2.png",
+        desc: "bsdkjfbksbdfk",
+        p_1: 5999,
+        p_2: 4499,
+      },
+    ];
+    document.addEventListener("DOMContentLoaded", function () {
+      let card_display = document.getElementById("card_display");
+      let container = document.getElementById("contain_card");
+      card_data = "";
+      homeCards.forEach(i => {
+        card_data += `
+              <div class="col-lg-3 col-md-4 col-6">
+        <div class="home-card m-0">
+          <img class="home-card-img" src="src/${i.img_card}" alt="">
+          <img class="home-hover-img" src="src/${i.img1_hover}" alt="">
+          <p class="home-card-descrip">${i.desc}</p>
+          <div class="card-prices">
+            <p class="duplicate-price">rs:${i.p_1}</p>
+            <p class="price">rs:${i.p_2}</p>
+          </div>
+        </div>
+      </div>
+        `
+      })
+      card_display.innerHTML = card_data;
+    })
+  </script>
+  <script src="js/nav.js"></script>
+  <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
 </html>
