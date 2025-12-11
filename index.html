@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/cards.css">
   <title>PetBot-Home</title>
   <style>
     .section1 {
@@ -31,10 +30,10 @@
       left: 0;
       bottom: -8px;
       /* underline thoda neeche */
-      width: 100%;
-      height: 4px;
+      width: 80%;
+      height: 3px;  
       /* underline ki motai */
-      background-color: navy;
+      background-color: orange;
       /* acha gradient underline */
       border-radius: 2px;
     }
@@ -43,18 +42,17 @@
       color: navy;
     }
 
-    .section1 p {
+    .section1 p { 
       text-align: center;
-      color: black;
-      margin: 20px 30px 0;
-      word-spacing: 3px;
+      color: gray;
+      margin: 30px 10%;
+      font-weight: 400;
       line-height: 25px;
     }
 
     #carouselExampleFade .carousel-item img {
       height: 650px;
       position: relative;
-      top: 85px;
       width: 100%;
     }
 
@@ -124,13 +122,14 @@
     }
 
     #section {
+      margin-bottom: 50px;
       padding: 60px 20px;
     }
-
     h2 {
+      text-align: center;
       font-weight: 700;
-      /* font-size: 45px; */
-      margin-bottom: 50px;
+      margin: 10px 0 70px 75px;
+      margin-bottom: 70px;
       color: #333;
     }
 
@@ -140,9 +139,8 @@
       /* Always in a single row */
       justify-content: center;
       align-items: center;
-      gap: 50px;
-      /* space between items */
-      flex-shrink: 0;
+      gap: 50px;  
+      margin-left: 60px;
     }
 
     .circle-box {
@@ -306,44 +304,170 @@
         gap: 10px;
       }
     }
+        /* products css */
+#product-cards{
+  margin-bottom: 50px !important;
+  background-color: #f9f9f9;
+}
+
+/* Cards container */
+.home-card {
+    height: 350px;
+    margin: 10px 0;
+    background-color: white;
+    box-shadow: 1px 2px 1px rgba(0,0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;                /* for fade-in animation */
+    transform: translateY(50px); /* initial slide up offset */
+}
+
+/* Fade-in + slide-up animation on page load */
+.home-card.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Hover animation */
+.home-card:hover {
+    transform: translateY(-10px); /* slight lift on hover */
+    box-shadow: 3px 6px 15px rgba(0,0,0,0.3); /* deeper shadow */
+}
+
+.home-card img {
+    width: 100%;
+    height: 250px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Optional image zoom on hover */
+.home-card:hover img {
+    transform: scale(1.05);
+}
+
+.home-card-descrip {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.home-card:hover .home-card-descrip {
+    transform: translateY(-5px);
+    color: #007bff; /* text color change */
+}
+
+.card-prices {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.home-card:hover .card-prices {
+    transform: translateY(-5px);
+}
+
+.duplicate-price {
+    display: inline;
+    font-size: 18px;
+    text-decoration: line-through;
+    color: rgb(206, 67, 67);
+}
+
+.cart-btn {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    padding: 10px 5px !important;
+    text-transform: capitalize;
+}
+  /* product css end  */
+/* crousel */
+/* Carousel initial state */
+#carouselExampleFade {
+    opacity: 0;
+    transform: translateY(150px); /* zyada neeche se start */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* fast animation */
+}
+
+/* Slide up */
+#carouselExampleFade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+  
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="src/logo1.png" alt="Logo">
-    </div>
-    <ul class="items">
-      <li><a class="navlinks" href="index.html">home</a></li>
-      <li><a class="navlinks" href="about.html">about us</a></li>
-      <li><a class="navlinks" href="gallery.html">gallery</a></li>
-      <li class="dropdown">
-        <a class="navlinks dropdown-toggle" href="#" role="button">
-          product
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
-          <li><a class="dropdown-item" href="jars.html">jars</a></li>
-          <li><a class="dropdown-item" href="bevrages.html">beverages</a></li>
-          <li><a class="dropdown-item" href="edibleoil.html">edible oil</a></li>
-          <li><a class="dropdown-item" href="pharma.html">pharmas</a></li>
-        </ul>
-      </li>
-      <li><a class="navlinks" href="contact.html">contact us</a></li>
-    </ul>
-    <div class="d-block me-3 text-dark text-center">
-      <i style="font-size: 22px;" class="fa-solid mx-2 fa-magnifying-glass"></i>
-      <i style="font-size: 22px;" class="fa-solid mx-2 fa-user"></i>
-      <i style="font-size: 22px;" class="fa-solid mx-2 fa-heart"></i>
-      <i style="font-size: 22px;" class="fa-solid mx-2 fa-cart-shopping"></i>
-    </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <i class="fa-solid fa-bars" id="toggleBtn"></i>
+            <a class="navbar-brand" href="#"><img src="src/logo1.png" width="100%" alt=""></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            products <i style="font-size: 14px;" class="fa-solid fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+                            <li><a class="dropdown-item" href="jar.html">jars</a></li>
+                            <li><a class="dropdown-item" href="glass.html">glass</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true">contact</a>
+                    </li>
+                </ul>
 
-    <div class="toggle-btn">
-      <button class="navbar-toggler" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            </div>
+             <i class="fa-solid fa-magnifying-glass search-glass"></i>
+        </div>
+    </nav>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <!-- Close button -->
+        <i class="fa-solid fa-xmark" id="sidebarClose"></i>
+        <img src="src/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
+        <ul>
+            <li><a class="side-link" href="index.html">Home</a></li>
+            <hr>
+            <li><a class="side-link" href="about.html">Service</a></li>
+            <hr>
+            <li><a class="side-link" href="gallery.html">Gallery</a></li>
+            <hr>
+            <li class="nav-item dropdown">
+    <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#sidebarProducts" aria-expanded="false">
+        shop
+    </a>
+    <hr>
+    <ul class="collapse bg-light" id="sidebarProducts">
+        <li><a class="side-link" href="bottles.html">Bottles</a></li>
+        <li><a class="side-link" href="jars.html">Jars</a></li>
+        <li><a class="side-link" href="beverages.html">glass</a></li>
+    </ul>
+</li>
+            <li><a class="side-link" href="contact.html">Contact</a></li>
+            <hr>
+        </ul>
     </div>
-  </nav>
+    <!-- overlay -->
+    <div id="overlay"></div>
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -418,7 +542,7 @@
       eco-friendly practices in mind. Our innovative solutions help businesses reduce waste, promote recycling, and
       contribute to a greener future.</p>
   </div>
-  <div id="product-cards" class="container contain_card">
+  <div id="product-cards" class="container contain_card ">
     <div id="card_display" class="row">
     </div>
   </div>
@@ -568,9 +692,8 @@
       homeCards.forEach(i => {
         card_data += `
               <div class="col-lg-3 col-md-4 col-6">
-        <div class="home-card m-0">
+        <div class="home-card">
           <img class="home-card-img" src="src/${i.img_card}" alt="">
-          <img class="home-hover-img" src="src/${i.img1_hover}" alt="">
           <p class="home-card-descrip">${i.desc}</p>
           <div class="card-prices">
             <p class="duplicate-price">rs:${i.p_1}</p>
@@ -581,7 +704,21 @@
         `
       })
       card_display.innerHTML = card_data;
-    })
+    });
+    window.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.home-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('show');
+        }, index * 200); // staggered effect
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.getElementById('carouselExampleFade');
+    carousel.classList.add('show'); // triggers CSS transition
+});
+
+
   </script>
   <script src="js/nav.js"></script>
   <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
