@@ -10,64 +10,42 @@
   <link rel="stylesheet" href="css/footer.css">
   <title>PetBot-Home</title>
   <style>
-    .section1 {
+    /* .section1 {
       margin: 0 !important;
-    }
+    } */
+
     .section1 h1 {
       text-transform: capitalize;
       color: rgb(9, 10, 14);
       font-size: 40px;
-      font-weight: bolder;
+      font-weight: 500;
       display: inline-block;
       position: relative;
-      margin: 10px;
-      font-weight: bold;
     }
 
     .section1 h1::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -8px;
+      bottom: -5px;
       /* underline thoda neeche */
-      width: 80%;
-      height: 3px;  
+      width: 50%;
+      text-align: center;
+      height: 4px;
       /* underline ki motai */
+      margin: 0 60px;
       background-color: orange;
       /* acha gradient underline */
       border-radius: 2px;
     }
 
-    .section1 h1:hover {
-      color: navy;
-    }
-
-    .section1 p { 
+    .section1 p {
       text-align: center;
       color: gray;
-      margin: 30px 10%;
+      margin: 20px 12% 30px;
       font-weight: 400;
       line-height: 25px;
     }
-
-    #carouselExampleFade .carousel-item img {
-      height: 650px;
-      position: relative;
-      width: 100%;
-    }
-
-    @media (max-width: 768px) {
-      #carouselExampleFade .carousel-item img {
-        height: 500px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      #carouselExampleFade .carousel-item img {
-        height: 400px;
-      }
-    }
-
     .home-info {
       padding: 15px;
     }
@@ -90,11 +68,11 @@
       line-height: 2;
       overflow-wrap: break-word;
       word-spacing: 3px;
-      margin: 0 20px;
+      margin: 20px 10%;
     }
 
     .hero-text .view-more {
-      background-color: orange;
+      background-color: palegoldenrod;
       margin: 10px;
       padding: 10px;
       font-size: 18px;
@@ -108,12 +86,11 @@
     .hero-text .view-more:hover {
       opacity: 0.9;
     }
-
     .video {
       display: flex;
       justify-content: center;
+      padding: 30px 0;
     }
-
     .video iframe {
       width: 65%;
       margin: 10px 50px;
@@ -125,10 +102,11 @@
       margin-bottom: 50px;
       padding: 60px 20px;
     }
+
     h2 {
-      text-align: center;
-      font-weight: 700;
-      margin: 10px 0 70px 75px;
+      /* text-align: center; */
+      font-weight: bold;
+      /* margin: 10px 0 70px 75px; */
       margin-bottom: 70px;
       color: #333;
     }
@@ -139,8 +117,8 @@
       /* Always in a single row */
       justify-content: center;
       align-items: center;
-      gap: 50px;  
-      margin-left: 60px;
+      gap: 50px;
+      /* margin-left: 60px; */
     }
 
     .circle-box {
@@ -157,12 +135,14 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
+
     .circle-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
     }
+
     .circle-box .title {
       position: absolute;
       top: 180px;
@@ -182,7 +162,6 @@
 
     @media (max-width: 480px) {
       .section1 p {
-        text-align: justify;
         margin: 20px;
       }
 
@@ -202,7 +181,6 @@
       .hero-text p {
         padding: 0;
         margin: 15px;
-        text-align: justify;
       }
 
       .hero-text #p2 {
@@ -214,16 +192,20 @@
         width: 90%;
         margin: 5px 20px;
       }
+
+      .home-card {
+        height: 250px;
+      }
     }
+
     @media (width: 768px) {
-      .hero-text h1 { 
+      .hero-text h1 {
         font-size: 30px;
       }
 
       .hero-text p {
         padding: 0;
         margin: 0;
-        text-align: justify;
       }
     }
 
@@ -286,7 +268,7 @@
     }
 
     @media (max-width: 576px) {
-      .circle-box   {
+      .circle-box {
         width: 80px;
         height: 80px;
       }
@@ -304,190 +286,273 @@
         gap: 10px;
       }
     }
-        /* products css */
-#product-cards{
-  margin-bottom: 50px !important;
-  background-color: #f9f9f9;
-}
 
-/* Cards container */
-.home-card {
-    height: 350px;
-    margin: 10px 0;
-    background-color: white;
-    box-shadow: 1px 2px 1px rgba(0,0, 0, 0.5);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;                /* for fade-in animation */
-    transform: translateY(50px); /* initial slide up offset */
-}
+    /* products css */
+    #product-cards {
+      margin-bottom: 50px !important;
+      /* background-color: #f9f9f9; */
+    }
 
-/* Fade-in + slide-up animation on page load */
-.home-card.show {
-    opacity: 1;
-    transform: translateY(0);
-    transition: transform 0.6s ease, opacity 0.6s ease;
-}
+    /* Cards container */
+    .home-card {
+      height: 350px;
+      margin: 15px 0;
+      background-color: white;
+      box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(50px);
+    }
 
-/* Hover animation */
-.home-card:hover {
-    transform: translateY(-10px); /* slight lift on hover */
-    box-shadow: 3px 6px 15px rgba(0,0,0,0.3); /* deeper shadow */
-}
+    /* Fade-in + slide-up animation on page load */
+    .home-card.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
 
-.home-card img {
-    width: 100%;
-    height: 250px;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
+    /* Hover animation */
+    .home-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.3);
+      background: #dadee9;
+    }
 
-/* Optional image zoom on hover */
-.home-card:hover img {
-    transform: scale(1.05);
-}
+    .home-card img {
+      width: 100%;
+      height: 250px;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
 
-.home-card-descrip {
-    text-align: center;
-    margin: 5px 0;
-    font-size: 20px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
+    /* Optional image zoom on hover */
+    .home-card:hover img {
+      transform: scale(1.05);
+    }
 
-.home-card:hover .home-card-descrip {
-    transform: translateY(-5px);
-    color: #007bff; /* text color change */
-}
+    .home-card-descrip {
+      text-align: center;
+      margin: 5px 0;
+      font-size: 16px;
+      font-weight: 0;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
 
-.card-prices {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
+    .home-card:hover .home-card-descrip {
+      color: #007bff;
+      /* text color change */
+    }
 
-.home-card:hover .card-prices {
-    transform: translateY(-5px);
-}
+    /* product css end  */
+    /* crousel */
+    #glassesCarousel .carousel-item img {
+      height: 500px;
+    }
 
-.duplicate-price {
-    display: inline;
-    font-size: 18px;
-    text-decoration: line-through;
-    color: rgb(206, 67, 67);
-}
+    /* Smooth zoom animation */
+    .carousel-item.active img {
+      animation: zoomEffect 6s ease-in-out infinite alternate;
+    }
 
-.cart-btn {
-    display: block;
-    margin: 0 auto;
-    width: 70%;
-    padding: 10px 5px !important;
-    text-transform: capitalize;
-}
-  /* product css end  */
-/* crousel */
-/* Carousel initial state */
-#carouselExampleFade {
-    opacity: 0;
-    transform: translateY(150px); /* zyada neeche se start */
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* fast animation */
-}
+    @keyframes zoomEffect {
+      from {
+        transform: scale(1);
+      }
 
-/* Slide up */
-#carouselExampleFade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+      to {
+        transform: scale(1.08);
+      }
+    }
 
+    /* CENTER TEXT */
+    .center-caption {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+      /* text-align: center; */
+      color: white;
+      /* z-index: 10; */
+    }
 
+    .center-caption h2 {
+      font-size: 3rem;
+      color: white;
+      font-weight: bold;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
 
-  
+    .center-caption p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-shop {
+      background: palegoldenrod;
+      color: black;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    /* CUSTOM BOTTOM CIRCLE BUTTONS */
+    .custom-controls {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 15;
+      /* above carousel */
+    }
+
+    .control-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .control-dot.active {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    @media (max-width:480px) {
+      #glassesCarousel .carousel-item img {
+        height: 300px;
+      }
+
+      .center-caption {
+        left: 18%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .center-caption h2 {
+        font-size: 1.8rem;
+      }
+
+      .center-caption p {
+        font-size: 0.9rem;
+      }
+
+      .carousel-inner img {
+        height: 430px;
+      }
+    }
   </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <i class="fa-solid fa-bars" id="toggleBtn"></i>
-            <a class="navbar-brand" href="#"><img src="src/logo1.png" width="100%" alt=""></a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">gallery</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            products <i style="font-size: 14px;" class="fa-solid fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
-                            <li><a class="dropdown-item" href="jar.html">jars</a></li>
-                            <li><a class="dropdown-item" href="glass.html">glass</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true">contact</a>
-                    </li>
-                </ul>
-
-            </div>
-             <i class="fa-solid fa-magnifying-glass search-glass"></i>
-        </div>
-    </nav>
-    <!-- Sidebar -->
-    <div id="sidebar">
-        <!-- Close button -->
-        <i class="fa-solid fa-xmark" id="sidebarClose"></i>
-        <img src="src/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
-        <ul>
-            <li><a class="side-link" href="index.html">Home</a></li>
-            <hr>
-            <li><a class="side-link" href="about.html">Service</a></li>
-            <hr>
-            <li><a class="side-link" href="gallery.html">Gallery</a></li>
-            <hr>
-            <li class="nav-item dropdown">
-    <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#sidebarProducts" aria-expanded="false">
-        shop
-    </a>
-    <hr>
-    <ul class="collapse bg-light" id="sidebarProducts">
-        <li><a class="side-link" href="bottles.html">Bottles</a></li>
-        <li><a class="side-link" href="jars.html">Jars</a></li>
-        <li><a class="side-link" href="beverages.html">glass</a></li>
-    </ul>
-</li>
-            <li><a class="side-link" href="contact.html">Contact</a></li>
-            <hr>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <i class="fa-solid fa-bars" id="toggleBtn"></i>
+      <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">gallery</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              products <i style="font-size: 14px;" class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+              <li><a class="dropdown-item" href="jar.html">jars</a></li>
+              <li><a class="dropdown-item" href="glass.html">glass</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">contact</a>
+          </li>
         </ul>
+
+      </div>
+      <i class="fa-solid fa-magnifying-glass search-glass"></i>
     </div>
-    <!-- overlay -->
-    <div id="overlay"></div>
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+  </nav>
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <!-- Close button -->
+    <i class="fa-solid fa-xmark" id="sidebarClose"></i>
+    <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
+    <ul>
+      <li><a class="side-link" href="index.html">Home</a></li>
+      <hr>
+      <li><a class="side-link" href="about.html">Service</a></li>
+      <hr>
+      <li><a class="side-link" href="gallery.html">Gallery</a></li>
+      <hr>
+      <li class="nav-item dropdown">
+        <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
+          data-bs-target="#sidebarProducts" aria-expanded="false">
+          shop
+        </a>
+        <hr>
+        <ul class="collapse bg-light" id="sidebarProducts">
+          <li><a class="side-link" href="bottles.html">Bottles</a></li>
+          <li><a class="side-link" href="jars.html">Jars</a></li>
+          <li><a class="side-link" href="beverages.html">glass</a></li>
+        </ul>
+      </li>
+      <li><a class="side-link" href="contact.html">Contact</a></li>
+      <hr>
+    </ul>
+  </div>
+  <!-- overlay -->
+  <div id="overlay"></div>
+
+  <div id="glassesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <!-- CENTER TEXT -->
+    <!-- <div class="center-caption">
+        <h2>Modern Glasses</h2>
+        <p>Premium eyewear for your perfect style</p>
+        <a href="#" class="btn-shop">Shop Now</a>
+    </div> -->
+
+    <!-- CUSTOM CIRCLE BUTTONS -->
+    <div class="custom-controls">
+      <div class="control-dot active" data-bs-target="#glassesCarousel" data-bs-slide-to="0"></div>
+      <div class="control-dot" data-bs-target="#glassesCarousel" data-bs-slide-to="1"></div>
+      <div class="control-dot" data-bs-target="#glassesCarousel" data-bs-slide-to="2"></div>
+    </div>
+    <!-- Slides -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="src/hero.1.jpg" class="d-block w-100" alt="...">
+        <img src="images_src/banner.jpg" width="100%" class="d-block">
+        <div class="center-caption">
+          <h2>pet bottles</h2>
+        </div>
       </div>
       <div class="carousel-item">
-        <img src="src/hero2.jpg" class="d-block w-100" alt="...">
+        <img src="images_src/hero3.jpg" width="100%" class="d-block">
+        <div class="center-caption">
+          <h2>pet jars</h2>
+        </div>
       </div>
       <div class="carousel-item">
-        <img src="src/hero3.jpg" class="d-block w-100" alt="...">
+        <img src="images_src/hero3.jpg" width="100%" class="d-block">
+        <div class="center-caption">
+          <h2>pet Glasses</h2>
+        </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
   <div class="home-info col-12">
     <div class="hero-text">
@@ -504,7 +569,7 @@
       <a href="about.html"><button class="view-more">view more</button></a>
     </div>
   </div>
-  <div class="video">
+  <div class="video container">
     <iframe width="853" height="480" src="https://www.youtube.com/embed/XRiDu1FkYX4" title="" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -514,22 +579,22 @@
       <h2 class="text-capitalize">The path to sustainable development of PET</h2>
       <div class="path-row">
         <div class="circle-box">
-          <img src="src/petchip.avif" alt="PET Chips">
+          <img src="images_src/petchip.avif" alt="PET Chips">
           <p class="title">PET Chips</p>
         </div>
         <div class="arrow">→</div>
         <div class="circle-box">
-          <img src="src/petsheet.jpg" alt="PET Sheet">
+          <img src="images_src/petsheet.jpg" alt="PET Sheet">
           <p class="title">PET Sheet</p>
         </div>
         <div class="arrow">→</div>
         <div class="circle-box">
-          <img src="src/petcontainer.jpg" alt="PET Container">
+          <img src="images_src/petcontainer.jpg" alt="PET Container">
           <p class="title">PET Container</p>
         </div>
         <div class="arrow">→</div>
         <div class="circle-box">
-          <img src="src/petfibr.avif" alt="Fiber">
+          <img src="images_src/petfibr.avif" alt="Fiber">
           <p class="title">Fiber</p>
         </div>
       </div>
@@ -598,88 +663,84 @@
   <div class="footer-bottom">
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
+            <!-- <div class="card-prices">
+            <p class="duplicate-price d-block">rs:${i.p_1}</p>
+            <p class="price d-block">rs:${i.p_2}</p>
+          </div> -->
   <script>
     let homeCards = [
       {
+        img_card: "bottles/bottle1.jpg",
+        desc: "bottles",
+        p_1: 250,
+        p_2: 150,
+        href:"bottles.html"
+      },
+      {
+        img_card: "bottles/bottle2.jpg",
+        desc: "Shaker Bottle 62mm",
+        p_1: 300,
+        p_2: 220,
+        href:"bottles.html"
+      },
+      {
+        img_card: "bottles/bottle3.jpg",
+        desc: "1000ml Bottle",
+        p_1: 350,
+        p_2: 250,
+        href:"bottles.html"
+      },
+      {
+        img_card: "bottles/bottle4.jpg",
+        desc: "12onz Bottle",
+        p_1: 399,
+        p_2: 249,
+        href:"bottles.html"
+      },
+      {
+        img_card: "jar/jar1.jpg",
+        desc: "5 LBS Jar",
+        p_1: 850,
+        p_2: 650,
+      },
+      {
+        img_card: "jar/jar2.jpg",
+        desc: "Round Jar Small",
+        p_1: 500,
+        p_2: 399,
+      },
+      {
+        img_card: "jar/jar3.jpg",
+        desc: "Round Jar Medium ",
+        p_1: 649,
+        p_2: 549,
+      },
+      {
+        img_card: "jar/jar5.jpg",
+        desc: "Round Jar Long",
+        p_1: 700,
+        p_2: 550,
+      },
+      {
         img_card: "logo1.png",
-        img1_hover: "logo2.png",
         desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
-        img1_hover: "logo2.png",
         desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
-        img1_hover: "logo2.png",
         desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
       },
       {
         img_card: "logo1.png",
-        img1_hover: "logo2.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        img1_hover: "logo2.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        img1_hover: "logo2.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        img1_hover: "logo2.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        img1_hover: "logo2.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        img1_hover: "logo2.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        img1_hover: "logo2.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        img1_hover: "logo2.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        img1_hover: "logo2.png",
         desc: "bsdkjfbksbdfk",
         p_1: 5999,
         p_2: 4499,
@@ -693,12 +754,9 @@
         card_data += `
               <div class="col-lg-3 col-md-4 col-6">
         <div class="home-card">
-          <img class="home-card-img" src="src/${i.img_card}" alt="">
+          <img class="home-card-img" src="images_src/${i.img_card}" alt="">
           <p class="home-card-descrip">${i.desc}</p>
-          <div class="card-prices">
-            <p class="duplicate-price">rs:${i.p_1}</p>
-            <p class="price">rs:${i.p_2}</p>
-          </div>
+          <a class="btn d-block mx-auto text-light bg-dark w-50" href="${i.href}">view more</a> 
         </div>
       </div>
         `
@@ -706,21 +764,24 @@
       card_display.innerHTML = card_data;
     });
     window.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.home-card');
-    cards.forEach((card, index) => {
+      const cards = document.querySelectorAll('.home-card');
+      cards.forEach((card, index) => {
         setTimeout(() => {
-            card.classList.add('show');
+          card.classList.add('show');
         }, index * 200); // staggered effect
+      });
     });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const carousel = document.getElementById('carouselExampleFade');
-    carousel.classList.add('show'); // triggers CSS transition
-});
 
+    var carousel = document.querySelector('#glassesCarousel');
+    var dots = document.querySelectorAll('.control-dot');
 
+    carousel.addEventListener('slid.bs.carousel', function (event) {
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[event.to].classList.add('active');
+    });
   </script>
   <script src="js/nav.js"></script>
   <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
+
 </html>

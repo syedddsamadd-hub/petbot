@@ -6,7 +6,7 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     text-transform: capitalize;
-    /* background-color: aliceblue; */
+    background-color:#f6f6f6;
     /* background: linear-gradient(135deg, Lightgreen,cadetblue); */
   }
   p{
@@ -17,7 +17,7 @@ body {
   }
 /* navbar css */
   .navbar {
-            background-color: palegoldenrod;
+            /* background-color: palegoldenrod; */
             height: 100px;
             width: 100%;
         }
