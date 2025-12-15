@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body{
+            /* background-color: #000; */
+        }
+        /* Glass icon */
+.search-glass {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Overlay */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    transition: right 0.4s ease;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Active state */
+.search-overlay.active {
+    right: 0;
+}
+
+/* Search box */
+.search-box {
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+/* Input */
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Search button */
+.search-btn {
+    padding: 10px 15px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Close button */
+.close-search {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+/* Mobile tweak */
+@media (max-width: 500px) {
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Search Icon -->
+<i class="fa-solid fa-magnifying-glass search-glass" onclick="openSearch()"></i>
+
+<script>
+function openSearch() {
+    document.getElementById("searchOverlay").classList.add("active");
+}
+
+function closeSearch() {
+    document.getElementById("searchOverlay").classList.remove("active");
+}
+</script>
+
+</body>
+</html>

@@ -41,7 +41,7 @@
 
     .section1 p {
       text-align: center;
-      color: gray;
+      color: black;
       margin: 20px 12% 30px;
       font-weight: 400;
       line-height: 25px;
@@ -72,7 +72,7 @@
     }
 
     .hero-text .view-more {
-      background-color: palegoldenrod;
+      background-color: orange;
       margin: 10px;
       padding: 10px;
       font-size: 18px;
@@ -87,9 +87,10 @@
       opacity: 0.9;
     }
     .video {
-      display: flex;
-      justify-content: center;
+      /* display: flex;
+      justify-content: center; */
       padding: 30px 0;
+      text-align: center;
     }
     .video iframe {
       width: 65%;
@@ -252,7 +253,7 @@
         width: 100px;
         height: 100px;
       }
-
+      
       .circle-box .title {
         top: 115px;
         font-size: 14px;
@@ -295,11 +296,11 @@
 
     /* Cards container */
     .home-card {
-      height: 350px;
-      margin: 15px 0;
+      height: 300px;
+      margin: 15px;
       background-color: white;
       box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
-      overflow: hidden;
+      /* overflow: hidden; */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       opacity: 0;
       transform: translateY(50px);
@@ -316,7 +317,7 @@
     .home-card:hover {
       transform: translateY(-10px);
       box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.3);
-      background: #dadee9;
+      background: #fff;
     }
 
     .home-card img {
@@ -431,7 +432,7 @@
       #glassesCarousel .carousel-item img {
         height: 300px;
       }
-
+      
       .center-caption {
         left: 18%;
       }
@@ -441,7 +442,6 @@
       .center-caption h2 {
         font-size: 1.8rem;
       }
-
       .center-caption p {
         font-size: 0.9rem;
       }
@@ -450,6 +450,111 @@
         height: 430px;
       }
     }
+           .section-title{
+            text-align: center;
+            margin: 20px 0;
+        }
+v#reviews-section {
+    padding: 20px;
+}
+
+.reviews-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.reviews-wrapper {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.review {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review-content {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.rating span {
+    font-size: 18px;
+}
+
+.submit-review {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.submit-review h4 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.rating-submit {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.rating-submit select {
+    padding: 5px;
+    display: block;
+      margin: 0 auto 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
   </style>
 </head>
 <body>
@@ -469,8 +574,8 @@
             <a class="nav-link" href="gallery.html">gallery</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              products <i style="font-size: 14px;" class="fa-solid fa-chevron-down"></i>
+            <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              products 
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
@@ -479,13 +584,25 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-disabled="true">contact</a>
+            <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
+        <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
           </li>
         </ul>
-
       </div>
-      <i class="fa-solid fa-magnifying-glass search-glass"></i>
+      <i class="fa-solid fa-magnifying-glass search-glass" onclick="openSearch()"></i>
     </div>
+    
+<!-- Search Slide Panel -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <button class="close-search" onclick="closeSearch()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <input type="text" placeholder="Search here..." />
+        <button class="search-btn">Search</button>
+    </div>
+</div>
   </nav>
   <!-- Sidebar -->
   <div id="sidebar">
@@ -502,7 +619,7 @@
       <li class="nav-item dropdown">
         <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
           data-bs-target="#sidebarProducts" aria-expanded="false">
-          shop
+          products
         </a>
         <hr>
         <ul class="collapse bg-light" id="sidebarProducts">
@@ -512,6 +629,7 @@
         </ul>
       </li>
       <li><a class="side-link" href="contact.html">Contact</a></li>
+         <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
       <hr>
     </ul>
   </div>
@@ -553,7 +671,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>  
   <div class="home-info col-12">
     <div class="hero-text">
       <h1>pebot Leading Food-Grade PET Packaging Solutions</h1>
@@ -569,10 +687,14 @@
       <a href="about.html"><button class="view-more">view more</button></a>
     </div>
   </div>
+  <div class="" style="background-color: #f8f8f8; margin: 10px 20px; border-radius: 20px; box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);">
   <div class="video container">
+    <h3>watch our latest video</h3>
+    <p>watch out our latest video to know more about how we manufacture our bottles.</p>
     <iframe width="853" height="480" src="https://www.youtube.com/embed/XRiDu1FkYX4" title="" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
   </div>
   <section id="section" class="text-center">
     <div class="container-fluid">
@@ -600,6 +722,7 @@
       </div>
     </div>
   </section>
+  <div class="" style="background-color: #f8f8f8; padding: 10px 0; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);">
   <div class="section1 text-center m-5">
     <h1>our product</h1>
     <p>PETBot is dedicated to creating high-quality, sustainable PET products that meet modern industry standards. From
@@ -611,6 +734,78 @@
     <div id="card_display" class="row">
     </div>
   </div>
+  </div>
+       <div class="container mt-5" id="reviews-section">
+        <h3 class="section-title">Customer Reviews</h3>
+        <div class="reviews-box">
+            <div class="reviews-wrapper">
+                <div class="review">
+                    <div class="review-author">
+                        <img src="https://klasie-store-demo.myshopify.com/cdn/shop/files/testimonial-img1.png?v=1704630681"
+                            alt="User">
+                        <div>
+                            <h6>John Doe</h6>
+                            <span>Verified Customer</span>
+                        </div>
+                    </div>
+                    <p class="review-content">"Great qualities of pet cups, jars and other items with reasonable prices and recycle."</p>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+
+                <div class="review">
+                    <div class="review-author">
+                        <img src="https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg"
+                            alt="User">
+                        <div>
+                            <h6>Jane Smith</h6>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                    <p class="review-content">"Amazing service and fast delivery. The sunglasses are perfect for my
+                        summer look!"</p>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+
+                <div class="review">
+                    <div class="review-author">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2qB43KRtCEPZFNRHTFEy_mEXw2Fvvq88jFw&s"
+                            alt="User">
+                        <div>
+                            <h6>Alex Brown</h6>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                    <p class="review-content">"Love the sunglasses! Perfect for sunny days. Will recommend to friends."
+                    </p>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Review submission form -->
+        <div class="submit-review">
+            <h4>Submit Your Review</h4>
+            <form>
+                <textarea class="review-text" placeholder="Write your review here..." rows="4" required></textarea>
+                <div class="rating-submit">
+                    <label for="rating">Rating: </label>
+                    <select id="rating" required>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="1">⭐</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
   <footer class="footer container-fluid">
     <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -645,6 +840,7 @@
             <li><a href="pharma.html">pharma</a></li>
           </ul>
         </div>
+        
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="social-link">
@@ -661,12 +857,10 @@
     </div>
   </footer>
   <div class="footer-bottom">
+    <img src="images_src/logo/logo1.png" width="100px" height="100px" style="text-align: center; " alt="">
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
-            <!-- <div class="card-prices">
-            <p class="duplicate-price d-block">rs:${i.p_1}</p>
-            <p class="price d-block">rs:${i.p_2}</p>
-          </div> -->
+          <!-- <a class="btn d-block mx-auto text-light bg-dark w-50" href="${i.href}">view more</a>  -->
   <script>
     let homeCards = [
       {
@@ -721,30 +915,30 @@
         p_1: 700,
         p_2: 550,
       },
-      {
-        img_card: "logo1.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
-      {
-        img_card: "logo1.png",
-        desc: "bsdkjfbksbdfk",
-        p_1: 5999,
-        p_2: 4499,
-      },
+      // {
+      //   img_card: "logo1.png",
+      //   desc: "bsdkjfbksbdfk",
+      //   p_1: 5999,
+      //   p_2: 4499,
+      // },
+      // {
+      //   img_card: "logo1.png",
+      //   desc: "bsdkjfbksbdfk",
+      //   p_1: 5999,
+      //   p_2: 4499,
+      // },
+      // {
+      //   img_card: "logo1.png",
+      //   desc: "bsdkjfbksbdfk",
+      //   p_1: 5999,
+      //   p_2: 4499,
+      // },
+      // {
+      //   img_card: "logo1.png",
+      //   desc: "bsdkjfbksbdfk",
+      //   p_1: 5999,
+      //   p_2: 4499,
+      // },
     ];
     document.addEventListener("DOMContentLoaded", function () {
       let card_display = document.getElementById("card_display");
@@ -752,11 +946,10 @@
       card_data = "";
       homeCards.forEach(i => {
         card_data += `
-              <div class="col-lg-3 col-md-4 col-6">
+              <div class="col-lg-3 col-md-4 col-12 p-0">
         <div class="home-card">
-          <img class="home-card-img" src="images_src/${i.img_card}" alt="">
+          <a href="jar.html"><img class="home-card-img" src="images_src/${i.img_card}" alt=""> </a>
           <p class="home-card-descrip">${i.desc}</p>
-          <a class="btn d-block mx-auto text-light bg-dark w-50" href="${i.href}">view more</a> 
         </div>
       </div>
         `

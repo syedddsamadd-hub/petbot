@@ -2,7 +2,8 @@
         .footer {
             /* background: linear-gradient(to right, #9bc0bc, #9bc0bc, Lightgreen); */
             padding: 10px;
-            /* background-color:  palegoldenrod; */
+            background-color:  #2d1f18;
+            margin-top: 50px;
             /* background-color: #0f172a; */
         }
         .foot-1 {
@@ -11,23 +12,24 @@
         }
 
         .foot-1 h1 {
-            color: black;
+            color: orange;
             text-transform: capitalize;
         }
 
         .foot-1 p {
             text-align: justify;
             font-weight: 400;
-            color: black;
+            color: gray;
         }
 
         .foot-links {
             padding: 15px;
             text-transform: capitalize;
+            color: white;
         }
 
         .foot-links h3 {
-            color: black;
+            color: #fff;
             margin-left: 20px;
         }
 
@@ -41,8 +43,8 @@
             position: relative;
             transition: color 0.3s ease;
             line-height: 1.5;
-            color:black;
-            font-weight: 450;
+            color: gray;
+            /* font-weight: 450; */
         }
 
         .social-link {
@@ -51,57 +53,37 @@
         }
 
         .social-link h3 {
-            color: black;
+            color: #fff;
         }
 
         .social-link p {
             /* margin:  10px; */
             text-align: justify;
             font-weight: 400;
-            color: black;
+            color: gray;
         }
 
         span a {
             margin: 0 12px;
             font-size: 24px;
+            color: orange;
         }
         .footer-bottom {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* background-color: #0f172a; */
-            height: 50px;
+            background-color: #2d1f18;
+            height: 150px;
             text-align: center;
             /* background: linear-gradient(to right, #9bc0bc, #9bc0bc, Lightgreen); */
         }
         .footer-bottom p {
             font-weight: 500;
-            color: black;
+            color: gray;
         }
         @media (max-width: 500px) {
             .foot-links {
                 padding: 0;
             }
         }
-        .foot-links ul li a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            /* text ke neeche underline ka gap */
-            width: 0%;
-            height: 2px;
-            background: cyan;
-            /* underline color */
-            transition: width 0.4s ease;
-        }
-
-        .foot-links ul li a:hover {
-            color: cyan;
-            /* hover text color */
-        }
-
-        .foot-links ul li a:hover::after {
-            width: 100%;
+        .foot-links ul li a:hover{
+            color: #fff;
         }
         /* footer css end */

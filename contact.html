@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact form</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        .contact-form{
+            padding: 5px;
+        }
+        .contact-form h1{
+            font-size: 30px;
+            margin: 15px 20px;
+            color: orange;
+        }
+        .contact-inp{
+            margin: 30px 5px !important;
+            padding: 10px;
+            box-shadow: 0px 2px 0px rgb(0, 0,0,0.1);
+            border: none;
+        }
+         .contact-inp::placeholder{
+            font-size: 18px;
+            text-transform: capitalize;
+         }
+        .mess-btn{
+            color: #fff;
+            padding: 10px !important;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin: 10px 0 30px 10px !important;
+            background-color: orange;
+            border: none;
+        }
+        .contact-info{
+            padding: 5px;
+            color: #fff;
+            /* background-color: orange;     */
+        }
+         .contact-info h1{
+            font-size: 30px;
+            text-transform: capitalize;
+            margin: 20px 10px 30px;
+         }
+         .contact-info p{
+            font-size: 16px;
+            /* margin: 50px 0; */
+         }
+         .contact-info .our-info{
+            display: block;
+            margin: 10px 20px;
+            font-size: 20px;
+         }
+    </style>
+</head>
+<body>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <i class="fa-solid fa-bars" id="toggleBtn"></i>
+      <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">gallery</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              products 
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+              <li><a class="dropdown-item" href="jar.html">jars</a></li>
+              <li><a class="dropdown-item" href="glass.html">glass</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
+        <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
+          </li>
+        </ul>
+      </div>
+      <i class="fa-solid fa-magnifying-glass search-glass" onclick="openSearch()"></i>
+    </div>
+    
+<!-- Search Slide Panel -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <button class="close-search" onclick="closeSearch()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <input type="text" placeholder="Search here..." />
+        <button class="search-btn">Search</button>
+    </div>
+</div>
+  </nav>
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <!-- Close button -->
+    <i class="fa-solid fa-xmark" id="sidebarClose"></i>
+    <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
+    <ul>
+      <li><a class="side-link" href="index.html">Home</a></li>
+      <hr>
+      <li><a class="side-link" href="about.html">Service</a></li>
+      <hr>
+      <li><a class="side-link" href="gallery.html">Gallery</a></li>
+      <hr>
+      <li class="nav-item dropdown">
+        <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
+          data-bs-target="#sidebarProducts" aria-expanded="false">
+          products
+        </a>
+        <hr>
+        <ul class="collapse bg-light" id="sidebarProducts">
+          <li><a class="side-link" href="bottles.html">Bottles</a></li>
+          <li><a class="side-link" href="jars.html">Jars</a></li>
+          <li><a class="side-link" href="beverages.html">glass</a></li>
+        </ul>
+      </li>
+      <li><a class="side-link" href="contact.html">Contact</a></li>
+         <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
+      <hr>
+    </ul>
+  </div>
+  <!-- overlay -->
+  <div id="overlay"></div>
+    <div class="container contact">
+        <div class="row my-5">
+            <div class="col-lg-8 col-12 bg-light">
+                <div class="contact-form">
+                    <h1>Send us a message</h1>
+                    <div class="d-flex">
+                    <input type="text" class="form-control contact-inp" placeholder="your name" id="">              
+                    <input type="email" class="form-control contact-inp" placeholder="your email" id="">  
+                    </div>  
+                    <div class="d-flex">         
+                    <input type="number" class="form-control contact-inp" placeholder="#phone" id="">
+                    <input type="text" class="form-control contact-inp" placeholder="company name..." id="">
+                    </div>      
+                    <input type="text" class="form-control contact-inp py-5" placeholder="write your message..." id="">
+                    <button class="mess-btn">send message</button>
+            </div>
+            </div>
+            <div class="col-lg-4 col-12 bg-warning">
+                <div class="contact-info">
+                    <h1>contact information</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam praesentium voluptates repudiandae architecto sapiente culpa dolore error dolorum eaque. Quod consectetur nam neque debitis illo nobis quam libero conse                 quuntur earum.</p>
+                     <span class="our-info"><i class="fa-solid me-2 fa-location-dot"></i>baldia town karachi</span>
+                     <span class="our-info"><i class="fa-solid me-2 fa-phone"></i>03160260319</span>
+                     <span class="our-info"><i class="fa-solid me-2 fa-envelope"></i>petbot@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <h1>google map</h1>
+        <p>find out our loaction at map and get in touch.</p>
+    </div>
+    <div style="width:90%; margin: 20px; display: flex; margin: auto; height:400px;">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.634324577549!2d67.02549227436654!3d24.910451943257286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33fb94eb666b5%3A0x6e383e3adce474a4!2sAptech%20Computer%20Education%20Site%20Center!5e0!3m2!1sen!2s!4v1765835917028!5m2!1sen!2s"
+        width="100%" 
+        height="100%" 
+        style="border:0; border-radius: 10px;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</div>
+  <footer class="footer container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="foot-1">
+          <h1>petbot</h1>
+          <p>your trusted partner in premium PET packaging solutions.
+            We craft durable, lightweight, and food-grade PET bottles designed for every industry.
+            From innovation to quality, we ensure packaging that protects your product and enhances your
+            brand.
+            PetBot — where strength, style, and sustainability come together.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="foot-links">
+          <h3>quick links</h3>
+          <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about us</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="contact.html">contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="foot-links">
+          <h3>product links</h3>
+          <ul>
+            <li><a href="bottles.html">bottles</a></li>
+            <li><a href="jars.html">jars</a></li>
+            <li><a href="edibleoil.html">edible oil</a></li>
+            <li><a href="beverages.html">beverages</a></li>
+            <li><a href="pharma.html">pharma</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        <div class="social-link">
+          <h3>follow us</h3>
+          <p>for get more information follow us on these platform to gain the first hand konwledge about
+            petbot.</p>
+          <span><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></span>
+          <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
+          <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i
+                class="fa-brands fa-linkedin"></i></a></span>
+          <span><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <img src="images_src/logo/logo1.png" width="100px" height="100px" style="text-align: center; " alt="">
+    <p>© 2025 PetBot Industries. All Rights Reserved.</p>
+  </div>
+<script src="js/nav.js"></script>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+</body>
+</html>

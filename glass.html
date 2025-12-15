@@ -49,7 +49,7 @@
             width: 80%;
             text-align: center;
             height: 250px;
-            background-color: black;
+            background-color: #2d1f18;
             display: block;
             padding: 20px;
             align-items: center;
@@ -117,72 +117,84 @@
         }
     </style>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <i class="fa-solid fa-bars" id="toggleBtn"></i>
-            <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">gallery</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            products <i style="font-size: 14px;" class="fa-solid fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
-                            <li><a class="dropdown-item" href="jar.html">jars</a></li>
-                            <li><a class="dropdown-item" href="glass.html">glass</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true">contact</a>
-                    </li>
-                </ul>
-
-            </div>
-            <i class="fa-solid fa-magnifying-glass search-glass"></i>
-        </div>
-    </nav>
-    <!-- Sidebar -->
-    <div id="sidebar">
-        <!-- Close button -->
-        <i class="fa-solid fa-xmark" id="sidebarClose"></i>
-        <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
-        <ul>
-            <li><a class="side-link" href="index.html">Home</a></li>
-            <hr>
-            <li><a class="side-link" href="about.html">Service</a></li>
-            <hr>
-            <li><a class="side-link" href="gallery.html">Gallery</a></li>
-            <hr>
-            <li class="nav-item dropdown">
-                <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
-                    data-bs-target="#sidebarProducts" aria-expanded="false">
-                    shop
-                </a>
-                <hr>
-                <ul class="collapse bg-light" id="sidebarProducts">
-                    <li><a class="side-link" href="bottles.html">Bottles</a></li>
-                    <li><a class="side-link" href="jars.html">Jars</a></li>
-                    <li><a class="side-link" href="beverages.html">glass</a></li>
-                </ul>
-            </li>
-            <li><a class="side-link" href="contact.html">Contact</a></li>
-            <hr>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <i class="fa-solid fa-bars" id="toggleBtn"></i>
+      <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">gallery</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              products 
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+              <li><a class="dropdown-item" href="jar.html">jars</a></li>
+              <li><a class="dropdown-item" href="glass.html">glass</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
+        <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
+          </li>
         </ul>
+      </div>
+      <i class="fa-solid fa-magnifying-glass search-glass" onclick="openSearch()"></i>
     </div>
-    <!-- overlay -->
-    <div id="overlay"></div>
+    
+<!-- Search Slide Panel -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <button class="close-search" onclick="closeSearch()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <input type="text" placeholder="Search here..." />
+        <button class="search-btn">Search</button>
+    </div>
+</div>
+  </nav>
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <!-- Close button -->
+    <i class="fa-solid fa-xmark" id="sidebarClose"></i>
+    <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
+    <ul>
+      <li><a class="side-link" href="index.html">Home</a></li>
+      <hr>
+      <li><a class="side-link" href="about.html">Service</a></li>
+      <hr>
+      <li><a class="side-link" href="gallery.html">Gallery</a></li>
+      <hr>
+      <li class="nav-item dropdown">
+        <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
+          data-bs-target="#sidebarProducts" aria-expanded="false">
+            products
+        </a>
+        <hr>
+        <ul class="collapse bg-light" id="sidebarProducts">
+          <li><a class="side-link" href="bottles.html">Bottles</a></li>
+          <li><a class="side-link" href="jars.html">Jars</a></li>
+          <li><a class="side-link" href="beverages.html">glass</a></li>
+        </ul>
+      </li>
+      <li><a class="side-link" href="contact.html">Contact</a></li>
+         <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
+      <hr>
+    </ul>
+  </div>
+  <!-- overlay -->
+  <div id="overlay"></div>
     <div class="hero-img col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <img width="100%" src="https://ideogram.ai/assets/image/balanced/response/ui4RHrt0T7-TgoR-wmbmJw" alt="">
     </div>
@@ -397,9 +409,10 @@
             </div>
         </div>
     </footer>
-    <div class="footer-bottom">
-        <p>© 2025 PetBot Industries. All Rights Reserved.</p>
-    </div>
+  <div class="footer-bottom">
+    <img src="images_src/logo/logo1.png" width="100px" height="100px" style="text-align: center; " alt="">
+    <p>© 2025 PetBot Industries. All Rights Reserved.</p>
+  </div>
     <script src="jquery.js"></script>
     <script src="js/nav.js"></script>
     <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
