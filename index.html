@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,14 +26,14 @@
       content: "";
       position: absolute;
       left: 0;
-      bottom: -5px;
+      bottom: -10px;
       /* underline thoda neeche */
       width: 50%;
       text-align: center;
       height: 4px;
       /* underline ki motai */
       margin: 0 60px;
-      background-color: orange;
+      background-color: green;
       /* acha gradient underline */
       border-radius: 2px;
     }
@@ -93,9 +92,9 @@
       text-align: center;
     }
     .video iframe {
-      width: 65%;
+      width: 85%;
       margin: 10px 50px;
-      height: 500px;
+      height: 400px;
       border-radius: 25px;
     }
 
@@ -104,7 +103,7 @@
       padding: 60px 20px;
     }
 
-    h2 {
+   #section h2 {
       /* text-align: center; */
       font-weight: bold;
       /* margin: 10px 0 70px 75px; */
@@ -157,7 +156,7 @@
     .arrow {
       font-size: 70px;
       font-weight: bold;
-      color: gray;
+      color: black;
       user-select: none;
     }
 
@@ -303,6 +302,7 @@
       /* overflow: hidden; */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       opacity: 0;
+      border-radius: 10px;
       transform: translateY(50px);
     }
 
@@ -315,32 +315,28 @@
 
     /* Hover animation */
     .home-card:hover {
-      transform: translateY(-10px);
+      /* transform: translateY(-10px); */
       box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.3);
       background: #fff;
+      transform: scale(1.05);
     }
 
     .home-card img {
       width: 100%;
+      border-radius: 10px;
       height: 250px;
       transition: transform 0.5s ease, opacity 0.5s ease;
     }
-
-    /* Optional image zoom on hover */
-    .home-card:hover img {
-      transform: scale(1.05);
-    }
-
     .home-card-descrip {
       text-align: center;
       margin: 5px 0;
-      font-size: 16px;
+      font-size: 16px;    
       font-weight: 0;
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .home-card:hover .home-card-descrip {
-      color: #007bff;
+      color: green;
       /* text color change */
     }
 
@@ -468,7 +464,6 @@ v#reviews-section {
     display: flex;
     transition: transform 1s ease-in-out;
 }
-
 .review {
     min-width: 100%;
     box-sizing: border-box;
@@ -479,6 +474,30 @@ v#reviews-section {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+    .section-title {
+      text-transform: capitalize;
+      font-size: 30px;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      /* underline thoda neeche */
+      width: 50%;
+      height: 4px;
+      /* underline ki motai */
+      margin: 0 60px;
+      background-color: green;
+      /* acha gradient underline */
+      border-radius: 2px;
+    }
 
 .review-author {
     display: flex;
@@ -543,7 +562,7 @@ v#reviews-section {
 
 .btn-submit {
     padding: 10px 20px;
-    background-color: #007bff;
+    /* background-color: green; */
     color: white;
     border: none;
     display: block;
@@ -558,7 +577,7 @@ v#reviews-section {
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg  bg-light">
     <div class="container-fluid">
       <i class="fa-solid fa-bars" id="toggleBtn"></i>
       <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
@@ -585,27 +604,27 @@ v#reviews-section {
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
-        <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
+        <li><a href="signup.html" class="btn text-light btn-success fw-bold mt-2">register</a></li>
           </li>
-        </ul>
+        </ul> 
       </div>
-      <i class="fa-solid fa-magnifying-glass search-glass" onclick="openSearch()"></i>
+      <i class="fa-solid fa-magnifying-glass search-glass fa-rotate-90 text-success" onclick="openSearch()"></i>
     </div>
     
 <!-- Search Slide Panel -->
 <div class="search-overlay" id="searchOverlay">
     <div class="search-box">
         <button class="close-search" onclick="closeSearch()">
-            <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-xmark text-success"></i>
         </button>
 
         <input type="text" placeholder="Search here..." />
-        <button class="search-btn">Search</button>
+        <button class="search-btn bg-success">Search</button>
     </div>
 </div>
   </nav>
   <!-- Sidebar -->
-  <div id="sidebar">
+  <div id="sidebar" class="alert alert-success">
     <!-- Close button -->
     <i class="fa-solid fa-xmark" id="sidebarClose"></i>
     <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
@@ -684,17 +703,15 @@ v#reviews-section {
           containers annually for beverages, dairy, juices, and other food products. Our solutions are ideal for global
           brands, households, and outdoor events, combining innovation, scale, and environmental responsibility.</span>
       </p>
-      <a href="about.html"><button class="view-more">view more</button></a>
+      <a href="about.html"><button class="btn bg-success text-white view-more">view more</button></a>
     </div>
   </div>
-  <div class="" style="background-color: #f8f8f8; margin: 10px 20px; border-radius: 20px; box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);">
-  <div class="video container">
-    <h3>watch our latest video</h3>
-    <p>watch out our latest video to know more about how we manufacture our bottles.</p>
+  <div class="video alert alert-success">
+    <h3 class="my-4">watch our latest video</h3>
+    <p class="mb-4">watch out our latest video to know more about how we manufacture our bottles.</p>
     <iframe width="853" height="480" src="https://www.youtube.com/embed/XRiDu1FkYX4" title="" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </div>
   </div>
   <section id="section" class="text-center">
     <div class="container-fluid">
@@ -702,22 +719,22 @@ v#reviews-section {
       <div class="path-row">
         <div class="circle-box">
           <img src="images_src/petchip.avif" alt="PET Chips">
-          <p class="title">PET Chips</p>
+          <p class="title text-success">PET Chips</p>
         </div>
         <div class="arrow">→</div>
         <div class="circle-box">
           <img src="images_src/petsheet.jpg" alt="PET Sheet">
-          <p class="title">PET Sheet</p>
+          <p class="title text-success">PET Sheet</p>
         </div>
         <div class="arrow">→</div>
         <div class="circle-box">
           <img src="images_src/petcontainer.jpg" alt="PET Container">
-          <p class="title">PET Container</p>
+          <p class="title text-success">PET Container</p>
         </div>
         <div class="arrow">→</div>
         <div class="circle-box">
           <img src="images_src/petfibr.avif" alt="Fiber">
-          <p class="title">Fiber</p>
+          <p class="title text-success">Fiber</p>
         </div>
       </div>
     </div>
@@ -735,7 +752,7 @@ v#reviews-section {
     </div>
   </div>
   </div>
-       <div class="container mt-5" id="reviews-section">
+       <div class="container mt-5 text-center" id="reviews-section">
         <h3 class="section-title">Customer Reviews</h3>
         <div class="reviews-box">
             <div class="reviews-wrapper">
@@ -802,15 +819,16 @@ v#reviews-section {
                         <option value="1">⭐</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-submit">Submit Review</button>
+                <button type="submit" class="btn-submit bg-success">Submit Review</button>
             </form>
         </div>
     </div>
-  <footer class="footer container-fluid">
+  <footer class="footer container-fluid bg-light">
+    <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="foot-1">
-          <h1>petbot</h1>
+          <h1 class="text-success">petbot</h1>
           <p>your trusted partner in premium PET packaging solutions.
             We craft durable, lightweight, and food-grade PET bottles designed for every industry.
             From innovation to quality, we ensure packaging that protects your product and enhances your
@@ -820,7 +838,7 @@ v#reviews-section {
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="foot-links">
-          <h3>quick links</h3>
+          <h3 class="text-secondary">quick links</h3>
           <ul>
             <li><a href="index.html">home</a></li>
             <li><a href="about.html">about us</a></li>
@@ -831,7 +849,7 @@ v#reviews-section {
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="foot-links">
-          <h3>product links</h3>
+          <h3 class="text-secondary">product links</h3>
           <ul>
             <li><a href="bottles.html">bottles</a></li>
             <li><a href="jars.html">jars</a></li>
@@ -844,22 +862,23 @@ v#reviews-section {
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="social-link">
-          <h3>follow us</h3>
+          <h3 class="text-success">follow us</h3>
           <p>for get more information follow us on these platform to gain the first hand konwledge about
             petbot.</p>
           <span><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></span>
           <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
-          <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i
-                class="fa-brands fa-linkedin"></i></a></span>
+          <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i class="fa-brands fa-linkedin"></i></a></span>
           <span><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></span>
         </div>
       </div>
     </div>
-  </footer>
-  <div class="footer-bottom">
+    </div>
+    <hr>
+      <div class="footer-bottom ">
     <img src="images_src/logo/logo1.png" width="100px" height="100px" style="text-align: center; " alt="">
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
+  </footer>
           <!-- <a class="btn d-block mx-auto text-light bg-dark w-50" href="${i.href}">view more</a>  -->
   <script>
     let homeCards = [

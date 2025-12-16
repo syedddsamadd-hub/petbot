@@ -21,6 +21,7 @@ h3,
 h4.h5,
 h6 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    text-transform: capitalize;
 }
 
 /* navbar css */
@@ -28,6 +29,9 @@ h6 {
     background-color: orange;
     height: 100px;
     width: 100%;
+    box-shadow: 0px 5px 10px 5px rgba(44, 44, 44, 0.5);
+    z-index: 1;
+    
 }
 .nav-link {
     font-size: 22px;
@@ -35,9 +39,12 @@ h6 {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: capitalize;
+    transition: all 0.1s linear;
 }
 .nav-link:hover{
-    color: #fff;
+        color:#198754;
+   border-bottom: 2px solid green;
+    padding-bottom: 5px;
 }
 .navbar-brand {
     width: 100px;
@@ -139,7 +146,6 @@ h6 {
     left: -250px;
     width: 250px;
     height: 100%;
-    background: palegoldenrod;
     color: white;
     transition: left 0.3s ease;
     padding-top: 40px;
