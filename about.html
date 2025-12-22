@@ -219,7 +219,8 @@
 </style>
 </head>
 <body> 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+  <nav class="navbar navbar-expand-lg  bg-light">
     <div class="container-fluid">
       <i class="fa-solid fa-bars" id="toggleBtn"></i>
       <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
@@ -236,37 +237,36 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              products
+              products 
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
-              <li><a class="dropdown-item" href="jar.html">jars</a></li>
-              <li><a class="dropdown-item" href="glass.html">glass</a></li>
+            <ul class="dropdown-menu alert alert-success">
+              <li><a class="dropdown-item text-success" href="bottles.html">bottles</a></li>
+              <li><a class="dropdown-item text-success" href="jar.html">jars</a></li>
+              <li><a class="dropdown-item text-success" href="glass.html">glass</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
-        <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
+        <li><a href="signup.html" class="btn text-light btn-success fw-bold ms-3 mt-2">register</a></li>
           </li>
-        </ul>
+        </ul> 
       </div>
-      <i class="fa-solid fa-magnifying-glass search-glass" onclick="openSearch()"></i>
+      <i class="fa-solid fa-magnifying-glass search-glass fa-rotate-90 text-success" onclick="openSearch()"></i>
     </div>
     
 <!-- Search Slide Panel -->
 <div class="search-overlay" id="searchOverlay">
     <div class="search-box">
-        <button class="close-search" onclick="closeSearch()">
-            <i class="fa-solid fa-xmark"></i>
+        <button class="close-search bg-success" onclick="closeSearch()">
+            <i class="fa-solid fa-xmark text-light"></i>
         </button>
-
         <input type="text" placeholder="Search here..." />
-        <button class="search-btn">Search</button>
+        <button class="search-btn bg-success">Search</button>
     </div>
 </div>
   </nav>
   <!-- Sidebar -->
-  <div id="sidebar">
+  <div id="sidebar" class="alert alert-success">
     <!-- Close button -->
     <i class="fa-solid fa-xmark" id="sidebarClose"></i>
     <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
@@ -280,7 +280,7 @@
       <li class="nav-item dropdown">
         <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
           data-bs-target="#sidebarProducts" aria-expanded="false">
-           products
+          products
         </a>
         <hr>
         <ul class="collapse bg-light" id="sidebarProducts">
@@ -387,60 +387,66 @@
     <div class="faq-content">Yes, our materials are fully recyclable and environment-friendly.</div>
   </div>
 </section>
+<footer class="footer">
+  <div class="container">
+    <div class="row" style="display:flex; gap:40px; flex-wrap:wrap;">
 
-  <footer class="footer container-fluid">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="foot-1">
-          <h1>petbot</h1>
-          <p>your trusted partner in premium PET packaging solutions.
-            We craft durable, lightweight, and food-grade PET bottles designed for every industry.
-            From innovation to quality, we ensure packaging that protects your product and enhances your
-            brand.
-            PetBot — where strength, style, and sustainability come together.</p>
+      
+      <div style="flex:1; min-width:220px;">
+        <h2 class="footer-logo">PETBOT</h2>
+        <p class="footer-text">
+          Your trusted partner in premium PET packaging solutions.
+          We craft durable, lightweight, and food-grade PET bottles
+          designed to protect your product and elevate your brand.
+        </p>
+      </div>
+
+      
+      <div style="flex:1; min-width:200px;">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div style="flex:1; min-width:200px;">
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="bottles.html">Bottles</a></li>
+          <li><a href="jars.html">Jars</a></li>
+          <li><a href="edibleoil.html">Edible Oil</a></li>
+          <li><a href="beverages.html">Beverages</a></li>
+          <li><a href="pharma.html">Pharma</a></li>
+        </ul>
+      </div>
+
+      
+      <div style="flex:1; min-width:220px;">
+        <h4>Follow Us</h4>
+        <p class="footer-text">
+          Stay connected with PETBOT for updates and innovations.
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="foot-links">
-          <h3>quick links</h3>
-          <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="about.html">about us</a></li>
-            <li><a href="gallery.html">gallery</a></li>
-            <li><a href="contact.html">contact us</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="foot-links">
-          <h3>product links</h3>
-          <ul>
-            <li><a href="bottles.html">bottles</a></li>
-            <li><a href="jars.html">jars</a></li>
-            <li><a href="edibleoil.html">edible oil</a></li>
-            <li><a href="beverages.html">beverages</a></li>
-            <li><a href="pharma.html">pharma</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="social-link">
-          <h3>follow us</h3>
-          <p>for get more information follow us on these platform to gain the first hand konwledge about
-            petbot.</p>
-          <span><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></span>
-          <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
-          <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i
-                class="fa-brands fa-linkedin"></i></a></span>
-          <span><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></span>
-        </div>
-      </div>
+
     </div>
-  </footer>
+  </div>
+
+  
   <div class="footer-bottom">
-    <img src="images_src/logo/logo1.png" width="100px" height="100px" style="text-align: center; " alt="">
+    <img src="images_src/logo/logo1.png" width="80" alt="PETBOT Logo">
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
+</footer>
   <link rel="stylesheet" href="js/nav.js">
   <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
   <script src="js/nav.js"></script>

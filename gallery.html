@@ -1,245 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetBot-Gallery</title>
-  <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+<meta charset="UTF-8">
+<title>Gallery</title>
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/footer.css">
-    <style>
-        .section1 h1 {
-            text-transform: capitalize;
-            color: navy;
-            text-shadow: 1px 2px 1px 2px lightblue;
-            font-size: 40px;
-            font-weight: bolder;
-            display: inline-block;
-            position: relative;
-            margin: 90px 0 20px 0;
-            font-weight: bold;
-        }
+<style>
+  .navlink{
+    color: black;
+  }
+.gal-heading {
+  text-align: center;
+  font-size: 44px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  color: #198754;
+}
 
-        .section1 h1::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 100%;
-            height: 4px;
-            background-color: navy;
-            border-radius: 2px;
-        }
+.sect-headings {
+  margin: 50px 30px 20px;
+  font-size: 26px;
+  color: #36aa74;
+  border-left: 6px solid  #36aa74;
+  padding-left: 12px;
+}
 
-        .section1 h1:hover {
-            color: navy;
-        }
+/* ================= GALLERY GRID ================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
 
-        .section1 p {
-            padding: 15px;
-            text-align: center;
-            margin-top: 40px;
-            width: 600px;
-            background-color: aliceblue;
-            box-shadow: 2px 3px 1px skyblue;
-            border-left: 10px solid rgb(61, 61, 146);
-            border-radius: 20px;
-            color: gray;
-            margin: auto;
-            text-transform: capitalize;
-            font-weight: 500;
-            /* border: solid; */
-        }
+/* ================= IMAGE CARD ================= */
+.gallery img {
+  width: 100%;
+  height: 260px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 16px;
+  object-fit: contain;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
 
-        @keyframes scrollText {
-            from {
-                transform: translateX(100%);
-            }
+/* ================= HOVER EFFECT ================= */
+.gallery img:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 14px 30px rgba(31,60,136,0.3);
+}
 
-            to {
-                transform: translateX(-100%);
-            }
-        }
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-        .btn-group {
-            display: flex;
-            justify-content: center;
-        }
+@media (max-width: 576px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 
-        .content-btn {
-            width: 120px;
-            margin: 0 25px 15px;
-            padding: 20px;
-            flex-wrap: wrap;
-            text-transform: capitalize;
-            font-weight: bold;
-            background: lightgreen;
-            border: none;
-            border-left: 5px solid rgb(101, 101, 182);
-            border-radius: 15px;
-            transition: all 0.4s ease;
-        }
+  h1 {
+    font-size: 28px;
+  }
 
-        .pro-btn {
-            width: 120px;
-            text-transform: capitalize;
-            margin: 0 25px 15px;
-            padding: 20px;
-            font-weight: bold;
-            background: lightgreen;
-            border: none;
-            flex-wrap: wrap;
-            border-left: 8px solid rgb(99, 99, 187);
-            border-radius: 15px;
-            transition: all 0.4s ease;
-        }
-
-        .pro-btn:hover,
-        .content-btn:hover {
-            transform: scale(1.1);
-            background: linear-gradient(90deg, #8bb3b0, #a4e1a1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-        }
-
-        .content-btn:active,
-        .pro-btn:active {
-            transform: scale(0.95);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery-1 {
-            margin: 20px;
-            border-radius: 20px;
-            height: 400px;
-        }
-        @media (max-width:500px) {
-
-            .content-btn,
-            .pro-btn {
-                width: auto;
-                font-weight: 500;
-                padding: 10px;
-                margin: 15px;
-            }
-
-            .section1 p {
-                padding: 5px 15px;
-                width: 300px;
-            }
-
-            .section1 h1 {
-                margin-bottom: 20px;
-            }
-        }
-        .custom-carousel {
-            width: 90%;
-            height: 400px;
-            margin: 30px auto;
-            border-radius: 20px;
-            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-        }
-
-        .custom-carousel .carousel-item img {
-            width: 100%;
-            height: 400px;
-            /* object-fit: cover; */
-        }
-
-        /* Hover icon overlay */
-        .gallery-1 img {
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .gallery-1 img:hover {
-            transform: scale(1.05);
-            opacity: 0.8;
-        }
-
-        /* camera icon overlay using pseudo element */
-        .gallery-1 img::after {
-            content: "\f030";
-            /* Font Awesome camera icon */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            color: white;
-            font-size: 30px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .gallery-1 img:hover::after {
-            opacity: 1;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 10px;
-        }
-
-        .close {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-        }
-        .gal-img {
-            margin: 20px;
-            position: relative;
-            width: 300px;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-
-        .gal-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.5s ease;
-        }
-
-        .gal-img-hover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-        }
-
-        .gal-img:hover .gal-img-hover {
-            opacity: 1;
-            background: #a4e1a1;
-        }
-    </style>
+  h2 {
+    font-size: 22px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg  bg-light">
     <div class="container-fluid">
       <i class="fa-solid fa-bars" id="toggleBtn"></i>
       <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
@@ -256,37 +94,36 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              products
+              products 
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
-              <li><a class="dropdown-item" href="jar.html">jars</a></li>
-              <li><a class="dropdown-item" href="glass.html">glass</a></li>
+            <ul class="dropdown-menu alert alert-success">
+              <li><a class="dropdown-item text-success" href="bottles.html">bottles</a></li>
+              <li><a class="dropdown-item text-success" href="jar.html">jars</a></li>
+              <li><a class="dropdown-item text-success" href="glass.html">glass</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
-        <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
+        <li><a href="signup.html" class="btn text-light btn-success fw-bold ms-3 mt-2">register</a></li>
           </li>
-        </ul>
+        </ul> 
       </div>
-      <i class="fa-solid fa-magnifying-glass search-glass" onclick="openSearch()"></i>
+      <i class="fa-solid fa-magnifying-glass search-glass fa-rotate-90 text-success" onclick="openSearch()"></i>
     </div>
     
 <!-- Search Slide Panel -->
 <div class="search-overlay" id="searchOverlay">
     <div class="search-box">
-        <button class="close-search" onclick="closeSearch()">
-            <i class="fa-solid fa-xmark"></i>
+        <button class="close-search bg-success" onclick="closeSearch()">
+            <i class="fa-solid fa-xmark text-light"></i>
         </button>
-
         <input type="text" placeholder="Search here..." />
-        <button class="search-btn">Search</button>
+        <button class="search-btn bg-success">Search</button>
     </div>
 </div>
   </nav>
   <!-- Sidebar -->
-  <div id="sidebar">
+  <div id="sidebar" class="alert alert-success">
     <!-- Close button -->
     <i class="fa-solid fa-xmark" id="sidebarClose"></i>
     <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
@@ -300,7 +137,7 @@
       <li class="nav-item dropdown">
         <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
           data-bs-target="#sidebarProducts" aria-expanded="false">
-           products
+          products
         </a>
         <hr>
         <ul class="collapse bg-light" id="sidebarProducts">
@@ -316,709 +153,108 @@
   </div>
   <!-- overlay -->
   <div id="overlay"></div>
-    <div class="section1 text-center m-5">
-        <h1><i class="fas fa-camera" style="color: rgb(104, 104, 202); margin: 0 5px;"></i>gallery</h1>
-        <p>explore our gallery and wittnessed the best product and demandable product of our store.</p>
-    </div>
-    <div class="btn-group">
-        <button data-target="product" class="pro-btn click-btn">product</button>
-        <button data-target="bottles" class="content-btn click-btn">bottles</button>
-        <button data-target="jars" class="content-btn click-btn">jars</button>
-    </div>
-    <div class="btn-group">
-        <button data-target="edibleoil" class="content-btn click-btn">edible oil</button>
-        <button data-target="beverages" class="content-btn click-btn">beverages</button>
-        <button data-target="pharmas" class="content-btn click-btn">pharmas</button>
-    </div>
-    <div id="product" class="container-fluid section">
-        <div id="myCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel" data-bs-interval="4000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
 
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="src/beverages/beverages1.jpg" class="d-block w-100" alt="Slide 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages2.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages3.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages4.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages5.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages6.webp" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages7.webp" class="d-block w-100" alt="Slide 3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="gallery-1 d-flex">
-                    <div class="gal1">
-                        <img src="https://mehranplastic.pk/wp-content/uploads/2019/01/slide2a.png" width="49%"
-                            height="200px" style="border-radius: 20px;" alt="">
-                        <img src="src/beverages/beverages6.webp" width="49%" height="200px" style="border-radius: 20px;"
-                            alt="">
-                        <div class="gal2">
-                            <img src="src/beverages/beverages6.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                            <img src="src/beverages/beverages11.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="gallery-1 d-flex">
-                    <div class="gal1">
-                        <img src="src/beverages/beverages8.webp" width="49%" height="200px" style="border-radius: 20px;"
-                            alt="">
-                        <img src="src/beverages/beverages8.webp" width="49%" height="200px" style="border-radius: 20px;"
-                            alt="">
-                        <div class="gal2">
-                            <img src="src/beverages/beverages8.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                            <img src="src/beverages/beverages8.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="gallery-1 d-flex">
-                    <div class="gal1">
-                        <img src="src/beverages/beverages10.webp" width="49%" height="200px"
-                            style="border-radius: 20px;" alt="">
-                        <img src="src/beverages/beverages10.webp" width="49%" height="200px"
-                            style="border-radius: 20px;" alt="">
-                        <div class="gal2">
-                            <img src="src/beverages/beverages10.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                            <img src="src/beverages/beverages10.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="gallery-1 d-flex">
-                    <div class="gal1">
-                        <img src="src/beverages/beverages9.webp" width="49%" height="200px" style="border-radius: 20px;"
-                            alt="">
-                        <img src="src/beverages/beverages9.webp" width="49%" height="200px" style="border-radius: 20px;"
-                            alt="">
-                        <div class="gal2">
-                            <img src="src/beverages/beverages9.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                            <img src="src/beverages/beverages9.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="gallery-1 d-flex">
-                    <div class="gal1">
-                        <img src="src/beverages/beverages12.webp" width="49%" height="200px"
-                            style="border-radius: 20px;" alt="">
-                        <img src="src/beverages/beverages12.webp" width="49%" height="200px"
-                            style="border-radius: 20px;" alt="">
-                        <div class="gal2">
-                            <img src="src/beverages/beverages12.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                            <img src="src/beverages/beverages12.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="gallery-1 d-flex">
-                    <div class="gal1">
-                        <img src="src/beverages/beverages7.webp" width="49%" height="200px" style="border-radius: 20px;"
-                            alt="">
-                        <img src="src/beverages/beverages7.webp" width="49%" height="200px" style="border-radius: 20px;"
-                            alt="">
-                        <div class="gal2">
-                            <img src="src/beverages/beverages7.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                            <img src="src/beverages/beverages7.webp" width="49%" height="200px"
-                                style="border-radius: 20px;" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="bottles" class="container section">
-        <div id="myCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+<h1 class="gal-heading">GALLERY</h1>
 
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="src/beverages/beverages1.jpg" class="d-block w-100" alt="Slide 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages2.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages3.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages4.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages5.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages6.webp" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages7.webp" class="d-block w-100" alt="Slide 3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+<h2 class="sect-headings">BOTTLES</h2>
+<div class="gallery">
+  <img src="https://i.pinimg.com/736x/f2/0d/d9/f20dd91f76d1f0f0f7ec51e1675518e3.jpg">
+  <img src="https://i.pinimg.com/736x/95/d3/ea/95d3ea2a512f3e7a5558142dc38d9a8e.jpg">
+  <img src="https://i.pinimg.com/1200x/31/a2/dd/31a2dd75bc5eac358c21a7b8d5251eee.jpg">
+  <img src="https://i.pinimg.com/736x/ac/b4/99/acb4997c1e92e5efc78e5076d71d78eb.jpg">
+</div>
 
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+<h2 class="sect-headings">JARS</h2>
+<div class="gallery">
+  <img src="https://i.pinimg.com/1200x/9d/53/a7/9d53a7516cf9160915cd5d1b71a0e782.jpg">
+  <img src="https://i.pinimg.com/736x/e8/b7/53/e8b753f500d74ab260e3c4e367ede275.jpg">
+  <img src="https://i.pinimg.com/736x/5e/40/df/5e40dfb0bf9d33582eb09629d6d03640.jpg">
+  <img src="https://i.pinimg.com/736x/de/bc/88/debc88b3c8a39472bc6f72bac9bcee15.jpg">
+</div>
 
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+<h2 class="sect-headings">EDIBLE OILS</h2>
+<div class="gallery">
+  <img src="https://i.pinimg.com/736x/0f/ce/95/0fce95391da4e51aeeb1428cff9445f2.jpg">
+  <img src="https://i.pinimg.com/1200x/59/92/51/599251a18ed5ee824b1dae4f3c3b5b34.jpg">
+  <img src="https://i.pinimg.com/1200x/e0/47/d4/e047d41b9b77247f956ce198cba9e9a4.jpg">
+  <img src="https://i.pinimg.com/1200x/96/e1/89/96e1895780df3a0e7a6a7a4b9b2fd334.jpg">
+</div>
 
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+<h2 class="sect-headings">BEVERAGES</h2>
+<div class="gallery">
+  <img src="https://i.pinimg.com/1200x/f7/58/35/f758356933c948291b0defe0e95b060e.jpg">
+  <img src="https://i.pinimg.com/736x/a7/c5/5c/a7c55c17ce8d18d906c4ba7fe5bf5caa.jpg">
+  <img src="https://i.pinimg.com/1200x/39/07/92/390792e8ff92e2d6355215167776e048.jpg">
+  <img src="https://i.pinimg.com/1200x/af/0e/06/af0e0650a09c7236aa170424cf7c5e4d.jpg">
+</div>
 
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="jars" class="container section">
-        <div id="myCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+<h2 class="sect-headings">PHARMA</h2>
+<div class="gallery">
+  <img src="https://i.pinimg.com/736x/79/39/1e/79391e29a77a305988505239fd7f7fab.jpg">
+  <img src="https://i.pinimg.com/1200x/da/d3/75/dad37578224577a2639cf3caa1689315.jpg">
+  <img src="https://i.pinimg.com/1200x/52/93/3b/52933b5b39742e767c8d971cbd102d46.jpg">
+  <img src="https://i.pinimg.com/736x/54/1d/ff/541dff4508c573dbfc3315fb55827929.jpg">
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="row" style="display:flex; gap:40px; flex-wrap:wrap;">
 
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="src/beverages/beverages1.jpg" class="d-block w-100" alt="Slide 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages2.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages3.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages4.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages5.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages6.webp" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages7.webp" class="d-block w-100" alt="Slide 3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+      
+      <div style="flex:1; min-width:220px;">
+        <h2 class="footer-logo">PETBOT</h2>
+        <p class="footer-text">
+          Your trusted partner in premium PET packaging solutions.
+          We craft durable, lightweight, and food-grade PET bottles
+          designed to protect your product and elevate your brand.
+        </p>
+      </div>
 
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+      
+      <div style="flex:1; min-width:200px;">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
 
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+      <!-- Products -->
+      <div style="flex:1; min-width:200px;">
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="bottles.html">Bottles</a></li>
+          <li><a href="jars.html">Jars</a></li>
+          <li><a href="edibleoil.html">Edible Oil</a></li>
+          <li><a href="beverages.html">Beverages</a></li>
+          <li><a href="pharma.html">Pharma</a></li>
+        </ul>
+      </div>
 
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="edibleoil" class="container section">
-        <div id="myCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="src/beverages/beverages1.jpg" class="d-block w-100" alt="Slide 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages2.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages3.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages4.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages5.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages6.webp" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages7.webp" class="d-block w-100" alt="Slide 3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="beverages" class="container section">
-        <div id="myCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="src/beverages/beverages1.jpg" class="d-block w-100" alt="Slide 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages2.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages3.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages4.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages5.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages6.webp" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages7.webp" class="d-block w-100" alt="Slide 3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="pharmas" class="container section">
-        <div id="myCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel" data-bs-interval="5000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="src/beverages/beverages1.jpg" class="d-block w-100" alt="Slide 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages2.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages3.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages4.jpg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages5.jpg" class="d-block w-100" alt="Slide 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages6.webp" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="src/beverages/beverages7.webp" class="d-block w-100" alt="Slide 3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-
-                <div class="gal-img">
-                    <img width="100%" height="250px" src="src/beverages/beverages1.jpg" alt="">
-                    <img width="100%" height="250px" src="src/beverages/beverages5.jpg" class="gal-img-hover" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" src="">
-    </div>
-  <footer class="footer container-fluid">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="foot-1">
-          <h1>petbot</h1>
-          <p>your trusted partner in premium PET packaging solutions.
-            We craft durable, lightweight, and food-grade PET bottles designed for every industry.
-            From innovation to quality, we ensure packaging that protects your product and enhances your
-            brand.
-            PetBot — where strength, style, and sustainability come together.</p>
+      
+      <div style="flex:1; min-width:220px;">
+        <h4>Follow Us</h4>
+        <p class="footer-text">
+          Stay connected with PETBOT for updates and innovations.
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="foot-links">
-          <h3>quick links</h3>
-          <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="about.html">about us</a></li>
-            <li><a href="gallery.html">gallery</a></li>
-            <li><a href="contact.html">contact us</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="foot-links">
-          <h3>product links</h3>
-          <ul>
-            <li><a href="bottles.html">bottles</a></li>
-            <li><a href="jars.html">jars</a></li>
-            <li><a href="edibleoil.html">edible oil</a></li>
-            <li><a href="beverages.html">beverages</a></li>
-            <li><a href="pharma.html">pharma</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="social-link">
-          <h3>follow us</h3>
-          <p>for get more information follow us on these platform to gain the first hand konwledge about
-            petbot.</p>
-          <span><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></span>
-          <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
-          <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i
-                class="fa-brands fa-linkedin"></i></a></span>
-          <span><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></span>
-        </div>
-      </div>
+
     </div>
-  </footer>
+  </div>
+
+  
   <div class="footer-bottom">
-    <img src="images_src/logo/logo1.png" width="100px" height="100px" style="text-align: center; " alt="">
+    <img src="images_src/logo/logo1.png" width="80" alt="PETBOT Logo">
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
-    <script src="jquery.js"></script>
-    <script src="js/nav.js"></script>
-    <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.close');
-
-        document.querySelectorAll('.gallery-1 img').forEach(img => {
-            img.addEventListener('click', function () {
-                lightbox.style.display = 'flex';
-                lightboxImg.src = this.src;
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-
-        // Close lightbox if background clicked
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-            }
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $(".section").fadeOut();
-            $("#product").fadeIn()
-            $(".click-btn").click(function () {
-                let target = $(this).data('target');
-                $(".section:visible").fadeOut(300, function () {
-                    $("#" + target).fadeIn(500)
-                })
-            })
-        });
-
-    </script>
-
+</footer>
+  <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
-
 </html>

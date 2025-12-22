@@ -14,7 +14,6 @@ p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-transform: capitalize;
 }
-
 h1,
 h2,
 h3,
@@ -26,7 +25,7 @@ h6 {
 
 /* navbar css */
 .navbar {
-    background-color: orange;
+    background-color: #f8f9fa;
     height: 100px;
     width: 100%;
     box-shadow: 0px 5px 10px 5px rgba(44, 44, 44, 0.5);
@@ -36,14 +35,14 @@ h6 {
 .nav-link {
     font-size: 22px;
     margin: 0 15px;
-    color: black;
+    color: black !important;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: capitalize;
     transition: all 0.1s linear;
 }
 .nav-link:hover{
-        color:#198754;
-   border-bottom: 2px solid green;
+        color:#198754 !important;
+   border-bottom: 2px solid #198754 !important;
     padding-bottom: 5px;
 }
 .navbar-brand {
@@ -53,15 +52,14 @@ h6 {
 .navbar-nav {
     margin-left: 170px;
 }
-#toggleBtn {
-    margin: 20px;
-    padding: 10px 15px;
-    cursor: pointer;
+ #toggleBtn {
     display: none;
-    color: white;
+} 
+.nav-item.dropdown:hover{
+        color:#198754;
+   border-bottom: 2px solid #198754;
+    padding-bottom: 5px;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
 }
 @media (max-width:1024px) {
     .nav-link{
@@ -90,7 +88,7 @@ h6 {
         margin: 0;
         font-size: 24px;
         cursor: pointer;
-        color: black;
+        color: #198754;
     }
 
     .navbar-brand {
@@ -138,7 +136,9 @@ h6 {
         display: none;
     }
 }
-
+.reg-btn{
+    color: black !important;
+}
 /* Sidebar */
 #sidebar {
     position: fixed;
@@ -146,7 +146,7 @@ h6 {
     left: -250px;
     width: 250px;
     height: 100%;
-    color: white;
+    background-color: #198754;
     transition: left 0.3s ease;
     padding-top: 40px;
     z-index: 1000;
@@ -280,3 +280,8 @@ h6 {
         width: 100%;
     }
 }
+.nav-item.dropdown .nav-link:hover {
+    border: none !important;
+    box-shadow: none !important;
+}
+

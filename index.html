@@ -9,10 +9,6 @@
   <link rel="stylesheet" href="css/footer.css">
   <title>PetBot-Home</title>
   <style>
-    /* .section1 {
-      margin: 0 !important;
-    } */
-
     .section1 h1 {
       text-transform: capitalize;
       color: rgb(9, 10, 14);
@@ -33,7 +29,7 @@
       height: 4px;
       /* underline ki motai */
       margin: 0 60px;
-      background-color: green;
+      background-color: #198754;
       /* acha gradient underline */
       border-radius: 2px;
     }
@@ -45,58 +41,107 @@
       font-weight: 400;
       line-height: 25px;
     }
-    .home-info {
-      padding: 15px;
-    }
+            .hero-img {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  top: 30px;
+}
 
-    .hero-text {
-      text-align: center;
-      padding: 40px;
-    }
+.hero-img img {
+  /* width: 100%; */
+  height: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+  position: absolute;
+  cursor: pointer;
+  transition: z-index 0.2s, transform 0.4s ease,box-shadow 0.4s ease;
+  transition: all 0.4s ease;
+}
 
-    .hero-text h1 {
-      font-size: 60px;
-      font-weight: 500;
-      margin: 10px;
-      overflow-wrap: break-word;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+/* first image */
+.hero-img-1 {
+  width: 80%;
+  /* top: 40px; */
+  left: 0;
+  z-index: 1;
+}
+/* second image (slightly upper & right) */
+.hero-img-2 {
+  width: 80%;
+  top: 40px;
+  left: 100px;
+  z-index: 2;
+}
+.hero-img img.active {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.hero-text{
+  position: relative;
+  top: 30px;
+}
+.hero-text h1{
+  font-size: 24px;
+  text-align: left;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+.hero-text p{
+  word-spacing: 2px;
+  margin-left: 30px;
+  line-height: 30px;
+}
+.hero-text .btn{
+  margin: 15px 0 15px 30px;
+}
+/* Tablets */
+@media (max-width: 768px) {
+  .hero-img {
+    max-width: 360px;
+    height: 280px;
+    margin: auto;
+    position: relative;
+    top: 30px;
+  }
+  .hero-text h1{
+    margin-left: 30px;
     }
+  .hero-img img {
+    width: 80%;
+  } 
 
-    .hero-text p {
-      text-align: center;
-      line-height: 2;
-      overflow-wrap: break-word;
-      word-spacing: 3px;
-      margin: 20px 10%;
-    }
+  .hero-img-2 {
+    top: 30px;
+    left: 50px;
+  }
+}
 
-    .hero-text .view-more {
-      background-color: orange;
-      margin: 10px;
-      padding: 10px;
-      font-size: 18px;
-      width: 150px;
-      text-transform: capitalize;
-      font-weight: bold;
-      border: none;
-      transition: 0.3 ease;
-    }
+/* Mobile */
+@media (max-width: 576px) {
+  .hero-img {
+    max-width: 100%;
+    height: 250px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  .hero-text{
+    padding: 0;
+  }
+  .hero-img img {
+    width: 90%;
+  }
 
-    .hero-text .view-more:hover {
-      opacity: 0.9;
-    }
-    .video {
-      /* display: flex;
-      justify-content: center; */
-      padding: 30px 0;
-      text-align: center;
-    }
-    .video iframe {
-      width: 85%;
-      margin: 10px 50px;
-      height: 400px;
-      border-radius: 25px;
-    }
+  .hero-img-1 {
+    top: 0;
+    left: 0;
+  }
+
+  .hero-img-2 {
+    top: 40px;
+    left: 30px;
+  }
+}
 
     #section {
       margin-bottom: 50px;
@@ -164,29 +209,6 @@
       .section1 p {
         margin: 20px;
       }
-
-      .hero-text {
-        padding: 0;
-      }
-
-      .hero-text h1 {
-        font-size: 26px;
-        margin: 10px 0;
-      }
-
-      .hide-para {
-        display: none;
-      }
-
-      .hero-text p {
-        padding: 0;
-        margin: 15px;
-      }
-
-      .hero-text #p2 {
-        display: none;
-      }
-
       .video iframe {
         height: 300px;
         width: 90%;
@@ -197,24 +219,6 @@
         height: 250px;
       }
     }
-
-    @media (width: 768px) {
-      .hero-text h1 {
-        font-size: 30px;
-      }
-
-      .hero-text p {
-        padding: 0;
-        margin: 0;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .hero-text h1 {
-        font-size: 45px;
-      }
-    }
-
     @media (max-width: 1200px) {
       .circle-box {
         width: 140px;
@@ -336,7 +340,7 @@
     }
 
     .home-card:hover .home-card-descrip {
-      color: green;
+      color: #198754;
       /* text color change */
     }
 
@@ -596,15 +600,15 @@ v#reviews-section {
             <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               products 
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
-              <li><a class="dropdown-item" href="jar.html">jars</a></li>
-              <li><a class="dropdown-item" href="glass.html">glass</a></li>
+            <ul class="dropdown-menu alert alert-success">
+              <li><a class="dropdown-item text-success" href="bottles.html">bottles</a></li>
+              <li><a class="dropdown-item text-success" href="jar.html">jars</a></li>
+              <li><a class="dropdown-item text-success" href="glass.html">glass</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
-        <li><a href="signup.html" class="btn text-light btn-success fw-bold mt-2">register</a></li>
+        <li><a href="signup.html" class="btn text-light reg-btn btn-success fw-bold ms-3 mt-2">register</a></li>
           </li>
         </ul> 
       </div>
@@ -614,10 +618,9 @@ v#reviews-section {
 <!-- Search Slide Panel -->
 <div class="search-overlay" id="searchOverlay">
     <div class="search-box">
-        <button class="close-search" onclick="closeSearch()">
-            <i class="fa-solid fa-xmark text-success"></i>
+        <button class="close-search bg-success" onclick="closeSearch()">
+            <i class="fa-solid fa-xmark text-light"></i>
         </button>
-
         <input type="text" placeholder="Search here..." />
         <button class="search-btn bg-success">Search</button>
     </div>
@@ -672,7 +675,7 @@ v#reviews-section {
     <!-- Slides -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="images_src/banner.jpg" width="100%" class="d-block">
+        <img src="https://ideogram.ai/assets/image/thumbnail/response/RvnrUEQ1TZiC_XeW_Jppig" width="100%" class="d-block">
         <div class="center-caption">
           <h2>pet bottles</h2>
         </div>
@@ -691,27 +694,28 @@ v#reviews-section {
       </div>
     </div>
   </div>  
-  <div class="home-info col-12">
-    <div class="hero-text">
-      <h1>pebot Leading Food-Grade PET Packaging Solutions</h1>
-      <p>PETBot specializes in premium, eco-friendly, food-grade PET packaging, offering end-to-end solutions from raw
+  <div class="container-fluid mt-5 mb-5">
+    <h1 class="text-center">why choose petbot?</h1>
+    <div class="row">
+    <div class="col-12 col-md-6 ">
+      <div class="hero-text">
+      <h1 class="text-success">pebot Leading PET Packaging Solutions</h1>
+      <p class="">PETBot specializes in premium, eco-friendly, food-grade PET packaging, offering end-to-end solutions from raw
         material sourcing to high-quality finished bottles and containers. With a strong commitment to sustainability,
         PETBot ensures low carbon emissions and high recyclability, making PET a superior alternative to paper, glass,
-        and metal packaging.
-        <span class="hide-para">Equipped with advanced, digitalized production lines, PETBot manufactures billions of
-          PET bottles, jars, and
-          containers annually for beverages, dairy, juices, and other food products. Our solutions are ideal for global
-          brands, households, and outdoor events, combining innovation, scale, and environmental responsibility.</span>
+        and metal packaging.Equipped with advanced, digitalized production lines, PETBot manufactures billions of
+          PET bottles, jars.
       </p>
-      <a href="about.html"><button class="btn bg-success text-white view-more">view more</button></a>
+      <a class="text-decoration-none" href="about.html"><button class="btn bg-success btn-lg text-capitalize  text-white view-more">view more</button></a>
+      </div>
     </div>
+ <div class="col-12 col-md-6">
+  <div class="hero-img position-relative">
+    <img src="images_src/hero3.jpg" class="hero-img-1" alt="">
+    <img src="images_src/hero4.jpg" class="hero-img-2" alt="">
   </div>
-  <div class="video alert alert-success">
-    <h3 class="my-4">watch our latest video</h3>
-    <p class="mb-4">watch out our latest video to know more about how we manufacture our bottles.</p>
-    <iframe width="853" height="480" src="https://www.youtube.com/embed/XRiDu1FkYX4" title="" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+    </div>
   </div>
   <section id="section" class="text-center">
     <div class="container-fluid">
@@ -739,7 +743,7 @@ v#reviews-section {
       </div>
     </div>
   </section>
-  <div class="" style="background-color: #f8f8f8; padding: 10px 0; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);">
+  <div class="alert alert-success">
   <div class="section1 text-center m-5">
     <h1>our product</h1>
     <p>PETBot is dedicated to creating high-quality, sustainable PET products that meet modern industry standards. From
@@ -823,113 +827,117 @@ v#reviews-section {
             </form>
         </div>
     </div>
-  <footer class="footer container-fluid bg-light">
-    <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="foot-1">
-          <h1 class="text-success">petbot</h1>
-          <p>your trusted partner in premium PET packaging solutions.
-            We craft durable, lightweight, and food-grade PET bottles designed for every industry.
-            From innovation to quality, we ensure packaging that protects your product and enhances your
-            brand.
-            PetBot — where strength, style, and sustainability come together.</p>
+<footer class="footer">
+  <div class="container">
+    <div class="row" style="display:flex; gap:40px; flex-wrap:wrap;">
+
+      
+      <div style="flex:1; min-width:220px;">
+        <h2 class="footer-logo">PETBOT</h2>
+        <p class="footer-text">
+          Your trusted partner in premium PET packaging solutions.
+          We craft durable, lightweight, and food-grade PET bottles
+          designed to protect your product and elevate your brand.
+        </p>
+      </div>
+
+      
+      <div style="flex:1; min-width:200px;">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div style="flex:1; min-width:200px;">
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="bottles.html">Bottles</a></li>
+          <li><a href="jars.html">Jars</a></li>
+          <li><a href="edibleoil.html">Edible Oil</a></li>
+          <li><a href="beverages.html">Beverages</a></li>
+          <li><a href="pharma.html">Pharma</a></li>
+        </ul>
+      </div>
+
+      
+      <div style="flex:1; min-width:220px;">
+        <h4>Follow Us</h4>
+        <p class="footer-text">
+          Stay connected with PETBOT for updates and innovations.
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="foot-links">
-          <h3 class="text-secondary">quick links</h3>
-          <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="about.html">about us</a></li>
-            <li><a href="gallery.html">gallery</a></li>
-            <li><a href="contact.html">contact us</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="foot-links">
-          <h3 class="text-secondary">product links</h3>
-          <ul>
-            <li><a href="bottles.html">bottles</a></li>
-            <li><a href="jars.html">jars</a></li>
-            <li><a href="edibleoil.html">edible oil</a></li>
-            <li><a href="beverages.html">beverages</a></li>
-            <li><a href="pharma.html">pharma</a></li>
-          </ul>
-        </div>
-        
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <div class="social-link">
-          <h3 class="text-success">follow us</h3>
-          <p>for get more information follow us on these platform to gain the first hand konwledge about
-            petbot.</p>
-          <span><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></span>
-          <span><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></span>
-          <span><a href="https://www.linkedin.com/in/abdul-samad-40691236a/"><i class="fa-brands fa-linkedin"></i></a></span>
-          <span><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></span>
-        </div>
-      </div>
+
     </div>
-    </div>
-    <hr>
-      <div class="footer-bottom ">
-    <img src="images_src/logo/logo1.png" width="100px" height="100px" style="text-align: center; " alt="">
+  </div>
+
+  
+  <div class="footer-bottom">
+    <img src="images_src/logo/logo1.png" width="80" alt="PETBOT Logo">
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
-  </footer>
+</footer>
           <!-- <a class="btn d-block mx-auto text-light bg-dark w-50" href="${i.href}">view more</a>  -->
   <script>
     let homeCards = [
       {
-        img_card: "bottles/bottle1.jpg",
+        img_card: "https://ideogram.ai/assets/image/lossless/response/huYwGNpiQ6q85ptdmzVJlQ",
         desc: "bottles",
         p_1: 250,
         p_2: 150,
         href:"bottles.html"
       },
       {
-        img_card: "bottles/bottle2.jpg",
+        img_card: "https://ideogram.ai/assets/progressive-image/balanced/response/FvW2e4txQwWAl7VA8-KVDA",
         desc: "Shaker Bottle 62mm",
         p_1: 300,
         p_2: 220,
         href:"bottles.html"
       },
       {
-        img_card: "bottles/bottle3.jpg",
+        img_card: "https://ideogram.ai/assets/progressive-image/balanced/response/vLox6vGvRou-WRYzYJ12Sw",
         desc: "1000ml Bottle",
         p_1: 350,
         p_2: 250,
         href:"bottles.html"
       },
       {
-        img_card: "bottles/bottle4.jpg",
+        img_card: "https://ideogram.ai/assets/progressive-image/balanced/response/o666vV_XSdy67JoWaNmFqQ",
         desc: "12onz Bottle",
         p_1: 399,
         p_2: 249,
         href:"bottles.html"
       },
       {
-        img_card: "jar/jar1.jpg",
+        img_card: "https://ideogram.ai/assets/progressive-image/balanced/response/tojGk-Y9SG26xIHs3BYrnw",
         desc: "5 LBS Jar",
         p_1: 850,
         p_2: 650,
       },
       {
-        img_card: "jar/jar2.jpg",
+        img_card: "https://ideogram.ai/assets/image/balanced/response/tojGk-Y9SG26xIHs3BYrnw",
         desc: "Round Jar Small",
         p_1: 500,
         p_2: 399,
       },
       {
-        img_card: "jar/jar3.jpg",
+        img_card: "https://ideogram.ai/assets/progressive-image/balanced/response/1AusmlH2STyX3IZWaIHmgQ",
         desc: "Round Jar Medium ",
         p_1: 649,
         p_2: 549,
       },
       {
-        img_card: "jar/jar5.jpg",
+        img_card: "https://ideogram.ai/assets/progressive-image/balanced/response/b1honaM6TVSVFt9FfpIg9A",
         desc: "Round Jar Long",
         p_1: 700,
         p_2: 550,
@@ -967,7 +975,7 @@ v#reviews-section {
         card_data += `
               <div class="col-lg-3 col-md-4 col-12 p-0">
         <div class="home-card">
-          <a href="jar.html"><img class="home-card-img" src="images_src/${i.img_card}" alt=""> </a>
+          <a href="jar.html"><img class="home-card-img" src="${i.img_card}" alt=""> </a>
           <p class="home-card-descrip">${i.desc}</p>
         </div>
       </div>
@@ -984,6 +992,7 @@ v#reviews-section {
       });
     });
 
+    // crousel script 
     var carousel = document.querySelector('#glassesCarousel');
     var dots = document.querySelectorAll('.control-dot');
 
@@ -991,9 +1000,29 @@ v#reviews-section {
       dots.forEach(dot => dot.classList.remove('active'));
       dots[event.to].classList.add('active');
     });
+    // end
+    // overlap images
+  const img1 = document.querySelector(".hero-img-1");
+  const img2 = document.querySelector(".hero-img-2");
+
+  img1.addEventListener("click", () => {
+    img1.style.zIndex = 2;
+    img2.style.zIndex = 1;
+
+    img1.classList.add("active");
+    img2.classList.remove("active");
+  });
+
+  img2.addEventListener("click", () => {
+    img2.style.zIndex = 2;
+    img1.style.zIndex = 1;
+
+    img2.classList.add("active");
+    img1.classList.remove("active");
+  });
+  // end
   </script>
   <script src="js/nav.js"></script>
   <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
-
 </html>
