@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetBot-bottles</title>
+    <title>PetBot-cups</title>
     <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="css/footer.css">
@@ -43,12 +44,12 @@
                 transform: translateY(0) scale(1);
             }
         }
-
         .email-sub {
+            background-color: #198754;
             width: 80%;
             text-align: center;
             height: 250px;
-            background-color: #198754;
+            /* background-color: black; */
             display: block;
             padding: 20px;
             align-items: center;
@@ -115,10 +116,8 @@
             }
         }
     </style>
-
 </head>
 <body>
-
   <nav class="navbar navbar-expand-lg  bg-light">
     <div class="container-fluid">
       <i class="fa-solid fa-bars" id="toggleBtn"></i>
@@ -196,7 +195,7 @@
   <!-- overlay -->
   <div id="overlay"></div>
     <div class="hero-img col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <img width="100%" src="https://ideogram.ai/assets/image/balanced/response/ui4RHrt0T7-TgoR-wmbmJw" alt="">
+        <img width="100%" src="https://image.cdn.ishopastro.com/eyJidWNrZXQiOiJwcm9kLW1lZGlhLW15c2hvcGFzdHJvLWNvbSIsImtleSI6Ijc5OTg3NjY0OTAyNDMxOS9tZWRpYS9pbWFnZS8xMjJiZGI4ZjEyMjcyOTYyMDA5ODA5NDkucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxNTAwfSwicm90YXRlIjpudWxsfX0=?w=1500" alt="">
     </div>
     <div class="container contain_card">
         <div id="bottles_display" class="row">
@@ -205,107 +204,79 @@
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle1.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">Bottles (4 piece-pack)</p>
+                    <img class="home-card-img" src="images_src/cups/cup1.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_1.webp" alt="">
+                    <p class="home-card-descrip">stepped design no stacking cups..</p>
                     <div class="card-prices">
-                        <p class="duplicate-price">pkr 3000</p>
-                        <p class="price">pkr 2499</p>
+                        <p class="duplicate-price">pkr 300</p>
+                        <p class="price">pkr 250</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product2')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle2.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">Shaker Bottle 62mm (per-piece)</p>
+                    <img class="home-card-img" src="images_src/cups/cup2.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_2.webp" alt="">
+                    <p class="home-card-descrip">Dessert cup is preferred..</p>
                     <div class="card-prices">
-                        <p class="duplicate-price">pkr 99</p>
-                        <p class="price">pkr 49</p>
+                        <p class="duplicate-price">pkr 400</p>
+                        <p class="price">pkr 349</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product3')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle3.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">1000ml Bottle (per-piece)</p>
+                    <img class="home-card-img" src="images_src/cups/cup3.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_3.webp" alt="">
+                    <p class="home-card-descrip">Dessert cup is preferred..</p>
                     <div class="card-prices">
-                        <p class="duplicate-price">pkr 299</p>
-                        <p class="price">pkr 199</p>
+                        <p class="duplicate-price">pkr 650</p>
+                        <p class="price">pkr 500</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product4')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle4.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">12onz Bottle (per-piece)</p>
+                    <img class="home-card-img" src="images_src/cups/cup4.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_4.webp" alt="">
+                    <p class="home-card-descrip">M-Stand Coffee Custom Cup</p>
                     <div class="card-prices">
-                        <p class="duplicate-price">pkr 220</p>
-                        <p class="price">pkr 160</p>
+                        <p class="duplicate-price">pkr 650</p>
+                        <p class="price">pkr 480</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product5')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle5.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">Semi Round Bottle 62mm (per-piece)</p>
+                    <img class="home-card-img" src="images_src/cups/cup5.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_5.webp" alt="">
+                    <p class="home-card-descrip">The hottest ice cup..</p>
                     <div class="card-prices">
-                        <p class="duplicate-price">pkr 180</p>
-                        <p class="price">pkr 120</p>
+                        <p class="duplicate-price">pkr 399</p>
+                        <p class="price">pkr 299</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product6')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle6.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">100ml Flip Top (6 piece-pack)</p>
-                    <div class="card-prices">
-                        <p class="duplicate-price">pkr 200</p>
-                        <p class="price">pkr 149</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
-                    <div class="download-icon">
-                        <i class="fa-solid fa-download"></i>
-                    </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle7.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">350ml Shaker Bottle 62mm (per-piece)</p>
-                    <div class="card-prices">
-                        <p class="duplicate-price">pkr 150</p>
-                        <p class="price">pkr 100</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
-                    <div class="download-icon">
-                        <i class="fa-solid fa-download"></i>
-                    </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle8.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">22ml Dropper (12 piece-pack)</p>
+                    <img class="home-card-img" src="images_src/cups/cup6.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_6.webp" alt="">
+                    <p class="home-card-descrip">Tims coffee is the same style...</p>
                     <div class="card-prices">
                         <p class="duplicate-price">pkr 250</p>
                         <p class="price">pkr 180</p>
@@ -313,16 +284,44 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product7')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle9.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">10ml Dropper (12 piece-pack)</p>
+                    <img class="home-card-img" src="images_src/cups/cup7.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_7.webp" alt="">
+                    <p class="home-card-descrip">Designed according to Starbucks...</p>
                     <div class="card-prices">
-                        <p class="duplicate-price">pkr 3000</p>
-                        <p class="price">pkr 2499</p>
+                        <p class="duplicate-price">pkr 480</p>
+                        <p class="price">pkr 360</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product8')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup8.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_8.webp" alt="">
+                    <p class="home-card-descrip">the stepped design model is favored</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 480</p>
+                        <p class="price">pkr 580</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product9')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup9.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_9.webp" alt="">
+                    <p class="home-card-descrip">Straight-fitting models</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 399</p>
+                        <p class="price">pkr 199</p>
                     </div>
                 </div>
             </div>
@@ -347,9 +346,9 @@
                         <span class="star" data-value="4">&#9733;</span>
                         <span class="star" data-value="5">&#9733;</span>
                     </div>
-                    <button class="add-to-cart  text-capitalize" onclick="ShowAlerts()">add to
+                    <button class="add-to-cart bg-success btn mx-2 text-capitalize" onclick="ShowAlerts()">add to
                         cart</button>
-                    <button class="buy-now  text-capitalize">buy now</button>
+                    <a href="chackoutform.html"><button class="buy-now bg-primary btn mx-2 text-capitalize">buy now</button></a>
                 </div>
             </div>
         </div>
@@ -430,22 +429,58 @@
     <script>
         detailproducts = {
             product1: {
-                img: "images_src/bottles/bottle1.jpg",
-                title: "petbot ai",
-                desc: "baFKBVASFHbdkasfbIGIFGIGvfsVFIeiqgfiBFUAufvvaCHVUGFgfhsAFGHGGFIGFGIwgfirgwegfgweifgwgfgwGFFUIagfgashvfuasdgzfugsuafgusgfugbagfkagfkgaHJHKkdbjaKFBKAdbfjkvKBJFKKKKJIKfbiebFBIEQWFIKBfbWFBbafiqwi",
-                price: "pkr 1000"
+                img: "images_src/cups/cup1.webp",
+                title: "92mm 11oz PET Cup",
+                desc: "Stepped design no stacking cups (six piece of packaging)",
+                price: "pkr 250"
             },
             product2: {
-                img: "src/logo1.png",
-                title: "petbot ai2",
-                desc: "bagfkagfkgaHJHK",
-                price: "pkr 2000"
+                img: "images_src/cups/cup2.webp",
+                title: "90mm U-shape 500ml PET Cup",
+                desc: "Dessert cup is preferred, special shape, U-shaped design (12 piece packaging)",
+                price: "pkr 349"
             },
             product3: {
-                img: "src/logo1.png",
-                title: "petbot 3",
-                desc: "bagfkagfkgaHJHK",
-                price: "2000"
+                img: "images_src/cups/cup3.webp",
+                title: "90mm U-shape 300ml PET Cup",
+                desc: "Dessert cup is preferred, special shape, U-shaped design (9 piece of pacakging)",
+                price: "500"
+            },
+            product4: {
+                img: "images_src/cups/cup4.webp",
+                title: "95mm 200ml PET Cup",
+                desc: "M-Stand Coffee Custom Cup Shape (24 piece of pacakging)",
+                price: "pkr 480"
+            },
+            product5: {
+                img: "images_src/cups/cup5.webp",
+                title: "98mm 500ml PET Cup",
+                desc: "The hottest ice cup in the Japanese market (12 piece of pacakging)",
+                price: "pkr 299"
+            },
+            product6: {
+                img: "images_src/cups/cup6.webp",
+                title: "98mm 16oz PET Cup",
+                desc: "Tims coffee is the same style, and it is the most cost-effective coffee cup(6 piece of pacakging)",
+                price: "180"
+            },
+            product7: {
+                img: "images_src/cups/cup7.webp",
+                title: "95mm 12oz PET Cup",
+                desc: "Designed according to Starbucks standards (12 piece of pacakging)",
+                price: "pkr 360"
+            },
+            product8: {
+                img: "images_src/cups/cup8.webp",
+                title: "78mm 8oz PET Cup",
+                desc: "The two shapes can be chosen arbitrarily, the stepped design model is favored in the Middle East, and the straight shape model is the most popular in the United States(12 piece of pacakging)",
+                price: "pkr 480"
+            },
+            product9: {
+                img: "images_src/cups/cup9.webp",
+                title: "78mm 7oz PET Cup",
+                desc: "Straight-fitting models are the hottest in the United States (12 piece of pacakging)",
+                price: "pkr 199"
             }
         }
         function ShowProducts(productId) {
@@ -490,5 +525,4 @@
         });
     </script>
 </body>
-
 </html>

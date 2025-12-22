@@ -46,4 +46,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+  // sabhi nav links select karo
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // pehle sabhi se active class hata do
+      navLinks.forEach(l => l.classList.remove('active'));
+      
+      // click ki hui link ko active class do
+      this.classList.add('active');
+    });
+  });
+
 // navbar js end

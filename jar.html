@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetBot-bottles</title>
+    <title>PetBot-cups</title>
     <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="css/footer.css">
@@ -44,6 +44,7 @@
                 transform: translateY(0) scale(1);
             }
         }
+
         .email-sub {
             background-color: #198754;
             width: 80%;
@@ -117,85 +118,87 @@
         }
     </style>
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-lg  bg-light">
-    <div class="container-fluid">
-      <i class="fa-solid fa-bars" id="toggleBtn"></i>
-      <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav  mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" style="position: relative; top: 8px;" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">service</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gallery.html">gallery</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              products 
-            </a>
-            <ul class="dropdown-menu alert alert-success">
-              <li><a class="dropdown-item text-success" href="bottles.html">bottles</a></li>
-              <li><a class="dropdown-item text-success" href="jar.html">jars</a></li>
-              <li><a class="dropdown-item text-success" href="glass.html">glass</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
-        <li><a href="signup.html" class="btn text-light btn-success fw-bold ms-3 mt-2">register</a></li>
-          </li>
-        </ul> 
-      </div>
-      <i class="fa-solid fa-magnifying-glass search-glass fa-rotate-90 text-success" onclick="openSearch()"></i>
-    </div>
-    
-<!-- Search Slide Panel -->
-<div class="search-overlay" id="searchOverlay">
-    <div class="search-box">
-        <button class="close-search bg-success" onclick="closeSearch()">
-            <i class="fa-solid fa-xmark text-light"></i>
-        </button>
-        <input type="text" placeholder="Search here..." />
-        <button class="search-btn bg-success">Search</button>
-    </div>
-</div>
-  </nav>
-  <!-- Sidebar -->
-  <div id="sidebar" class="alert alert-success">
-    <!-- Close button -->
-    <i class="fa-solid fa-xmark" id="sidebarClose"></i>
-    <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
-    <ul>
-      <li><a class="side-link" href="index.html">Home</a></li>
-      <hr>
-      <li><a class="side-link" href="about.html">Service</a></li>
-      <hr>
-      <li><a class="side-link" href="gallery.html">Gallery</a></li>
-      <hr>
-      <li class="nav-item dropdown">
-        <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
-          data-bs-target="#sidebarProducts" aria-expanded="false">
-          products
-        </a>
-        <hr>
-        <ul class="collapse bg-light" id="sidebarProducts">
-          <li><a class="side-link" href="bottles.html">Bottles</a></li>
-          <li><a class="side-link" href="jars.html">Jars</a></li>
-          <li><a class="side-link" href="beverages.html">glass</a></li>
+    <nav class="navbar navbar-expand-lg  bg-light">
+        <div class="container-fluid">
+            <i class="fa-solid fa-bars" id="toggleBtn"></i>
+            <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="position: relative; top: 8px;" aria-current="page"
+                            href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            products
+                        </a>
+                        <ul class="dropdown-menu alert alert-success">
+                            <li><a class="dropdown-item text-success" href="bottles.html">bottles</a></li>
+                            <li><a class="dropdown-item text-success" href="jar.html">jars</a></li>
+                            <li><a class="dropdown-item text-success" href="glass.html">glass</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
+                    <li><a href="signup.html" class="btn text-light btn-success fw-bold ms-3 mt-2">register</a></li>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-magnifying-glass search-glass fa-rotate-90 text-success" onclick="openSearch()"></i>
+        </div>
+
+        <!-- Search Slide Panel -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-box">
+                <button class="close-search bg-success" onclick="closeSearch()">
+                    <i class="fa-solid fa-xmark text-light"></i>
+                </button>
+                <input type="text" placeholder="Search here..." />
+                <button class="search-btn bg-success">Search</button>
+            </div>
+        </div>
+    </nav>
+    <!-- Sidebar -->
+    <div id="sidebar" class="alert alert-success">
+        <!-- Close button -->
+        <i class="fa-solid fa-xmark" id="sidebarClose"></i>
+        <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
+        <ul>
+            <li><a class="side-link" href="index.html">Home</a></li>
+            <hr>
+            <li><a class="side-link" href="about.html">Service</a></li>
+            <hr>
+            <li><a class="side-link" href="gallery.html">Gallery</a></li>
+            <hr>
+            <li class="nav-item dropdown">
+                <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
+                    data-bs-target="#sidebarProducts" aria-expanded="false">
+                    products
+                </a>
+                <hr>
+                <ul class="collapse bg-light" id="sidebarProducts">
+                    <li><a class="side-link" href="bottles.html">Bottles</a></li>
+                    <li><a class="side-link" href="jars.html">Jars</a></li>
+                    <li><a class="side-link" href="beverages.html">glass</a></li>
+                </ul>
+            </li>
+            <li><a class="side-link" href="contact.html">Contact</a></li>
+            <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
+            <hr>
         </ul>
-      </li>
-      <li><a class="side-link" href="contact.html">Contact</a></li>
-         <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
-      <hr>
-    </ul>
-  </div>
-  <!-- overlay -->
-  <div id="overlay"></div>
+    </div>
+    <!-- overlay -->
+    <div id="overlay"></div>
     <div class="hero-img col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <img width="100%" src="https://ideogram.ai/assets/image/balanced/response/ui4RHrt0T7-TgoR-wmbmJw" alt="">
+        <img width="100%" src="https://i.pinimg.com/736x/1d/1a/89/1d1a89133ea56e869d590f7c27d6b2a7.jpg" alt="">
     </div>
     <div class="container contain_card">
         <div id="bottles_display" class="row">
@@ -204,23 +207,37 @@
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle1.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">Bottles (4 piece-pack)</p>
+                    <img class="home-card-img" src="images_src/jars/jar1.jpg" alt="">
+                    <img class="home-hover-img" src="images_src/jars/jar_1.jpg" alt="">
+                    <p class="home-card-descrip">jumbo plastic of pure platic.....</p>
                     <div class="card-prices">
-                        <p class="duplicate-price">pkr 3000</p>
-                        <p class="price">pkr 2499</p>
+                        <p class="duplicate-price">pkr 450</p>
+                        <p class="price">pkr 350</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product2')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle2.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">Shaker Bottle 62mm (per-piece)</p>
+                    <img class="home-card-img" src="images_src/jars/jar2.jpg" alt="">
+                    <img class="home-hover-img" src="images_src/jars/jar_2.jpg" alt="">
+                    <p class="home-card-descrip">jar container for bakery items....</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 499</p>
+                        <p class="price">pkr 300</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product3')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/jars/jar3.jpg" alt="">
+                    <img class="home-hover-img" src="images_src/jars/jar_3.jpg" alt="">
+                    <p class="home-card-descrip">cosetic jars...</p>
                     <div class="card-prices">
                         <p class="duplicate-price">pkr 99</p>
                         <p class="price">pkr 49</p>
@@ -228,27 +245,13 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product4')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle3.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">1000ml Bottle (per-piece)</p>
-                    <div class="card-prices">
-                        <p class="duplicate-price">pkr 299</p>
-                        <p class="price">pkr 199</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
-                    <div class="download-icon">
-                        <i class="fa-solid fa-download"></i>
-                    </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle4.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">12onz Bottle (per-piece)</p>
+                    <img class="home-card-img" src="images_src/jars/jar4.jpg" alt="">
+                    <img class="home-hover-img" src="images_src/jars/jar_4.jpg" alt="">
+                    <p class="home-card-descrip">clear jar with green screw top lid.....</p>
                     <div class="card-prices">
                         <p class="duplicate-price">pkr 220</p>
                         <p class="price">pkr 160</p>
@@ -256,13 +259,13 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product5')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle5.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">Semi Round Bottle 62mm (per-piece)</p>
+                    <img class="home-card-img" src="images_src/jars/jar5.jpg" alt="">
+                    <img class="home-hover-img" src="images_src/jars/jar_5.jpg" alt="">
+                    <p class="home-card-descrip">large capacity glass jar with 62mm opening.....</p>
                     <div class="card-prices">
                         <p class="duplicate-price">pkr 180</p>
                         <p class="price">pkr 120</p>
@@ -270,13 +273,13 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product6')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle6.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">100ml Flip Top (6 piece-pack)</p>
+                    <img class="home-card-img" src="images_src/jars/jar6.jpg" alt="">
+                    <img class="home-hover-img" src="images_src/jars/jar_6.jpg" alt="">
+                    <p class="home-card-descrip">Set of glass storage canisters with sleek black flip-top lids</p>
                     <div class="card-prices">
                         <p class="duplicate-price">pkr 200</p>
                         <p class="price">pkr 149</p>
@@ -284,13 +287,13 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product7')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle7.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">350ml Shaker Bottle 62mm (per-piece)</p>
+                    <img class="home-card-img" src="images_src/jars/jar7.jpg" alt="">
+                    <img class="home-hover-img" src="images_src/jars/jar_7.jpg" alt="">
+                    <p class="home-card-descrip">Large round glass jar with black plastic lid and handle on top...</p>
                     <div class="card-prices">
                         <p class="duplicate-price">pkr 150</p>
                         <p class="price">pkr 100</p>
@@ -298,13 +301,13 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product8')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle8.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">22ml Dropper (12 piece-pack)</p>
+                    <img class="home-card-img" src="images_src/jars/jar8.jpg" alt="">
+                    <img class="home-hover-img" src="images_src/jars/jar_8.jpg" alt="">
+                    <p class="home-card-descrip">Set of cylindrical glass jars with wooden lids...</p>
                     <div class="card-prices">
                         <p class="duplicate-price">pkr 250</p>
                         <p class="price">pkr 180</p>
@@ -312,13 +315,13 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="home-card" onclick="ShowProducts('product1')">
+                <div class="home-card" onclick="ShowProducts('product9')">
                     <div class="download-icon">
                         <i class="fa-solid fa-download"></i>
                     </div>
-                    <img class="home-card-img" src="images_src/bottles/bottle9.jpg" alt="">
-                    <!-- <img class="home-hover-img" src="src/logo2.png" alt=""> -->
-                    <p class="home-card-descrip">10ml Dropper (12 piece-pack)</p>
+                    <img class="home-card-img" src="images_src/jars/jar9.jpg" alt="">
+                    <img class="home-hover-img" src="images_src/jars/jar_9.jpg" alt="">
+                    <p class="home-card-descrip">Square-shaped glass storage jars with black lids and handles</p>
                     <div class="card-prices">
                         <p class="duplicate-price">pkr 3000</p>
                         <p class="price">pkr 2499</p>
@@ -348,7 +351,8 @@
                     </div>
                     <button class="add-to-cart bg-success btn mx-2 text-capitalize" onclick="ShowAlerts()">add to
                         cart</button>
-                    <a href="chackoutform.html"><button class="buy-now bg-primary btn mx-2 text-capitalize">buy now</button></a>
+                    <a href="chackoutform.html"><button class="buy-now bg-primary btn mx-2 text-capitalize">buy
+                            now</button></a>
                 </div>
             </div>
         </div>
@@ -359,66 +363,66 @@
         <input type="email" class="inp" placeholder="example@gmail.com">
         <button class="submit-email">subscribe</button>
     </div>
-<footer class="footer">
-  <div class="container">
-    <div class="row" style="display:flex; gap:40px; flex-wrap:wrap;">
+    <footer class="footer">
+        <div class="container">
+            <div class="row" style="display:flex; gap:40px; flex-wrap:wrap;">
 
-      
-      <div style="flex:1; min-width:220px;">
-        <h2 class="footer-logo">PETBOT</h2>
-        <p class="footer-text">
-          Your trusted partner in premium PET packaging solutions.
-          We craft durable, lightweight, and food-grade PET bottles
-          designed to protect your product and elevate your brand.
-        </p>
-      </div>
 
-      
-      <div style="flex:1; min-width:200px;">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
+                <div style="flex:1; min-width:220px;">
+                    <h2 class="footer-logo">PETBOT</h2>
+                    <p class="footer-text">
+                        Your trusted partner in premium PET packaging solutions.
+                        We craft durable, lightweight, and food-grade PET bottles
+                        designed to protect your product and elevate your brand.
+                    </p>
+                </div>
 
-      <!-- Products -->
-      <div style="flex:1; min-width:200px;">
-        <h4>Products</h4>
-        <ul class="footer-links">
-          <li><a href="bottles.html">Bottles</a></li>
-          <li><a href="jars.html">Jars</a></li>
-          <li><a href="edibleoil.html">Edible Oil</a></li>
-          <li><a href="beverages.html">Beverages</a></li>
-          <li><a href="pharma.html">Pharma</a></li>
-        </ul>
-      </div>
 
-      
-      <div style="flex:1; min-width:220px;">
-        <h4>Follow Us</h4>
-        <p class="footer-text">
-          Stay connected with PETBOT for updates and innovations.
-        </p>
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <div style="flex:1; min-width:200px;">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div style="flex:1; min-width:200px;">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="bottles.html">Bottles</a></li>
+                        <li><a href="jars.html">Jars</a></li>
+                        <li><a href="edibleoil.html">Edible Oil</a></li>
+                        <li><a href="beverages.html">Beverages</a></li>
+                        <li><a href="pharma.html">Pharma</a></li>
+                    </ul>
+                </div>
+
+
+                <div style="flex:1; min-width:220px;">
+                    <h4>Follow Us</h4>
+                    <p class="footer-text">
+                        Stay connected with PETBOT for updates and innovations.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
 
-    </div>
-  </div>
 
-  
-  <div class="footer-bottom">
-    <img src="images_src/logo/logo1.png" width="80" alt="PETBOT Logo">
-    <p>© 2025 PetBot Industries. All Rights Reserved.</p>
-  </div>
-</footer>
+        <div class="footer-bottom">
+            <img src="images_src/logo/logo1.png" width="80" alt="PETBOT Logo">
+            <p>© 2025 PetBot Industries. All Rights Reserved.</p>
+        </div>
+    </footer>
     <script src="jquery.js"></script>
     <script src="js/nav.js"></script>
     <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
@@ -429,22 +433,58 @@
     <script>
         detailproducts = {
             product1: {
-                img: "images_src/bottles/bottle1.jpg",
-                title: "petbot ai",
-                desc: "baFKBVASFHbdkasfbIGIFGIGvfsVFIeiqgfiBFUAufvvaCHVUGFgfhsAFGHGGFIGFGIwgfirgwegfgweifgwgfgwGFFUIagfgashvfuasdgzfugsuafgusgfugbagfkagfkgaHJHKkdbjaKFBKAdbfjkvKBJFKKKKJIKfbiebFBIEQWFIKBfbWFBbafiqwi",
-                price: "pkr 1000"
+                img: "images_src/jars/jar1.jpg",
+                title: "jumbo jar",
+                desc: "a jumbo jar made up of pure plastic with the packaging of mockup plastic jar.",
+                price: "pkr 350"
             },
             product2: {
-                img: "src/logo1.png",
-                title: "petbot ai2",
-                desc: "bagfkagfkgaHJHK",
-                price: "pkr 2000"
+                img: "images_src/jars/jar2.jpg",
+                title: "food jars",
+                desc: "these jars are use as a container for containing bakery items,chips, etc. (3 piece packaging)",
+                price: "pkr 300"
             },
             product3: {
-                img: "src/logo1.png",
-                title: "petbot 3",
-                desc: "bagfkagfkgaHJHK",
-                price: "2000"
+                img: "images_src/jars/jar_3.jpg",
+                title: "cosmetic jar",
+                desc: "it is used for containing jel and cosmetic items.",
+                price: "49"
+            },
+            product4: {
+                img: "images_src/jars/jar4.jpg",
+                title: "12oz Glass Storage Jar",
+                desc: "Clear glass jar with green screw-top lid. Perfect for storing almonds, cashews, and other dry snacks. Compact design ideal for small kitchen spaces.",
+                price: "pkr 160"
+            },
+            product5: {
+                img: "images_src/jars/jar5.jpg",
+                title: "Wide Mouth Glass Storage Jar",
+                desc: " Large capacity glass jar with wide 62mm opening. Great for storing chickpeas, lentils, mung beans, dried cranberries, and mixed cereals. See-through design helps identify contents easily.",
+                price: "pkr 180"
+            },
+            product6: {
+                img: "images_src/jars/jar6.jpg",
+                title: "Glass Canister Set with Black Lids",
+                desc: "Set of glass storage canisters with sleek black flip-top lids. Ideal for cookies, pasta, rice, and various dry goods. Modern design adds elegance to your kitchen counter.",
+                price: "120"
+            },
+            product7: {
+                img: "images_src/jars/jar7.jpg",
+                title: "Glass Cookie Jar with Handle",
+                desc: "Large round glass jar with black plastic lid and handle on top. Wide opening for easy access. Perfect for storing cookies, biscuits, or dry snacks.",
+                price: "pkr 100"
+            },
+            product8: {
+                img: "images_src/jars/jar8.jpg",
+                title: "Glass Storage Jar Set (12 Pieces)",
+                desc: "Set of cylindrical glass jars with wooden lids. Medium to large capacity jars ideal for storing nuts, grains, pulses, and dry goods. Stackable design for organized pantry storage.",
+                price: "pkr 200"
+            },
+            product9: {
+                img: "images_src/jars/jar9.jpg",
+                title: "Square Glass Jars with Handle (12 Pieces)",
+                desc: "Square-shaped glass storage jars with black lids and handles. Space-saving design perfect for storing rice, flour, beans, pasta, and other kitchen essentials.",
+                price: "2499"
             }
         }
         function ShowProducts(productId) {

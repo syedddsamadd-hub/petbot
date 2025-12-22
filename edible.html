@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetBot-cups</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <style>
+        .hero-img {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .hero-img img {
+            opacity: 0;
+            height: 550px;
+            transform: translateY(50px) scale(1.1);
+            animation: heroAnimation 2s ease-out forwards;
+            /* border-radius: 12px; */
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* hover effect */
+        .hero-img img:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+            filter: brightness(1.1);
+        }
+
+        @keyframes heroAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(80px) scale(1.2);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .email-sub {
+            background-color: #198754;
+            width: 80%;
+            text-align: center;
+            height: 250px;
+            /* background-color: black; */
+            display: block;
+            padding: 20px;
+            align-items: center;
+            color: #fff;
+            margin: 50px auto;
+            border: solid;
+        }
+
+        .email-sub h3 {
+            font-size: 40px;
+            margin: 10px;
+            color: #fff;
+        }
+
+        .inp {
+            width: 50%;
+            padding: 9px;
+            border: none;
+        }
+
+        .inp::placeholder {
+            font-size: 18px;
+        }
+
+        .submit-email {
+            width: 20%;
+            padding: 9px;
+            border: none;
+            color: #fff;
+            background-color: black;
+        }
+
+        /* @media (max-width:992px) {
+            .category-banner img {
+                height: 300px;
+            }
+        } */
+        @media (max-width:800px) {
+            .hero-img img {
+                height: 400px;
+            }
+        }
+
+        @media (max-width:500px) {
+            .hero-img img {
+                height: 250px;
+            }
+
+            .inp::placeholder {
+                font-size: 15px;
+            }
+
+            .email-sub {
+                padding: 10px;
+                width: 95%;
+            }
+
+            .submit-email {
+                padding: 5px;
+            }
+
+            .inp {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg  bg-light">
+    <div class="container-fluid">
+      <i class="fa-solid fa-bars" id="toggleBtn"></i>
+      <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" style="position: relative; top: 8px;" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">gallery</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              products 
+            </a>
+            <ul class="dropdown-menu alert alert-success">
+              <li><a class="dropdown-item text-success" href="bottles.html">bottles</a></li>
+              <li><a class="dropdown-item text-success" href="jar.html">jars</a></li>
+              <li><a class="dropdown-item text-success" href="glass.html">glass</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
+        <li><a href="signup.html" class="btn text-light btn-success fw-bold ms-3 mt-2">register</a></li>
+          </li>
+        </ul> 
+      </div>
+      <i class="fa-solid fa-magnifying-glass search-glass fa-rotate-90 text-success" onclick="openSearch()"></i>
+    </div>
+    
+<!-- Search Slide Panel -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <button class="close-search bg-success" onclick="closeSearch()">
+            <i class="fa-solid fa-xmark text-light"></i>
+        </button>
+        <input type="text" placeholder="Search here..." />
+        <button class="search-btn bg-success">Search</button>
+    </div>
+</div>
+  </nav>
+  <!-- Sidebar -->
+  <div id="sidebar" class="alert alert-success">
+    <!-- Close button -->
+    <i class="fa-solid fa-xmark" id="sidebarClose"></i>
+    <img src="images_src/logo/logo1.png" width="150px" height="150px" class="d-block mx-auto" alt="">
+    <ul>
+      <li><a class="side-link" href="index.html">Home</a></li>
+      <hr>
+      <li><a class="side-link" href="about.html">Service</a></li>
+      <hr>
+      <li><a class="side-link" href="gallery.html">Gallery</a></li>
+      <hr>
+      <li class="nav-item dropdown">
+        <a class=" dropdown-toggle side-link" href="#" role="button" data-bs-toggle="collapse"
+          data-bs-target="#sidebarProducts" aria-expanded="false">
+          products
+        </a>
+        <hr>
+        <ul class="collapse bg-light" id="sidebarProducts">
+          <li><a class="side-link" href="bottles.html">Bottles</a></li>
+          <li><a class="side-link" href="jars.html">Jars</a></li>
+          <li><a class="side-link" href="beverages.html">glass</a></li>
+        </ul>
+      </li>
+      <li><a class="side-link" href="contact.html">Contact</a></li>
+         <li><a href="signup.html" class="btn text-light bg-dark fw-bold mt-2">register</a></li>
+      <hr>
+    </ul>
+  </div>
+  <!-- overlay -->
+  <div id="overlay"></div>
+    <div class="hero-img col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <img width="100%" src="https://ideogram.ai/assets/image/balanced/response/ui4RHrt0T7-TgoR-wmbmJw" alt="">
+    </div>
+    <div class="container contain_card">
+        <div id="bottles_display" class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product1')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup1.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_1.webp" alt="">
+                    <p class="home-card-descrip">Bottles (4 piece-pack)</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 3000</p>
+                        <p class="price">pkr 2499</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product2')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup2.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_2.webp" alt="">
+                    <p class="home-card-descrip">Shaker Bottle 62mm (per-piece)</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 99</p>
+                        <p class="price">pkr 49</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product3')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup3.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_3.webp" alt="">
+                    <p class="home-card-descrip">1000ml Bottle (per-piece)</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 299</p>
+                        <p class="price">pkr 199</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product4')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup4.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_4.webp" alt="">
+                    <p class="home-card-descrip">12onz Bottle (per-piece)</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 220</p>
+                        <p class="price">pkr 160</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product5')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup5.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_5.webp" alt="">
+                    <p class="home-card-descrip">Semi Round Bottle 62mm (per-piece)</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 180</p>
+                        <p class="price">pkr 120</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product6')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup6.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_6.webp" alt="">
+                    <p class="home-card-descrip">100ml Flip Top (6 piece-pack)</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 200</p>
+                        <p class="price">pkr 149</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product7')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup7.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_7.webp" alt="">
+                    <p class="home-card-descrip">350ml Shaker Bottle 62mm (per-piece)</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 150</p>
+                        <p class="price">pkr 100</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product8')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup8.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_8.webp" alt="">
+                    <p class="home-card-descrip">22ml Dropper (12 piece-pack)</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 250</p>
+                        <p class="price">pkr 180</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="home-card" onclick="ShowProducts('product9')">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-download"></i>
+                    </div>
+                    <img class="home-card-img" src="images_src/cups/cup9.webp" alt="">
+                    <img class="home-hover-img" src="images_src/cups/cup_9.webp" alt="">
+                    <p class="home-card-descrip">10ml Dropper (12 piece-pack)</p>
+                    <div class="card-prices">
+                        <p class="duplicate-price">pkr 3000</p>
+                        <p class="price">pkr 2499</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="detail-sections" class="detail-section">
+        <div class="container mt-5">
+            <button id="back1" onclick="back()" class="back btn text-light bg-dark my-2 d-block mx-auto"><i
+                    class="fa-solid fa-arrow-left mx-1"></i>back</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="detail-img" src="" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6 px-5 col">
+                    <h2 id="detail-title" class="title"></h2>
+                    <p id="detail-desc" class="desc"></p>
+                    <p id="detail-price" class="price text-danger text-capitalize"></p>
+                    <div class="rating-box text-center">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <button class="add-to-cart bg-success btn mx-2 text-capitalize" onclick="ShowAlerts()">add to
+                        cart</button>
+                    <a href="chackoutform.html"><button class="buy-now bg-primary btn mx-2 text-capitalize">buy now</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="email-sub">
+        <h3>news letter</h3>
+        <p>let your customer to interact with you by sending email and updates of new products.</p>
+        <input type="email" class="inp" placeholder="example@gmail.com">
+        <button class="submit-email">subscribe</button>
+    </div>
+<footer class="footer">
+  <div class="container">
+    <div class="row" style="display:flex; gap:40px; flex-wrap:wrap;">
+
+      
+      <div style="flex:1; min-width:220px;">
+        <h2 class="footer-logo">PETBOT</h2>
+        <p class="footer-text">
+          Your trusted partner in premium PET packaging solutions.
+          We craft durable, lightweight, and food-grade PET bottles
+          designed to protect your product and elevate your brand.
+        </p>
+      </div>
+
+      
+      <div style="flex:1; min-width:200px;">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div style="flex:1; min-width:200px;">
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="bottles.html">Bottles</a></li>
+          <li><a href="jars.html">Jars</a></li>
+          <li><a href="edibleoil.html">Edible Oil</a></li>
+          <li><a href="beverages.html">Beverages</a></li>
+          <li><a href="pharma.html">Pharma</a></li>
+        </ul>
+      </div>
+
+      
+      <div style="flex:1; min-width:220px;">
+        <h4>Follow Us</h4>
+        <p class="footer-text">
+          Stay connected with PETBOT for updates and innovations.
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+  <div class="footer-bottom">
+    <img src="images_src/logo/logo1.png" width="80" alt="PETBOT Logo">
+    <p>© 2025 PetBot Industries. All Rights Reserved.</p>
+  </div>
+</footer>
+    <script src="jquery.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        detailproducts = {
+            product1: {
+                img: "images_src/cups/cup1.webp",
+                title: "petbot ai",
+                desc: "baFKBVASFHbdkasfbIGIFGIGvfsVFIeiqgfiBFUAufvvaCHVUGFgfhsAFGHGGFIGFGIwgfirgwegfgweifgwgfgwGFFUIagfgashvfuasdgzfugsuafgusgfugbagfkagfkgaHJHKkdbjaKFBKAdbfjkvKBJFKKKKJIKfbiebFBIEQWFIKBfbWFBbafiqwi",
+                price: "pkr 1000"
+            },
+            product2: {
+                img: "images_src/cups/cup2.webp",
+                title: "petbot ai2",
+                desc: "bagfkagfkgaHJHK",
+                price: "pkr 2000"
+            },
+            product3: {
+                img: "images_src/cups/cup3.webp",
+                title: "petbot 3",
+                desc: "bagfkagfkgaHJHK",
+                price: "2000"
+            },
+            product4: {
+                img: "images_src/cups/cup4.webp",
+                title: "petbot ai",
+                desc: "baFKBVASFHbdkasfbIGIFGIGvfsVFIeiqgfiBFUAufvvaCHVUGFgfhsAFGHGGFIGFGIwgfirgwegfgweifgwgfgwGFFUIagfgashvfuasdgzfugsuafgusgfugbagfkagfkgaHJHKkdbjaKFBKAdbfjkvKBJFKKKKJIKfbiebFBIEQWFIKBfbWFBbafiqwi",
+                price: "pkr 1000"
+            },
+            product5: {
+                img: "images_src/cups/cup5.webp",
+                title: "petbot ai2",
+                desc: "bagfkagfkgaHJHK",
+                price: "pkr 2000"
+            },
+            product6: {
+                img: "images_src/cups/cup6.webp",
+                title: "petbot 3",
+                desc: "bagfkagfkgaHJHK",
+                price: "2000"
+            },
+            product7: {
+                img: "images_src/cups/cup7.webp",
+                title: "petbot ai",
+                desc: "baFKBVASFHbdkasfbIGIFGIGvfsVFIeiqgfiBFUAufvvaCHVUGFgfhsAFGHGGFIGFGIwgfirgwegfgweifgwgfgwGFFUIagfgashvfuasdgzfugsuafgusgfugbagfkagfkgaHJHKkdbjaKFBKAdbfjkvKBJFKKKKJIKfbiebFBIEQWFIKBfbWFBbafiqwi",
+                price: "pkr 1000"
+            },
+            product8: {
+                img: "images_src/cups/cup8.webp",
+                title: "petbot ai2",
+                desc: "bagfkagfkgaHJHK",
+                price: "pkr 2000"
+            },
+            product9: {
+                img: "images_src/cups/cup9.webp",
+                title: "petbot 3",
+                desc: "bagfkagfkgaHJHK",
+                price: "2000"
+            }
+        }
+        function ShowProducts(productId) {
+            let product = detailproducts[productId]
+            if (product) {
+                document.getElementById("detail-img").src = product.img;
+                document.getElementById("detail-title").innerText = product.title;
+                document.getElementById("detail-desc").innerText = product.desc;
+                document.getElementById("detail-price").innerText = product.price;
+                document.getElementById("detail-sections").classList.add("active");
+            }
+        }
+        function back() {
+            document.getElementById("detail-sections").classList.remove("active");
+        };
+        function ShowAlerts() {
+            Swal.fire({
+                title: "Success!",
+                text: "Your product was added to cart",
+                icon: "success"
+            });
+        };
+
+        // download as a pdf
+        document.querySelectorAll('.download-icon').forEach(icon => {
+            icon.addEventListener('click', function (e) {
+                e.stopPropagation(); // prevent card click
+                const card = this.closest('.home-card');
+
+                html2canvas(card).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const { jsPDF } = window.jspdf;
+                    const pdf = new jsPDF({
+                        orientation: 'portrait',
+                        unit: 'px',
+                        format: [canvas.width, canvas.height]
+                    });
+                    pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+                    pdf.save('product.pdf');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

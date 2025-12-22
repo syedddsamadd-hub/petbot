@@ -5,6 +5,7 @@
 .home-card {
       position: relative;
       height: 350px;
+      border-radius: 15px;
       background-color: white;
       margin: 20px 10px;
       box-shadow: 1px 1px 2px 1px rgba(0,0, 0, 0.5);
@@ -13,8 +14,9 @@
     }
     .home-card:hover {
       transform: translateY(-10px);
+  box-shadow:0 12px 25px rgba(0,180,140,0.3);
       box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.3);
-      background: #dadee9;
+      background: #d1e7dd;
     }
     .home-card.show {
       opacity: 1;
@@ -24,16 +26,14 @@
     .home-card img {
       width: 100%;
       height: 250px;
+      border-radius: 15px 15px 0 0;
       transition: transform 0.5s ease, opacity 0.5s ease;
-    }
-    .home-card:hover img {
-      transform: scale(1.03);
     }
     .home-card:hover .home-card-descrip {
       color: #007bff;
       /* text color change */
     }
-    /* .home-hover-img {
+     .home-hover-img {
       opacity: 0;
       position: absolute;
       top: 0;
@@ -44,12 +44,12 @@
     }
     .home-card:hover .home-hover-img {
       opacity: 1;
-    } */
+    } 
 
     .home-card-descrip {
       text-align: center;
       margin: 5px 0;
-      font-size: 20px;
+      /* font-size: 20px; */
     }
 
     .card-prices {
@@ -57,11 +57,15 @@
       justify-content: center;
       gap: 15px;
       font-size: 18px;
+      text-transform: uppercase;
     }
-
+    .price{
+            text-transform: uppercase;
+    }
     .duplicate-price {
       display: inline;
       font-size: 18px;
+            text-transform: uppercase;
       text-decoration: line-through;
       color: rgb(206, 67, 67);
     }

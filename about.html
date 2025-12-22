@@ -3,224 +3,501 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PETBOT-About</title> 
- <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/footer.css">
+<title>PETBOT - About & FAQs</title>
+<link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/footer.css">
 <style>
-.hero-section {
-  position: relative;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
+/* HEADER */
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 1;
+.about-header{
+  text-align:center;
+  padding:110px 20px;
+  height: 450px;
+  /* width: 100%; */
+  background:linear-gradient(270deg,#b7f2ff,#c3f6ff,#b7f2ff);
+  /* background-size:600% 600%; */
+  background: url(https://image.cdn.ishopastro.com/eyJidWNrZXQiOiJwcm9kLW1lZGlhLW15c2hvcGFzdHJvLWNvbSIsImtleSI6Ijc5OTg3NjY0OTAyNDMxOS9tZWRpYS9wbmcvZDM3ZmFkNTA4OTE0MDE4NzM4Mzc5NjMucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxOTIwfSwicm90YXRlIjpudWxsfX0=?w=1920);
+  animation:gradientBG 12s ease infinite;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  padding: 40px 20px;
-  max-width: 800px;
+.about-header h1{
+  font-size:52px;
+  margin-bottom:18px;
+  color:#198754;
+  text-shadow:2px 2px 8px rgba(0,180,255,0.4);
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 0.8s ease;
+.about-header p{
+  font-size:20px;
+  max-width:750px;
+  margin:auto;
+  color: black;
 }
 
-.hero-content p {
-  font-size: 1.3rem;
-  margin-bottom: 30px;
-  opacity: 0.95;
-  animation: fadeInUp 1s ease;
+/*OUR STORY SECTION*/
+.story-section{
+  max-width:1200px;
+  margin:50px auto;
+  display:flex;
+  flex-wrap:wrap;
+  padding:70px 35px;
+  gap:45px;
+  border-radius:30px;
+  background:#d1e7dd;
+  box-shadow:0 12px 28px  rgba(0,200,150,0.25);
+  border-left:12px solid #198754;
+  transition:0.4s;
 }
 
-.hero-btn {
-  padding: 14px 35px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 50px;
-  border: none;
-  animation: fadeInUp 1.2s ease;
+.story-section:hover{
+  transform:scale(1.01);
 }
 
-.hero-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 2px 1px 1px black;
-  background: navy;
-  color: whitesmoke;
-}
-.section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  position: relative;
-  top: 70px;
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 40px auto;
-  background: #fffaf2;
-  border-radius: 25px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.story-section img{
+  flex:1;
+  max-width:430px;
+  border-radius:22px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.18);
+  transition:0.3s;
 }
 
-.section.reverse { flex-direction: row-reverse; }
-
-/* IMAGE FIX (SMALL, CLEAN, NEAT) */
-.section img {
-  flex: 1;
-  max-width: 420px;
-  border-radius: 20px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-  transition: 0.4s;
-  width: 100%;
-  height: auto;
+.story-section img:hover{
+  transform:scale(1.05);
 }
 
-.section img:hover { transform: scale(1.03); }
-
-.section .text {
-  flex: 1;
-  padding: 10px;
+.story-text{
+  flex:1;
 }
 
-.section .text h2 {
-  font-size: 38px;
-  margin-bottom: 15px;
-  color: #ff7f50;
+.story-text h2{
+  color: #198754;
+  font-size:42px;
+  margin-bottom:18px;
+  text-shadow:1px 1px 6px rgba(255,120,80,0.3);
 }
 
-.section .text p {
-  font-size: 18px;
-  opacity: 0.9;
+.story-text p{
+  font-size:19px;
+  margin-bottom:12px;
+}
+
+/*OUR MISSION SECTION*/
+.mission-section{
+  max-width:1200px;
+  margin:60px auto;
+  display:flex;
+  flex-wrap:wrap;
+  padding:70px 35px;
+  gap:45px;
+  border-radius:30px;
+  background:#d1e7dd;
+  box-shadow:0 12px 28px rgba(0,200,150,0.25);
+  border-right:12px solid  #198754;
+  transition:0.4s;
+}
+
+.mission-section:hover{
+  transform:scale(1.01);
+}
+
+.mission-section img{
+  flex:1;
+  max-width:430px;
+  border-radius:22px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.18);
+  transition:0.3s;
+}
+
+.mission-section img:hover{
+  transform:scale(1.05);
+}
+
+.mission-text{
+  flex:1;
+}
+
+.mission-text h2{
+  color: #198754;
+  font-size:42px;
+  margin-bottom:18px;
+  text-shadow:1px 1px 6px rgba(0,180,140,0.3);
+}
+
+.mission-text p{
+  font-size:19px;
+  margin-bottom:12px;
 }
 
 /* CARDS */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 50px 20px;
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+  padding:50px 20px;
+}
+.card img{
+  width: 100%;
+  height: 150px;
+}
+.card{
+  background: #d1e7dd;
+  border-radius:20px;
+  padding:30px;
+  max-width:330px;
+  text-align:center;
+  box-shadow:0 8px 18px ;
+  transition:0.4s;
 }
 
-.card {
-  background: linear-gradient(150deg, #ffe1df, #fff1cc);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 330px;
-  text-align: center;
-  box-shadow: 0 8px 18px rgba(255,200,120,0.3);
-  transition: 0.4s;
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 12px 25px rgba(0,180,140,0.3);
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(255,180,100,0.45);
+.card h3{
+  font-size:28px;
+  margin-bottom:12px;
+  color:  #198754;
+}
+.card p{
+  font-size:17px;
 }
 
-.card h3 {
-  font-size: 28px;
-  margin-bottom: 12px;
-  color: #ff6a3d;
-}
-
-.card p {
-  font-size: 17px;
-  opacity: 0.85;
-}
-
-/* FAQ SECTION */
-.faqs-section {
-  max-width: 850px;
-  margin: 70px auto;
-  padding: 45px 30px;
-  background: linear-gradient(120deg, #ffe9d6, #ffd8c1);
-  border-radius: 22px;
-  box-shadow: 0 8px 25px rgba(255,170,100,0.25);
-}
-
-.faqs-section h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 35px;
-  color: #026e6e;
-}
-
-/* FAQ ITEM */
-.faq {
-  background: #ffffffea;
-  border-radius: 15px;
-  margin-bottom: 12px;
-  border: 1px solid #ffc289;
+/* meet our team */
+.about-card {
+  background: #d1e7dd;
+  border-radius: 12px;
   overflow: hidden;
-  cursor: pointer;
-  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,200,150,0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeUp 0.8s ease forwards;
+  transform: 0.3 ease;
 }
 
-.faq:hover {
-  box-shadow: 0 5px 16px rgba(255,170,110,0.35);
+.about-card img {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
 }
 
-.faq-header {
-  padding: 17px 22px;
-  font-size: 18px;
+.about-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+}
+
+.about-card h5 {
+  margin-top: 15px;
   font-weight: 600;
-  color: #ff7f50;
+  color: #198754;
+}
+
+.about-card p {
+  font-size: 14px;
+  margin-top: 8px;
+  color: black;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* end */
+/* why choose us  */
+          .hero-img {
+  width: 100%;
+  height: 350px;
   position: relative;
+  top: 30px;
 }
 
-.faq-header::after {
-  content: "+";
-  font-size: 24px;
+.hero-img img {
+  /* width: 100%; */
+  height: 300px;
+  border-radius: 20px;
+  object-fit: cover;
   position: absolute;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #ff7f50;
+  cursor: pointer;
+  transition: z-index 0.2s, transform 0.4s ease,box-shadow 0.4s ease;
+  transition: all 0.4s ease;
 }
 
-.faq.active .faq-header::after {
-  content: "-";
+/* first image */
+.hero-img-1 {
+  width: 80%;
+  /* top: 40px; */
+  left: 0;
+  box-shadow:0 12px 25px rgba(0,180,140,0.3);
+  z-index: 1;
+}
+/* second image (slightly upper & right) */
+.hero-img-2 {
+  width: 80%;
+  top: 40px;
+  left: 100px;
+  box-shadow:0 25px 25px rgba(0,180,140,0.3);
+  z-index: 2;
+}
+.hero-img img.active {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.hero-text{
+  position: relative;
+  top: 30px;
+}
+.hero-text h1{
+  text-transform: capitalize;
+  font-size: 24px;
+  text-align: left;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+.hero-text p{
+  word-spacing: 2px;
+  margin-left: 30px;
+  line-height: 30px;
+}
+.hero-text .btn{
+  margin: 15px 0 15px 30px;
+}
+/* Tablets */
+@media (max-width: 768px) {
+  .hero-img {
+    max-width: 360px;
+    height: 280px;
+    margin: auto;
+    position: relative;
+    top: 30px;
+  }
+  .hero-text h1{
+    margin-left: 30px;
+    }
+  .hero-img img {
+    width: 80%;
+  } 
+
+  .hero-img-2 {
+    top: 30px;
+    left: 50px;
+  }
 }
 
-.faq-content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 22px;
-  transition: 0.5s;
-  font-size: 16px;
+/* Mobile */
+@media (max-width: 576px) {
+  .hero-img {
+    max-width: 100%;
+    height: 250px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  .hero-text{
+    padding: 0;
+  }
+  .hero-img img {
+    width: 90%;
+  }
+
+  .hero-img-1 {
+    top: 0;
+    left: 0;
+  }
+
+  .hero-img-2 {
+    top: 40px;
+    left: 30px;
+  }
+}
+/* Tablets */
+@media (max-width: 992px) {
+  .story-section img,
+  .mission-section img,
+  .story-text,
+  .mission-text {
+    max-width: 48%;
+  }
 }
 
-.faq.active .faq-content {
-  padding: 15px 22px 20px;
-  max-height: 500px;
+/* Small devices / Mobile */
+@media (max-width: 768px) {
+  .story-section,
+  .mission-section {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .story-section img,
+  .mission-section img,
+  .story-text,
+  .mission-text {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .mission-section {
+    flex-direction: column; /* reverse layout off for mobile */
+  }
 }
+
+/* faqs css  */
+.container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: #198754;
+            border: 2px solid #198754;
+            color: black;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn:hover {
+            background: #d1e7dd;
+            transform: translateY(-2px);
+            border-color: #d1e7dd;
+        }
+
+        .tab-btn.active {
+            background: #d1e7dd;
+            color: black;
+            border-color: #d1e7dd;
+        }
+
+        .faq-container {
+            display: none;
+        }
+
+        .faq-container.active {
+            display: block;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #198754;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .faq-question:hover {
+            opacity: 0.95;
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 25px;
+            background: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding: 20px 25px;
+        }
+
+        .vip-badge {
+            display: inline-block;
+            background: gold;
+            color: #333;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .tab-btn {
+                padding: 10px 18px;
+                font-size: 14px;
+            }
+            
+            .faq-question {
+                font-size: 16px;
+                padding: 15px 20px;
+            }
+        }
+        /* end */
 </style>
 </head>
-<body> 
+<body>
 
-  <nav class="navbar navbar-expand-lg  bg-light">
+    <nav class="navbar navbar-expand-lg  bg-light">
     <div class="container-fluid">
       <i class="fa-solid fa-bars" id="toggleBtn"></i>
       <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
@@ -247,7 +524,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
-        <li><a href="signup.html" class="btn text-light btn-success fw-bold ms-3 mt-2">register</a></li>
+        <li><a href="signup.html" class="btn text-light reg-btn btn-success fw-bold ms-3 mt-2">register</a></li>
           </li>
         </ul> 
       </div>
@@ -296,98 +573,377 @@
   </div>
   <!-- overlay -->
   <div id="overlay"></div>
- <section class="hero-section" style="background-image: url('src/hero2.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1><i class="fas fa-jar me-3"></i>Premium Plastic Jars</h1>
-            <p>Elegant cosmetic and storage jars for creams, lotions, food products, and more. Available in various sizes and finishes.</p>
-            <button class="hero-btn"><i class="fas fa-arrow-down me-2"></i>Explore Products</button>
-        </div>
-    </section>
-<!-- OUR STORY -->
-<section class="section">
-  <div class="text">
-    <h2>Our Story</h2>
-    <p>PETBOT has been producing premium PET bottles and plastic packaging for more than 10 years. Our mission began with a simple goal—combine quality, innovation, and eco-friendly materials.</p>
-    <p>Today, businesses around the world trust us for reliability, sustainability, and exceptional packaging solutions.</p>
-  </div>
-
-  <img src="https://eu-images.contentstack.com/v3/assets/blt4a147f9e36f0754a/bltbed3307d1cd4262b/651ff8a616f15a5a8c171666/plastic_20manufacturing_20MR1540.jpg" alt="Manufacturing">
+<!-- HEADER -->
+<section class="about-header">
+  <h1>About PETBOT</h1>
+  <p>Delivering high-quality plastic packaging solutions with innovation, safety, and sustainability.</p>
 </section>
 
-<!-- MISSION -->
-<section class="section reverse">
-  <img src="https://www.appliedadhesives.com/wp-content/uploads/2021/02/SustainablePackaging_Myth-1024x449.png" alt="Eco Production">
+<!-- OUR STORY -->
+<section class="story-section">
+  <div class="story-text">
+    <h2>Our Story</h2>
+    <p>PETBOT began with a strong vision: creating packaging that is safe, reliable, and environmentally responsible. What started as a small idea quickly grew into a professional manufacturing unit serving multiple industries.</p>
+    <p>Our journey reflects dedication, innovation, and continuous learning — shaping us into a trusted name in PET packaging solutions.</p>
+  </div>
 
-  <div class="text">
+  <img src="https://eu-images.contentstack.com/v3/assets/blt4a147f9e36f0754a/bltbed3307d1cd4262b/651ff8a616f15a5a8c171666/plastic_20manufacturing_20MR1540.jpg">
+</section>
+
+<!-- OUR MISSION -->
+<section class="mission-section">
+  <img src="https://www.appliedadhesives.com/wp-content/uploads/2021/02/SustainablePackaging_Myth-1024x449.png">
+
+  <div class="mission-text">
     <h2>Our Mission</h2>
-    <p>Our aim is to provide safe, durable, and eco-friendly PET solutions while supporting global industries. We focus on recyclable materials and responsible production for a greener future.</p>
+    <p>Our mission is to deliver advanced PET packaging that meets global standards through modern technology, environmental responsibility, and strong quality control.</p>
+    <p>We aim to support industries with solutions that improve safety, efficiency, and sustainability — ensuring a better tomorrow.</p>
   </div>
 </section>
 
 <!-- CARDS -->
 <section class="cards">
   <div class="card">
-    <h3>Vision</h3>
-    <p>To become the most trusted and eco-friendly PET packaging brand worldwide.</p>
+    <img src="images_src/goal.avif" class="rounded" alt="">
+    <h3>ours goal</h3>
+    <p>Leading the future of plastic packaging with innovation and sustainability.</p>
   </div>
 
   <div class="card">
+    <img src="images_src/corevalue.avif" alt="">
     <h3>Core Values</h3>
-    <p>Quality , Innovation , Reliability , Sustainability , Customer Satisfaction.</p>
+    <p>Quality • Innovation • Reliability • Sustainability</p>
   </div>
 
   <div class="card">
+    <img src="images_src/commit.jpg" alt="">
     <h3>Commitment</h3>
-    <p>We focus on recyclable materials and environmentally responsible production practices.</p>
+    <p>We focus on eco-friendly materials and responsible production.</p>
   </div>
 </section>
+ <!-- our team -->
+    <section class="about-us-section py-5">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3); font-size: 30px;">meet our team</h2>
+      <p class="text-muted mt-2">
+        meet our valuable team who works from behind and bring ideas into the world
+      </p>
+    </div>
+    <!-- Cards Row -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="about-card h-100">
+          <img src="images_src/ourteam1.avif" alt="Team Member" class="img-fluid">
+          <div class="card-body text-center">
+            <h5>john richardson</h5>
+            <p class="text-muted">
+              Packaging specialist with a focus on durable and eco-friendly PET bottle solutions.
+            </p>
+          </div>
+        </div>
+      </div>
 
-<!-- FAQ -->
-<section class="faqs-section">
-  <h2>Frequently Asked Questions</h2>
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="about-card h-100">
+          <img src="images_src/ourteam2.avif" alt="Team Member" class="img-fluid">
+          <div class="card-body text-center">
+            <h5>alex carey</h5>
+            <p class="text-muted">
+              Oversees quality control to ensure PETBOT products meet international standards.
+            </p>
+          </div>
+        </div>
+      </div>
 
-  <div class="faq">
-    <div class="faq-header">What does PETBOT manufacture?</div>
-    <div class="faq-content">We manufacture PET bottles, jars, and various plastic packaging products.</div>
-  </div>
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="about-card h-100">
+          <img src="images_src/ourteam3.jpg" alt="Team Member" class="img-fluid">
+          <div class="card-body text-center">
+            <h5>zak crawley</h5>
+            <p class="text-muted">
+              Expert in modern manufacturing processes and production optimization.
+            </p>
+          </div>
+        </div>
+      </div>
 
-  <div class="faq">
-    <div class="faq-header">Do you offer custom designs?</div>
-    <div class="faq-content">Yes, we customize shape, size, color, and branding.</div>
-  </div>
+      <!-- Card 4 -->
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="about-card h-100">
+          <img src="images_src/ourteam4.jpg" alt="Team Member" class="img-fluid">
+          <div class="card-body text-center">
+            <h5>alysa heally</h5>
+            <p class="text-muted">
+              Handles client coordination and ensures tailored packaging solutions.
+            </p>
+          </div>
+        </div>
+      </div>
 
-  <div class="faq">
-    <div class="faq-header">What material is used?</div>
-    <div class="faq-content">Food-grade PET which is lightweight, safe, and recyclable.</div>
-  </div>
+      <!-- Card 5 -->
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="about-card h-100">
+          <img src="images_src/ourteam5.jpg" alt="Team Member" class="img-fluid">
+          <div class="card-body text-center">
+            <h5>chris romario</h5>
+            <p class="text-muted">
+              Focused on sustainability and recyclable PET material innovation.
+            </p>
+          </div>
+        </div>
+      </div>
 
-  <div class="faq">
-    <div class="faq-header">Do you accept bulk orders?</div>
-    <div class="faq-content">Yes, we have large-scale production capacity.</div>
-  </div>
-
-  <div class="faq">
-    <div class="faq-header">How long is delivery time?</div>
-    <div class="faq-content">Usually 7–15 working days depending on order size.</div>
-  </div>
-
-  <div class="faq">
-    <div class="faq-header">Are products food-grade certified?</div>
-    <div class="faq-content">Yes, all PET bottles meet food safety standards.</div>
-  </div>
-
-  <div class="faq">
-    <div class="faq-header">MOQ (Minimum Order Quantity)?</div>
-    <div class="faq-content">MOQ varies based on product type.</div>
-  </div>
-
-  <div class="faq">
-    <div class="faq-header">Is PETBOT eco-friendly?</div>
-    <div class="faq-content">Yes, our materials are fully recyclable and environment-friendly.</div>
+      <!-- Card 6 -->
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="about-card h-100">
+          <img src="images_src/ourteam6.jpg" alt="Team Member" class="img-fluid">
+          <div class="card-body text-center">
+            <h5>henrich klassen</h5>
+            <p class="text-muted">
+              Ensures operational efficiency and continuous improvement at PETBOT.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-<footer class="footer">
+<!-- why choose us  -->
+  <div class="container-fluid mt-5 mb-5">
+    <h1 class="text-center text-capitalize fw-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">why choose petbot?</h1>
+    <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="hero-text">
+      <h1 class="text-success">pebot Leading PET Packaging Solutions</h1>
+      <p class="">PETBot specializes in premium, eco-friendly, food-grade PET packaging, offering end-to-end solutions from raw
+        material sourcing to high-quality finished bottles and containers. With a strong commitment to sustainability,
+        PETBot ensures low carbon emissions and high recyclability, making PET a superior alternative to paper, glass,
+        and metal packaging.Equipped with advanced, digitalized production lines, PETBot manufactures billions of
+          PET bottles, jars.
+      </p>
+      </div>
+    </div>
+ <div class="col-12 col-md-6">
+  <div class="hero-img position-relative">
+    <img src="images_src/hero3.jpg" class="hero-img-1" alt="">
+    <img src="images_src/hero4.jpg" class="hero-img-2" alt="">
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- faqs question -->
+       <div class="container mt-5">
+        <div class="header">
+            <h1 class="mt-5 text-dark">FAQs</h1>
+        </div>
+
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="showCategory('bottles')">🍶 Bottles</button>
+            <button class="tab-btn" onclick="showCategory('jars')">🏺 Jars</button>
+            <button class="tab-btn" onclick="showCategory('beverages')">🧃 Beverages</button>
+            <button class="tab-btn" onclick="showCategory('general')">ℹ️ General</button>
+        </div>
+
+        <!-- Bottles FAQs -->
+        <div id="bottles" class="faq-container active">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>PeetBot bottles kya hain? <span class="vip-badge">VIP</span></span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    PeetBot bottles premium quality ke reusable bottles hain jo aapki drinks ko thanda ya garam rakhne ke liye perfect hain. Yeh BPA-free, leak-proof aur stylish design ke sath aate hain. Different sizes aur colors mein available hain!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Bottle kitne dair tak pani thanda rakhti hai?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Hamari insulated bottles pani ko 24 ghante tak thanda aur 12 ghante tak garam rakh sakti hain. Double-wall vacuum insulation technology use ki gayi hai jo temperature maintain karti hai.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Bottles kis material ki bani hain?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    PeetBot bottles high-grade stainless steel (304 ya 316) se bani hain jo rust-proof aur durable hain. Yeh 100% BPA-free aur food-grade certified materials use karti hain jo health ke liye completely safe hain.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Bottle kaise clean karein? <span class="vip-badge">VIP</span></span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Bottle ko warm water aur mild soap se daily dhoyein. Deep cleaning ke liye baking soda aur vinegar solution use kar sakte hain. Dishwasher safe bhi hai lekin hand wash recommended hai for longer life. Cap aur rubber seals ko separately saaf karein.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Kya bottles dishwasher mein daal sakte hain?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Haan, lekin hand wash zyada better hai. Agar dishwasher use kar rahe hain toh top rack mein rakhein aur gentle cycle use karein. Yeh bottle ki coating aur insulation ko protect karega.
+                </div>
+            </div>
+        </div>
+
+        <!-- Jars FAQs -->
+        <div id="jars" class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>PeetBot jars kis kaam ke liye best hain? <span class="vip-badge">VIP</span></span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    PeetBot jars versatile hain - aap inme dry fruits, spices, tea, coffee, pasta, cereals ya koi bhi dry goods store kar sakte hain. Air-tight seal ke sath yeh freshness aur flavor maintain karte hain.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Jars air-tight hain?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Bilkul! Hamare jars mein premium quality silicone seals hain jo 100% air-tight protection dete hain. Yeh moisture, pests aur air se aapke food items ko protect karte hain aur freshness maintain karte hain.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Jars ki sizes kya available hain?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Hamare jars multiple sizes mein available hain: 250ml (choti spices ke liye), 500ml (medium storage), 1L (large storage), aur 2L (bulk storage). Aap apni zaroorat ke mutabiq choose kar sakte hain.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Kya glass jars microwave safe hain? <span class="vip-badge">VIP</span></span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Glass body microwave aur oven safe hai, lekin lid ko remove karna zaruri hai kyunki woh heat resistant nahi hai. Always check karein ke jar mein metal parts na hon before microwaving.
+                </div>
+            </div>
+        </div>
+
+        <!-- Beverages FAQs -->
+        <div id="beverages" class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Kya PeetBot bottles carbonated drinks ke liye safe hain? <span class="vip-badge">VIP</span></span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Haan, PeetBot bottles carbonated beverages jaise soda, sparkling water ke liye bilkul safe hain. Pressure-tested caps ensure karte hain ke carbonation maintained rahe aur koi leakage na ho.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Kya acidic drinks jaise juice ya lemonade safe hain?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Bilkul! Stainless steel material acidic beverages ko handle kar sakta hai without any corrosion ya taste transfer. Aap juice, lemonade, tea, coffee sab safely store kar sakte hain.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Hot beverages kitne dair tak hot rahenge?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Insulated bottles mein hot beverages 12 ghante tak hot reh sakte hain. Morning mein coffee ya chai bharein aur dophar tak enjoy karein! Perfect for office, travel ya outdoor activities.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Kya milk products store kar sakte hain? <span class="vip-badge">VIP</span></span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Haan, lekin thode time ke liye. Milk, smoothies, protein shakes safely store ho sakte hain. Regular cleaning zaroori hai dairy products ke liye taake smell ya bacteria na ho. Same day use recommended hai.
+                </div>
+            </div>
+        </div>
+
+        <!-- General FAQs -->
+        <div id="general" class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Delivery kitne din mein hogi? <span class="vip-badge">VIP</span></span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Standard delivery 5-7 working days mein hoti hai. Express delivery option bhi available hai jo 2-3 days mein deliver karta hai. Tracking details order confirm hone ke baad SMS ya email par mil jayenge.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Return policy kya hai?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    7 days ka hassle-free return policy hai. Agar product damaged ho ya aapko pasand na aaye toh easy return kar sakte hain. Original packaging aur tags intact hone chahiye. Refund 5-7 business days mein process ho jata hai.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Warranty kitni hai?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    PeetBot products par 1 year manufacturer warranty hai jo manufacturing defects cover karti hai. Normal wear and tear warranty mein include nahi hai. Warranty claim ke liye purchase receipt zaroori hai.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Bulk orders ke liye discount hai? <span class="vip-badge">VIP</span></span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Haan! 10+ items ke bulk orders par special discounts available hain. Corporate gifting aur B2B orders ke liye hamare support team se contact karein. Customization options bhi available hain bulk orders ke liye.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Customer support kaise contact karein?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Hamari customer support team Monday to Saturday, 9 AM to 6 PM available hai. Email: support@peetbot.com, WhatsApp: +92-XXX-XXXXXXX. Live chat option bhi website par available hai for instant help!
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+     <footer class="footer">
   <div class="container">
     <div class="row" style="display:flex; gap:40px; flex-wrap:wrap;">
 
@@ -447,19 +1003,71 @@
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
 </footer>
-  <link rel="stylesheet" href="js/nav.js">
-  <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
-  <script src="js/nav.js"></script>
-<script>
-document.querySelectorAll(".faq").forEach(faq=>{
-  faq.addEventListener("click",()=>{
-    document.querySelectorAll(".faq").forEach(i=>{
-      if(i!==faq) i.classList.remove("active");
-    });
-    faq.classList.toggle("active");
-  });
-});
-</script>
 
+  <script>
+        // overlap images
+  const img1 = document.querySelector(".hero-img-1");
+  const img2 = document.querySelector(".hero-img-2");
+
+  img1.addEventListener("click", () => {
+    img1.style.zIndex = 2;
+    img2.style.zIndex = 1;
+
+    img1.classList.add("active");
+    img2.classList.remove("active");
+  });
+
+  img2.addEventListener("click", () => {
+    img2.style.zIndex = 2;
+    img1.style.zIndex = 1;
+
+    img2.classList.add("active");
+    img1.classList.remove("active");
+  });
+  // end
+
+  // faqs css
+      function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isOpen = faqItem.classList.contains('open');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('open');
+            });
+            
+            // Toggle current FAQ
+            if (!isOpen) {
+                faqItem.classList.add('open');
+            }
+        }
+
+        function showCategory(category) {
+            // Hide all containers
+            document.querySelectorAll('.faq-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected container
+            document.getElementById(category).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Close all open FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('open');
+            });
+        }
+        // ends
+  </script>
+  <script src="js/nav.js"></script>
+ <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </body>
 </html>
