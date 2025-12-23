@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/index.css">
-  <title>PetBot-Home</title>
+  <title>PETBOT-Home</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg  bg-light">
@@ -287,10 +287,8 @@
         <h4>Products</h4>
         <ul class="footer-links">
           <li><a href="bottles.html">Bottles</a></li>
-          <li><a href="jars.html">Jars</a></li>
+          <li><a href="jar.html">Jars</a></li>
           <li><a href="glass.html">glass</a></li>
-          <li><a href="edible.html"></a></li>
-          <li><a href="pharmas.html">Pharma</a></li>
         </ul>
       </div>
 
@@ -335,67 +333,47 @@
         href:"glass.html"
       },
       {
-        img_card: "images_src/jars/jar1.jpg",
+        img_card: "images_src/cups/cup2.webp",
         desc: "jars",
         p_1: 350,
         p_2: 250,
         href:"glass.html"
       },
       {
-        img_card: "images_src/jars/jar2.jpg",
+        img_card: "images_src/jars/jar1.jpg",
         desc: "jars",
         p_1: 399,
         p_2: 249,
-        href:""
+        href:"jar.html"
       },
       {
-        img_card: "images_src/cups/cup1.webp",
+        img_card: "images_src/jars/jar2.jpg",
         desc: "5 LBS Jar",
         p_1: 850,
         p_2: 650,
+         href:"jar.html"
       },
       {
-        img_card: "images_src/cups/cup1.webp",
+        img_card: "images_src/jars/jar3.jpg",
         desc: "Round Jar Small",
         p_1: 500,
         p_2: 399,
+         href:"jar.html"
       },
       {
-        img_card: "",
+        img_card: "images_src/bottles/bottles1.jpg",
         desc: "Round Jar Medium ",
         p_1: 649,
         p_2: 549,
+         href:"bottles.html"
       },
       {
-        img_card: "",
+        img_card: "images_src/bottles/bottles5.jpg",
         desc: "Round Jar Long",
         p_1: 700,
         p_2: 550,
-      },
-      // {
-      //   img_card: "logo1.png",
-      //   desc: "bsdkjfbksbdfk",
-      //   p_1: 5999,
-      //   p_2: 4499,
-      // },
-      // {
-      //   img_card: "logo1.png",
-      //   desc: "bsdkjfbksbdfk",
-      //   p_1: 5999,
-      //   p_2: 4499,
-      // },
-      // {
-      //   img_card: "logo1.png",
-      //   desc: "bsdkjfbksbdfk",
-      //   p_1: 5999,
-      //   p_2: 4499,
-      // },
-      // {
-      //   img_card: "logo1.png",
-      //   desc: "bsdkjfbksbdfk",
-      //   p_1: 5999,
-      //   p_2: 4499,
-      // },
+         href:"bottles.html"
+      }
     ];
     document.addEventListener("DOMContentLoaded", function () {
       let card_display = document.getElementById("card_display");
@@ -405,7 +383,7 @@
         card_data += `
               <div class="col-lg-3 col-md-4 col-12 p-0">
         <div class="home-card">
-          <a href="jar.html"><img class="home-card-img" src="${i.img_card}" alt=""> </a>
+          <a href="${i.href}"><img class="home-card-img" src="${i.img_card}" alt=""> </a>
           <p class="home-card-descrip">${i.desc}</p>
         </div>
       </div>

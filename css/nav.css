@@ -40,7 +40,7 @@ h1,h2,h3,h4.h5,h6 {
 }
 .dropdown-item:hover,.nav-link:hover{
         color: #198754 !important;
-   border-bottom: 2px solid #198754 !important;
+   border-bottom: 3px solid #198754 !important;
     padding-bottom: 5px;
 }
 .navbar-brand {
