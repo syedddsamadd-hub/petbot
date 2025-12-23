@@ -121,52 +121,51 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg  bg-light">
-        <div class="container-fluid">
-            <i class="fa-solid fa-bars" id="toggleBtn"></i>
-            <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" style="position: relative; top: 8px;" aria-current="page"
-                            href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">gallery</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            products
-                        </a>
-                        <ul class="dropdown-menu alert alert-success">
-                            <li><a class="dropdown-item text-success" href="bottles.html">bottles</a></li>
-                            <li><a class="dropdown-item text-success" href="jar.html">jars</a></li>
-                            <li><a class="dropdown-item text-success" href="glass.html">glass</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
-                    <li><a href="signup.html" class="btn text-light btn-success fw-bold ms-3 mt-2">register</a></li>
-                    </li>
-                </ul>
-            </div>
-            <i class="fa-solid fa-magnifying-glass search-glass fa-rotate-90 text-success" onclick="openSearch()"></i>
-        </div>
-
-        <!-- Search Slide Panel -->
-        <div class="search-overlay" id="searchOverlay">
-            <div class="search-box">
-                <button class="close-search bg-success" onclick="closeSearch()">
-                    <i class="fa-solid fa-xmark text-light"></i>
-                </button>
-                <input type="text" placeholder="Search here..." />
-                <button class="search-btn bg-success">Search</button>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg  bg-light">
+    <div class="container-fluid">
+      <i class="fa-solid fa-bars" id="toggleBtn"></i>
+      <a class="navbar-brand" href="#"><img src="images_src/logo/logo1.png" width="100%" alt=""></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" style="position: relative; top: 8px;" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">about us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">gallery</a>
+          </li>
+          <li class="nav-item dropdown" >
+            <a class="nav-link" href="" style="border: none;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              products 
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
+              <li><a class="dropdown-item" href="jar.html">jars</a></li>
+              <li><a class="dropdown-item" href="glass.html">cups</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true" href="contact.html">contact</a>
+        <li><a href="signup.html" class="btn text-light reg-btn btn-success fw-bold ms-3 mt-2">register</a></li>
+          </li>
+        </ul> 
+      </div>
+      <i class="fa-solid fa-magnifying-glass search-glass fa-rotate-90 text-success" onclick="openSearch()"></i>
+    </div>
+    
+<!-- Search Slide Panel -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <button class="close-search bg-success" onclick="closeSearch()">
+            <i class="fa-solid fa-xmark text-light"></i>
+        </button>
+        <input type="text" placeholder="Search here..." />
+        <button class="search-btn bg-success">Search</button>
+    </div>
+</div>
+  </nav>
     <!-- Sidebar -->
     <div id="sidebar" class="alert alert-success">
         <!-- Close button -->
