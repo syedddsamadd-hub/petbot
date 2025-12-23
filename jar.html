@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +49,7 @@
             width: 80%;
             text-align: center;
             height: 250px;
+            border-radius: 15px;
             /* background-color: black; */
             display: block;
             padding: 20px;
@@ -68,6 +68,7 @@
         .inp {
             width: 50%;
             padding: 9px;
+            border-radius: 5px;
             border: none;
         }
 
@@ -80,6 +81,7 @@
             padding: 9px;
             border: none;
             color: #fff;
+            border-radius: 5px;
             background-color: black;
         }
 
@@ -118,7 +120,6 @@
         }
     </style>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg  bg-light">
         <div class="container-fluid">
@@ -332,8 +333,7 @@
     </div>
     <div id="detail-sections" class="detail-section">
         <div class="container mt-5">
-            <button id="back1" onclick="back()" class="back btn text-light bg-dark my-2 d-block mx-auto"><i
-                    class="fa-solid fa-arrow-left mx-1"></i>back</button>
+            <button id="back1" onclick="back()" class="back btn text-light bg-danger my-2 d-block mx-auto"><i class="fa-solid fa-xmark"></i></button>
             <div class="row">
                 <div class="col-md-6">
                     <img id="detail-img" src="" alt="" class="img-fluid">
@@ -349,10 +349,9 @@
                         <span class="star" data-value="4">&#9733;</span>
                         <span class="star" data-value="5">&#9733;</span>
                     </div>
-                    <button class="add-to-cart bg-success btn mx-2 text-capitalize" onclick="ShowAlerts()">add to
+                    <button class="add-to-cart btn-outline-success btn mx-2 text-capitalize" onclick="ShowAlerts()">add to
                         cart</button>
-                    <a href="chackoutform.html"><button class="buy-now bg-primary btn mx-2 text-capitalize">buy
-                            now</button></a>
+                    <a href="chackoutform.html"><button class="buy-now text-light bg-success btn mx-2 text-capitalize">buy now</button></a>
                 </div>
             </div>
         </div>
@@ -529,5 +528,4 @@
         });
     </script>
 </body>
-
 </html>

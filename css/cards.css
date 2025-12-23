@@ -30,7 +30,7 @@
       transition: transform 0.5s ease, opacity 0.5s ease;
     }
     .home-card:hover .home-card-descrip {
-      color: #007bff;
+      color:  #198754;
       /* text color change */
     }
      .home-hover-img {
