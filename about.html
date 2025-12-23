@@ -18,13 +18,18 @@
 .about-header{
   text-align:center;
   padding:110px 20px;
-  height: 450px;
-  /* width: 100%; */
+  height: 500px;
+  width: 100%;
   background:linear-gradient(270deg,#b7f2ff,#c3f6ff,#b7f2ff);
   /* background-size:600% 600%; */
   background: url(https://image.cdn.ishopastro.com/eyJidWNrZXQiOiJwcm9kLW1lZGlhLW15c2hvcGFzdHJvLWNvbSIsImtleSI6Ijc5OTg3NjY0OTAyNDMxOS9tZWRpYS9wbmcvZDM3ZmFkNTA4OTE0MDE4NzM4Mzc5NjMucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxOTIwfSwicm90YXRlIjpudWxsfX0=?w=1920);
   animation:gradientBG 12s ease infinite;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+@media (max-width:500px) {
+  .about-header{
+    height: 400px;
+  }
 }
 
 .about-header h1{
@@ -216,6 +221,151 @@
     transform: translateY(0);
   }
 }
+
+/* crousel  */
+.offers-3d-wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 70px auto;
+  perspective: 1400px;
+  position: relative;
+}
+
+/* Title */
+.section-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #111;
+}
+
+/* 3D Carousel Area */
+.offers-3d {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  bottom: 50px;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(.17,.67,.32,1);
+}
+
+/* Cards */
+.offer-card {
+  position: absolute;
+  width: 320px;
+  height: 360px;
+  left: 50%;
+  top: 50%;
+  margin-left: -160px;
+  margin-top: -180px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+  transform-style: preserve-3d;
+}
+
+.offer-card .img {
+  height: 60%;
+  background-size: cover;
+  background-position: center;
+}
+
+.offer-card .body {
+  padding: 15px;
+}
+
+.offer-card h4 {
+  margin: 0;
+  color: #198754;
+  font-size: 24px !important;
+  font-weight: 500;
+}
+
+.offer-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.offer-price {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0b8043;
+}
+
+/* OFFER BADGE */
+.offer-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #dc2626;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ---------------------------- */
+/* LEFT & RIGHT ARROWS ON CARD */
+/* ---------------------------- */
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111;
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.25s;
+}
+
+.arrow-btn:hover {
+  background: #333;
+}
+
+/* Left Arrow */
+#prevOffer {
+  left: -60px; /* adjust for position */
+}
+
+/* Right Arrow */
+#nextOffer {
+  right: -60px;
+}
+
+/* Dots */
+.offers-dots {
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-top: 25px;
+}
+
+.offers-dots button {
+  width: 12px;
+  height: 12px;
+  background: #cbd5e1;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.offers-dots button.active {
+  background: #111;
+}
 /* end */
 /* why choose us  */
           .hero-img {
@@ -270,7 +420,7 @@
 .hero-text p{
   word-spacing: 2px;
   margin-left: 30px;
-  line-height: 30px;
+  line-height: 2;
 }
 .hero-text .btn{
   margin: 15px 0 15px 30px;
@@ -296,7 +446,6 @@
     left: 50px;
   }
 }
-
 /* Mobile */
 @media (max-width: 576px) {
   .hero-img {
@@ -587,7 +736,6 @@
 
   <img src="https://eu-images.contentstack.com/v3/assets/blt4a147f9e36f0754a/bltbed3307d1cd4262b/651ff8a616f15a5a8c171666/plastic_20manufacturing_20MR1540.jpg">
 </section>
-
 <!-- OUR MISSION -->
 <section class="mission-section">
   <img src="https://www.appliedadhesives.com/wp-content/uploads/2021/02/SustainablePackaging_Myth-1024x449.png">
@@ -618,98 +766,17 @@
     <p>We focus on eco-friendly materials and responsible production.</p>
   </div>
 </section>
- <!-- our team -->
-    <section class="about-us-section py-5">
-  <div class="container">
-    <!-- Section Heading -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3); font-size: 30px;">meet our team</h2>
-      <p class="text-muted mt-2">
-        meet our valuable team who works from behind and bring ideas into the world
-      </p>
-    </div>
-    <!-- Cards Row -->
-    <div class="row g-4">
-      <!-- Card 1 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="about-card h-100">
-          <img src="images_src/ourteam1.avif" alt="Team Member" class="img-fluid">
-          <div class="card-body text-center">
-            <h5>john richardson</h5>
-            <p class="text-muted">
-              Packaging specialist with a focus on durable and eco-friendly PET bottle solutions.
-            </p>
-          </div>
-        </div>
-      </div>
+<div class="offers-3d-wrap">
 
-      <!-- Card 2 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="about-card h-100">
-          <img src="images_src/ourteam2.avif" alt="Team Member" class="img-fluid">
-          <div class="card-body text-center">
-            <h5>alex carey</h5>
-            <p class="text-muted">
-              Oversees quality control to ensure PETBOT products meet international standards.
-            </p>
-          </div>
-        </div>
-      </div>
+  <div class="section-title">Our Team</div> 
 
-      <!-- Card 3 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="about-card h-100">
-          <img src="images_src/ourteam3.jpg" alt="Team Member" class="img-fluid">
-          <div class="card-body text-center">
-            <h5>zak crawley</h5>
-            <p class="text-muted">
-              Expert in modern manufacturing processes and production optimization.
-            </p>
-          </div>
-        </div>
-      </div>
+  <button id="prevOffer" class="arrow-btn">⟨</button>
+  <button id="nextOffer" class="arrow-btn">⟩</button>
 
-      <!-- Card 4 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="about-card h-100">
-          <img src="images_src/ourteam4.jpg" alt="Team Member" class="img-fluid">
-          <div class="card-body text-center">
-            <h5>alysa heally</h5>
-            <p class="text-muted">
-              Handles client coordination and ensures tailored packaging solutions.
-            </p>
-          </div>
-        </div>
-      </div>
+  <div id="offersScene" class="offers-3d"></div>
 
-      <!-- Card 5 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="about-card h-100">
-          <img src="images_src/ourteam5.jpg" alt="Team Member" class="img-fluid">
-          <div class="card-body text-center">
-            <h5>chris romario</h5>
-            <p class="text-muted">
-              Focused on sustainability and recyclable PET material innovation.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="about-card h-100">
-          <img src="images_src/ourteam6.jpg" alt="Team Member" class="img-fluid">
-          <div class="card-body text-center">
-            <h5>henrich klassen</h5>
-            <p class="text-muted">
-              Ensures operational efficiency and continuous improvement at PETBOT.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <div id="offersDots" class="offers-dots"></div>
+</div>
 <!-- why choose us  -->
   <div class="container-fluid mt-5 mb-5">
     <h1 class="text-center text-capitalize fw-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">why choose petbot?</h1>
@@ -939,6 +1006,7 @@
         </div>
     </div>
     <!-- end -->
+     
  <!-- footer -->
 <footer class="footer">
   <div class="container">
@@ -998,8 +1066,111 @@
     <p>© 2025 PetBot Industries. All Rights Reserved.</p>
   </div>
 </footer>
-
+<!-- end -->
   <script>
+
+    const offers = [
+  {
+    img: "images_src/ourteam1.avif",
+    title: "john richardson",
+    text: "Packaging specialist with a focus on durable and eco-friendly PET bottle solutions.",
+  },
+  {
+    img: "images_src/ourteam2.avif",
+    title: "alex carey",
+    text: "Oversees quality control to ensure PETBOT products meet international standards.",
+    
+  },
+  { 
+    img: "images_src/ourteam3.jpg",
+    title: "zak crawley",
+    text: " Expert in modern manufacturing processes and production optimization.",
+  },
+  {
+    img: "images_src/ourteam4.jpg",
+    title: "alysa heally",
+    text: "andles client coordination and ensures tailored packaging solutions.",
+  }
+];
+
+const scene = document.getElementById("offersScene");
+const dots = document.getElementById("offersDots");
+const prevBtn = document.getElementById("prevOffer");
+const nextBtn = document.getElementById("nextOffer");
+
+let index = 0;
+let radius = 450;
+let autoSlide;
+
+/* BUILD CAROUSEL */
+function buildCarousel() {
+  const total = offers.length;
+  const deg = 360 / total;
+
+  scene.innerHTML = "";
+  dots.innerHTML = "";
+
+  offers.forEach((o, i) => {
+    let card = document.createElement("div");
+    card.className = "offer-card";
+    card.style.transform = `rotateY(${deg * i}deg) translateZ(${radius}px)`;
+
+    card.innerHTML = `
+      <div class="img" style="background-image:url(${o.img})"></div>
+      <div class="body">
+        <h4>${o.title}</h4>
+        <p>${o.text}</p>
+      </div>
+    `;
+
+    scene.appendChild(card);
+
+    let dot = document.createElement("button");
+    if(i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goTo(i));
+    dots.appendChild(dot);
+  });
+
+  rotateCarousel();
+}
+
+/* ROTATE */
+function rotateCarousel() {
+  const deg = 360 / offers.length;
+  scene.style.transform = `rotateY(${-index * deg}deg)`;
+
+  [...dots.children].forEach((d, i) => {
+    d.classList.toggle("active", i === index);
+  });
+}
+
+/* NEXT + PREV */
+function next() {
+  index = (index + 1) % offers.length;
+  rotateCarousel();
+}
+
+function prev() {
+  index = (index - 1 + offers.length) % offers.length;
+  rotateCarousel();
+}
+
+function goTo(i) {
+  index = i;
+  rotateCarousel();
+}
+
+/* AUTO SLIDE EVERY 2 SECONDS */
+function startAutoSlide() {
+  clearInterval(autoSlide);
+  autoSlide = setInterval(next, 2000);
+}
+
+prevBtn.onclick = () => { prev(); startAutoSlide(); };
+nextBtn.onclick = () => { next(); startAutoSlide(); };
+
+buildCarousel();
+startAutoSlide();
         // overlap images
   const img1 = document.querySelector(".hero-img-1");
   const img2 = document.querySelector(".hero-img-2");
@@ -1020,47 +1191,8 @@
     img1.classList.remove("active");
   });
   // end
-
-  // faqs css
-      function toggleFaq(element) {
-            const faqItem = element.parentElement;
-            const isOpen = faqItem.classList.contains('open');
-            
-            // Close all other FAQs
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('open');
-            });
-            
-            // Toggle current FAQ
-            if (!isOpen) {
-                faqItem.classList.add('open');
-            }
-        }
-
-        function showCategory(category) {
-            // Hide all containers
-            document.querySelectorAll('.faq-container').forEach(container => {
-                container.classList.remove('active');
-            });
-            
-            // Remove active class from all buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Show selected container
-            document.getElementById(category).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-            
-            // Close all open FAQs
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('open');
-            });
-        }
-        // ends
   </script>
+  <script src="js/script.js"></script>
   <script src="js/nav.js"></script>
  <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

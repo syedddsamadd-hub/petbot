@@ -75,7 +75,7 @@
 .hero-text p{
   word-spacing: 2px;
   margin-left: 30px;
-  line-height: 30px;
+  line-height: 2;
 }
 .hero-text .btn{
   margin: 15px 0 15px 30px;
