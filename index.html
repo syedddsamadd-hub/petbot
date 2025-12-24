@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="D9YRXNW8zCNwxHyCMC9lk7lIWLMv17l-eLsnYuUcq7g" />
   <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/nav.css">
@@ -33,7 +34,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="bottles.html">bottles</a></li>
               <li><a class="dropdown-item" href="jar.html">jars</a></li>
-              <li><a class="dropdown-item" href="glass.html">cups</a></li>
+              <li><a class="dropdown-item" href="glass.html">cup</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -64,7 +65,7 @@
     <ul>
       <li><a class="side-link" href="index.html">Home</a></li>
       <hr>
-      <li><a class="side-link" href="about.html">Service</a></li>
+      <li><a class="side-link" href="about.html">About us</a></li>
       <hr>
       <li><a class="side-link" href="gallery.html">Gallery</a></li>
       <hr>
@@ -75,9 +76,9 @@
         </a>
         <hr>
         <ul class="collapse bg-light" id="sidebarProducts">
-          <li><a class="side-link" href="">Bottles</a></li>
-          <li><a class="side-link" href="jars.html">Jars</a></li>
-          <li><a class="side-link" href="beverages.html">glass</a></li>
+          <li><a class="side-link" href="bottles.html">Bottles</a></li>
+          <li><a class="side-link" href="jar.html">Jars</a></li>
+          <li><a class="side-link" href="glass.html">Cup</a></li>
         </ul>
       </li>
       <li><a class="side-link" href="contact.html">Contact</a></li>
@@ -316,122 +317,6 @@
   </div>
 </footer>
 <script src="js/script.js"></script>
-<!-- script -->
-  <script>
-    // let homeCards = [
-    //   {
-    //     img_card: "images_src/cups/cup1.webp",
-    //     desc: "Cups",
-    //     p_1: 250,
-    //     p_2: 150,
-    //     href:"glass.html"
-    //   },
-    //   {
-    //     img_card: "images_src/cups/cup2.webp",
-    //     desc: "Cups",
-    //     p_1: 300,
-    //     p_2: 220,
-    //     href:"glass.html"
-    //   },
-    //   {
-    //     img_card: "images_src/cups/cup2.webp",
-    //     desc: "jars",
-    //     p_1: 350,
-    //     p_2: 250,
-    //     href:"glass.html"
-    //   },
-    //   {
-    //     img_card: "images_src/jars/jar1.jpg",
-    //     desc: "jars",
-    //     p_1: 399,
-    //     p_2: 249,
-    //     href:"jar.html"
-    //   },
-    //   {
-    //     img_card: "images_src/jars/jar2.jpg",
-    //     desc: "5 LBS Jar",
-    //     p_1: 850,
-    //     p_2: 650,
-    //      href:"jar.html"
-    //   },
-    //   {
-    //     img_card: "images_src/jars/jar3.jpg",
-    //     desc: "Round Jar Small",
-    //     p_1: 500,
-    //     p_2: 399,
-    //      href:"jar.html"
-    //   },
-    //   {
-    //     img_card: "images_src/bottles/bottles1.jpg",
-    //     desc: "Round Jar Medium ",
-    //     p_1: 649,
-    //     p_2: 549,
-    //      href:"bottles.html"
-    //   },
-    //   {
-    //     img_card: "images_src/bottles/bottles5.jpg",
-    //     desc: "Round Jar Long",
-    //     p_1: 700,
-    //     p_2: 550,
-    //      href:"bottles.html"
-    //   }
-    // ];
-    // document.addEventListener("DOMContentLoaded", function () {
-    //   let card_display = document.getElementById("card_display");
-    //   let container = document.getElementById("contain_card");
-    //   card_data = "";
-    //   homeCards.forEach(i => {
-    //     card_data += `
-    //           <div class="col-lg-3 col-md-4 col-12 p-0">
-    //     <div class="home-card">
-    //       <a href="${i.href}"><img class="home-card-img" src="${i.img_card}" alt=""> </a>
-    //       <p class="home-card-descrip">${i.desc}</p>
-    //     </div>
-    //   </div>
-    //     `
-    //   })
-    //   card_display.innerHTML = card_data;
-    // });
-    // window.addEventListener('DOMContentLoaded', () => {
-    //   const cards = document.querySelectorAll('.home-card');
-    //   cards.forEach((card, index) => {
-    //     setTimeout(() => {
-    //       card.classList.add('show');
-    //     }, index * 200);
-    //   });
-    // });
-
-    // crousel script 
-    // var carousel = document.querySelector('#glassesCarousel');
-    // var dots = document.querySelectorAll('.control-dot');
-
-    // carousel.addEventListener('slid.bs.carousel', function (event) {
-    //   dots.forEach(dot => dot.classList.remove('active'));
-    //   dots[event.to].classList.add('active');
-    // });
-    // end
-    // overlap images
-  // const img1 = document.querySelector(".hero-img-1");
-  // const img2 = document.querySelector(".hero-img-2");
-
-  // img1.addEventListener("click", () => {
-  //   img1.style.zIndex = 2;
-  //   img2.style.zIndex = 1;
-
-  //   img1.classList.add("active");
-  //   img2.classList.remove("active");
-  // });
-
-  // img2.addEventListener("click", () => {
-  //   img2.style.zIndex = 2;
-  //   img1.style.zIndex = 1;
-
-  //   img2.classList.add("active");
-  //   img1.classList.remove("active");
-  // });
-  // end
-  </script>
-  <!-- end -->
   <script src="js/nav.js"></script>
   <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>

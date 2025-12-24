@@ -15,7 +15,7 @@
         href:"glass.html"
       },
       {
-        img_card: "images_src/cups/cup2.webp",
+        img_card: "images_src/cups/cup3.webp",
         desc: "jars",
         p_1: 350,
         p_2: 250,
