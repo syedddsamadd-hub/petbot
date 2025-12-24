@@ -1191,6 +1191,43 @@ startAutoSlide();
     img1.classList.remove("active");
   });
   // end
+    // faqs css
+      function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isOpen = faqItem.classList.contains('open');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('open');
+            });
+            
+            // Toggle current FAQ
+            if (!isOpen) {
+                faqItem.classList.add('open');
+            }
+        }
+        function showCategory(category) {
+            // Hide all containers
+            document.querySelectorAll('.faq-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected container
+            document.getElementById(category).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Close all open FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('open');
+            });
+        }
   </script>
   <script src="js/script.js"></script>
   <script src="js/nav.js"></script>
